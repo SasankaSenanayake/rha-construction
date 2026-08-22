@@ -28,7 +28,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
-        serif: ["var(--font-serif)", "Georgia", "serif"],
+        display: ["var(--font-display)", "system-ui", "sans-serif"],
       },
       container: {
         center: true,
@@ -53,10 +53,15 @@ const config: Config = {
           "0%": { backgroundPosition: "-200% 0" },
           "100%": { backgroundPosition: "200% 0" },
         },
+        "ken-burns": {
+          "0%": { transform: "scale(1.06)" },
+          "100%": { transform: "scale(1.16)" },
+        },
       },
       animation: {
         "reveal-up": "reveal-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both",
         "pulse-ring": "pulse-ring 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "ken-burns": "ken-burns 20s ease-out both",
       },
     },
   },

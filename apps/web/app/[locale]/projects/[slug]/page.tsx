@@ -8,6 +8,7 @@ import { markdownToHtml } from "@/lib/content/markdown";
 import { Section } from "@/components/ui/Section";
 import { LinkButton } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
+import { DarkHero } from "@/components/layout/DarkHero";
 import { ProjectGallery } from "@/components/projects/ProjectGallery";
 import { CaseStudyBody } from "@/components/projects/CaseStudyBody";
 
@@ -45,33 +46,25 @@ export default async function ProjectDetailPage({
 
   return (
     <>
-      <section className="blueprint-grid bg-ink-900 py-20 text-white">
-        <div className="container-page">
-          <Reveal>
-            <LinkButton href="/projects" variant="ghost" className="mb-6">
-              ← {tc("backToProjects")}
-            </LinkButton>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">
-              {tCategories(localized.category)}
-            </p>
-            <h1 className="mt-3 font-serif text-4xl font-semibold md:text-5xl">{localized.title}</h1>
-            <div className="mt-5 flex flex-wrap gap-x-8 gap-y-2 text-sm text-sand-200">
-              <span>
-                {t("locationLabel")}: {localized.location}
-              </span>
-              <span>
-                {t("yearLabel")}: {localized.year}
-              </span>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {cover && (
-        <div className="aspect-[16/7] w-full overflow-hidden bg-ink-800">
-          <img src={cover.src} alt={cover.alt[locale as Locale]} className="h-full w-full object-cover" />
-        </div>
-      )}
+      <DarkHero image={cover?.src} imageAlt={cover?.alt[locale as Locale]}>
+        <Reveal>
+          <LinkButton href="/projects" variant="ghost" className="mb-6">
+            ← {tc("backToProjects")}
+          </LinkButton>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">
+            {tCategories(localized.category)}
+          </p>
+          <h1 className="mt-3 font-display text-4xl font-semibold md:text-5xl">{localized.title}</h1>
+          <div className="mt-5 flex flex-wrap gap-x-8 gap-y-2 text-sm text-sand-200">
+            <span>
+              {t("locationLabel")}: {localized.location}
+            </span>
+            <span>
+              {t("yearLabel")}: {localized.year}
+            </span>
+          </div>
+        </Reveal>
+      </DarkHero>
 
       <Section>
         <Reveal as="div" className="mx-auto max-w-3xl">
@@ -89,7 +82,7 @@ export default async function ProjectDetailPage({
 
       <Section tone="dark">
         <Reveal className="text-center">
-          <h2 className="font-serif text-2xl font-semibold">{tc("getQuote")}</h2>
+          <h2 className="font-display text-2xl font-semibold">{tc("getQuote")}</h2>
           <LinkButton href="/quote" className="mt-7">
             {tc("getQuote")}
           </LinkButton>

@@ -4,6 +4,7 @@ import type { Locale } from "@rha/shared";
 import { getAllProjects, localizeProject } from "@/lib/content/projects";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
+import { PageHeading } from "@/components/ui/PageHeading";
 import { ProjectFilterBar } from "@/components/projects/ProjectFilterBar";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -22,10 +23,7 @@ export default async function ProjectsPage({ params }: { params: Promise<{ local
   return (
     <Section>
       <Reveal>
-        <div className="text-center">
-          <h1 className="font-serif text-4xl font-semibold text-ink-900 md:text-5xl">{t("title")}</h1>
-          <p className="mx-auto mt-3 max-w-2xl text-sand-600">{t("subtitle")}</p>
-        </div>
+        <PageHeading title={t("title")} subtitle={t("subtitle")} />
       </Reveal>
       <Reveal delay={100} className="mt-12">
         <ProjectFilterBar projects={projects} />

@@ -27,4 +27,4 @@ export function FormField({
 }
 
 export const inputClassName =
-  "w-full rounded-sm border border-sand-200 bg-white px-3 py-2.5 text-sm text-ink-900 transition-colors duration-200 focus:border-gold-500 focus:outline-none focus:ring-1 focus:ring-gold-500";
+  "w-full rounded-none border border-sand-200 bg-white px-3 py-2.5 text-sm text-ink-900 transition-colors duration-200 focus:border-gold-500 focus:outline-none focus:ring-1 focus:ring-gold-500";

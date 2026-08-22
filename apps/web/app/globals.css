@@ -53,8 +53,21 @@ body {
   @apply mx-auto w-full max-w-6xl px-5;
 }
 
+/* Stepped-corner panel — the notched blueprint-tag silhouette used on cinematic
+   image captions/hero panels. Two variants so a panel can sit at either end of
+   an overlay without the notch reading as a mistake. */
+.notch-panel {
+  --notch: 2.75rem;
+  clip-path: polygon(0 0, calc(100% - var(--notch)) 0, calc(100% - var(--notch)) var(--notch), 100% var(--notch), 100% 100%, 0 100%);
+}
+
+.notch-panel-bl {
+  --notch: 2.75rem;
+  clip-path: polygon(var(--notch) 0, 100% 0, 100% 100%, 0 100%, 0 var(--notch), var(--notch) var(--notch));
+}
+
 .case-study-body h2 {
-  @apply mt-10 font-serif text-2xl font-semibold text-ink-900 first:mt-0;
+  @apply mt-10 font-display text-2xl font-semibold text-ink-900 first:mt-0;
 }
 
 .case-study-body p {

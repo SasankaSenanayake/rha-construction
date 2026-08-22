@@ -4,6 +4,7 @@ import { siteConfig, whatsappLink } from "@/lib/config/site";
 import { Section } from "@/components/ui/Section";
 import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
+import { PageHeading } from "@/components/ui/PageHeading";
 import { ContactForm } from "@/components/forms/ContactForm";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -21,21 +22,18 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
   return (
     <Section>
       <Reveal>
-        <div className="text-center">
-          <h1 className="font-serif text-4xl font-semibold text-ink-900 md:text-5xl">{t("title")}</h1>
-          <p className="mx-auto mt-3 max-w-2xl text-sand-600">{t("subtitle")}</p>
-        </div>
+        <PageHeading title={t("title")} subtitle={t("subtitle")} />
       </Reveal>
 
       <div className="mt-14 grid gap-10 lg:grid-cols-5">
         <Reveal as="div" className="lg:col-span-3">
-          <div className="rounded-sm border border-sand-200 bg-white p-7 shadow-soft sm:p-9">
+          <div className="rounded-none border border-sand-200 bg-white p-7 shadow-soft sm:p-9">
             <ContactForm />
           </div>
         </Reveal>
 
         <Reveal as="div" delay={120} className="lg:col-span-2">
-          <h2 className="font-serif text-lg font-semibold text-ink-900">{t("detailsTitle")}</h2>
+          <h2 className="font-display text-lg font-semibold text-ink-900">{t("detailsTitle")}</h2>
           <ul className="mt-4 space-y-4 text-sm">
             <li className="flex items-start gap-3">
               <Icon name="phone" className="mt-0.5 h-5 w-5 shrink-0 text-gold-500" />
@@ -61,7 +59,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
             </li>
           </ul>
 
-          <h2 className="mt-8 font-serif text-lg font-semibold text-ink-900">{tf("businessHours")}</h2>
+          <h2 className="mt-8 font-display text-lg font-semibold text-ink-900">{tf("businessHours")}</h2>
           <ul className="mt-3 space-y-2 text-sm text-ink-800">
             <li className="flex justify-between gap-4">
               <span className="text-sand-600">{tf("weekdays")}</span>
@@ -77,8 +75,8 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
             </li>
           </ul>
 
-          <h2 className="mt-8 font-serif text-lg font-semibold text-ink-900">{t("mapTitle")}</h2>
-          <div className="mt-3 aspect-square w-full overflow-hidden rounded-sm border border-sand-200">
+          <h2 className="mt-8 font-display text-lg font-semibold text-ink-900">{t("mapTitle")}</h2>
+          <div className="mt-3 aspect-square w-full overflow-hidden rounded-none border border-sand-200">
             <iframe
               title={t("mapTitle")}
               src={siteConfig.googleMapsEmbedSrc}

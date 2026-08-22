@@ -6,7 +6,7 @@ export function ProjectGallery({ images }: { images: LocalizedProject["images"] 
   return (
     <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
       {images.map((image) => (
-        <div key={image.src} className="group aspect-[3/2] overflow-hidden rounded-sm bg-ink-800">
+        <div key={image.src} className="group aspect-[3/2] overflow-hidden rounded-none bg-ink-800">
           <img
             src={image.src}
             alt={image.alt.en}

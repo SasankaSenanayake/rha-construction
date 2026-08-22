@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Outfit } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -15,10 +15,10 @@ import "../globals.css";
 // (Noto Sans Sinhala/Tamil ship with modern Android/iOS/Windows) rather than
 // bundling a second heavy webfont, which matters for low-bandwidth visitors.
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
-const playfair = Playfair_Display({
+const outfit = Outfit({
   subsets: ["latin"],
-  weight: ["600", "700"],
-  variable: "--font-serif",
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-display",
   display: "swap",
 });
 
@@ -52,7 +52,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${inter.variable} ${playfair.variable}`}>
+    <html lang={locale} className={`${inter.variable} ${outfit.variable}`}>
       <body className="flex min-h-screen flex-col bg-sand-50">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />

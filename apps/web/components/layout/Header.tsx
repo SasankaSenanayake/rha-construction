@@ -68,7 +68,7 @@ export function Header() {
           <div className="hidden lg:block">
             <Link
               href="/quote"
-              className="inline-flex items-center rounded-sm bg-gold-500 px-5 py-2.5 text-sm font-semibold uppercase tracking-wide text-ink-950 shadow-gold transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-600"
+              className="inline-flex items-center rounded-none bg-gold-500 px-5 py-2.5 text-sm font-semibold uppercase tracking-wide text-ink-950 shadow-gold transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-600"
             >
               {tc("getQuote")}
             </Link>
@@ -117,7 +117,7 @@ export function Header() {
               <Link
                 href="/quote"
                 onClick={() => setOpen(false)}
-                className="inline-flex w-full items-center justify-center rounded-sm bg-gold-500 px-5 py-2.5 text-sm font-semibold uppercase tracking-wide text-ink-950"
+                className="inline-flex w-full items-center justify-center rounded-none bg-gold-500 px-5 py-2.5 text-sm font-semibold uppercase tracking-wide text-ink-950"
               >
                 {tc("getQuote")}
               </Link>
