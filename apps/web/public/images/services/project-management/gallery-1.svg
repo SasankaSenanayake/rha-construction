@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
-  <rect width="1200" height="800" fill="#242427"/>
-  <rect x="0" y="0" width="1200" height="12" fill="#e8590c"/>
-  <rect x="0" y="788" width="1200" height="12" fill="#e8590c"/>
+  <rect width="1200" height="800" fill="#0F1B2E"/>
+  <rect x="0" y="0" width="1200" height="12" fill="#C9A227"/>
+  <rect x="0" y="788" width="1200" height="12" fill="#C9A227"/>
   <text x="600" y="400" font-family="system-ui, sans-serif" font-size="40" fill="#ffffff" text-anchor="middle" opacity="0.85">Project Management</text>
-  <text x="600" y="450" font-family="system-ui, sans-serif" font-size="20" fill="#ffcc00" text-anchor="middle" opacity="0.9">Placeholder photo — replace before launch</text>
+  <text x="600" y="450" font-family="system-ui, sans-serif" font-size="20" fill="#E3C77D" text-anchor="middle" opacity="0.9">Placeholder photo — replace before launch</text>
 </svg>

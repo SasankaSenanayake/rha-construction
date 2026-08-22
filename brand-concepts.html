@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>R.H.A. Construction — Brand Identity Concepts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;700;800&family=Barlow+Condensed:wght@700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0d12; --bg-card: #121720; --bg-card-hover: #171e2a;
+      --border: rgba(255,255,255,0.07); --text: #f0ebe0;
+      --text-muted: #7a8399; --text-dim: #3d4558;
+      --gold: #C9A84C; --gold-l: #D4A843;
+      --orange: #E85D26; --sage: #52B788;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; overflow-x: hidden; }
+
+    .header {
+      position: relative; padding: 80px 24px 60px; text-align: center;
+      background: linear-gradient(180deg, #0D1B2A 0%, #0a0d12 100%);
+      border-bottom: 1px solid var(--border); overflow: hidden;
+    }
+    .header::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% -10%, rgba(201,168,76,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .header-label { font-size: 11px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .header h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(36px, 6vw, 72px); font-weight: 800; letter-spacing: -0.01em; color: #fff; margin-bottom: 12px; }
+    .header h1 span { color: var(--gold); }
+    .header p { font-size: 16px; color: var(--text-muted); max-width: 560px; margin: 0 auto 32px; line-height: 1.6; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 100px; border: 1px solid rgba(201,168,76,0.3); font-size: 12px; color: var(--gold); background: rgba(201,168,76,0.06); }
+
+    .tabs-wrap { position: sticky; top: 0; z-index: 100; background: rgba(10,13,18,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 0 24px; }
+    .tabs { display: flex; max-width: 960px; margin: 0 auto; overflow-x: auto; scrollbar-width: none; }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tab-btn { flex-shrink: 0; padding: 16px 20px; font-size: 13px; font-weight: 500; color: var(--text-muted); background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; transition: color 0.2s, border-color 0.2s; white-space: nowrap; }
+    .tab-btn:hover { color: var(--text); }
+    .tab-btn.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+    .main { max-width: 960px; margin: 0 auto; padding: 0 24px 80px; }
+    .section { display: none; padding-top: 48px; }
+    .section.active { display: block; }
+
+    .concept-header { margin-bottom: 40px; }
+    .concept-number { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px; }
+    .concept-title { font-family: 'Barlow Condensed', sans-serif; font-size: 42px; font-weight: 800; color: #fff; margin-bottom: 8px; letter-spacing: -0.02em; }
+    .concept-subtitle { font-size: 15px; color: var(--text-muted); }
+
+    .logo-showcase { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border-radius: 16px; overflow: hidden; margin-bottom: 40px; }
+    .logo-panel { padding: 60px 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px; min-height: 260px; }
+    .logo-panel-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500; }
+
+    .lockups-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border-radius: 16px; overflow: hidden; margin-bottom: 40px; }
+    .lockup-cell { background: var(--bg-card); padding: 32px 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; min-height: 180px; }
+    .lockup-cell-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); }
+
+    .palette-row { display: flex; gap: 12px; margin-bottom: 40px; flex-wrap: wrap; }
+    .swatch { flex: 1; min-width: 110px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+    .swatch-color { height: 56px; }
+    .swatch-info { background: var(--bg-card); padding: 10px 12px; }
+    .swatch-name { font-size: 12px; font-weight: 600; color: #fff; margin-bottom: 2px; }
+    .swatch-hex { font-size: 11px; font-family: monospace; color: var(--text-muted); letter-spacing: 0.05em; }
+
+    .rationale { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; margin-bottom: 40px; }
+    .rationale h3 { font-family: 'Barlow', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
+    .rationale-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .rationale-item h4 { font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 8px; }
+    .rationale-item p { font-size: 13.5px; line-height: 1.75; color: var(--text-muted); }
+
+    .pick-btn { margin-top: 24px; padding: 16px 28px; background: var(--gold); color: #0D1B2A; border: none; border-radius: 8px; font-size: 14px; font-weight: 700; font-family: 'Barlow', sans-serif; letter-spacing: 0.05em; cursor: pointer; transition: filter 0.2s, transform 0.15s; display: block; width: 100%; }
+    .pick-btn:hover { filter: brightness(1.1); transform: translateY(-1px); }
+
+    .overview-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--border); border-radius: 16px; overflow: hidden; margin-bottom: 48px; }
+    .overview-cell { background: var(--bg-card); padding: 28px 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; cursor: pointer; transition: background 0.2s; }
+    .overview-cell:hover { background: var(--bg-card-hover); }
+    .overview-cell-num { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-dim); }
+    .overview-cell-name { font-size: 11px; font-weight: 600; color: var(--text-muted); text-align: center; line-height: 1.5; }
+
+    .rec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 40px; }
+    .rec-card { background: var(--bg-card); border: 1px solid rgba(201,168,76,0.25); border-radius: 14px; padding: 24px; }
+    .rec-card.green { border-color: rgba(82,183,136,0.25); }
+    .rec-card-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+    .rec-card.green .rec-card-tag { color: var(--sage); }
+    .rec-card h4 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .rec-card p { font-size: 13px; color: var(--text-muted); line-height: 1.65; }
+
+    .type-specimen { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 40px; margin-bottom: 40px; }
+    .type-specimen h3 { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 32px; }
+    .type-row { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+    .type-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .type-label { font-size: 10px; color: var(--text-dim); margin-bottom: 10px; letter-spacing: 0.12em; text-transform: uppercase; }
+    .t1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(40px,5vw,64px); font-weight: 800; color: #fff; letter-spacing: -0.02em; line-height: 1; }
+    .t2 { font-family: 'Barlow', sans-serif; font-size: 26px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+    .t3 { font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.7; color: var(--text-muted); max-width: 480px; }
+
+    code { background: rgba(201,168,76,0.1); color: var(--gold); padding: 2px 6px; border-radius: 4px; font-size: 12px; }
+
+    @media (max-width: 640px) {
+      .logo-showcase { grid-template-columns: 1fr; }
+      .rationale-grid, .rec-grid, .lockups-grid { grid-template-columns: 1fr; }
+      .overview-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-label">Brand Identity System &middot; Concept Exploration</div>
+  <h1>R.H.A. <span>Construction</span></h1>
+  <p>Five distinct logo concept directions for a premium Sri Lankan construction brand. Explore each tab, then select your preferred direction to take into final refinement.</p>
+  <div class="badge">5 Concept Directions &nbsp;&middot;&nbsp; 3 Colour Palettes &nbsp;&middot;&nbsp; Full Dev System</div>
+</div>
+
+<div class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab-btn active" onclick="go('overview',0)">Overview</button>
+    <button class="tab-btn" onclick="go('c1',1)">01 &middot; Monogram</button>
+    <button class="tab-btn" onclick="go('c2',2)">02 &middot; I-Beam</button>
+    <button class="tab-btn" onclick="go('c3',3)">03 &middot; Cornerstone</button>
+    <button class="tab-btn" onclick="go('c4',4)">04 &middot; Peak</button>
+    <button class="tab-btn" onclick="go('c5',5)">05 &middot; Grid</button>
+    <button class="tab-btn" onclick="go('system',6)">Brand System</button>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- OVERVIEW -->
+<div id="overview" class="section active">
+  <div class="concept-header">
+    <div class="concept-number">R.H.A. Construction &middot; Brand Identity</div>
+    <div class="concept-title">Five Directions</div>
+    <div class="concept-subtitle">Click any concept to explore in full detail</div>
+  </div>
+
+  <div class="overview-grid">
+    <div class="overview-cell" onclick="go('c1',1)">
+      <div class="overview-cell-num">01</div>
+      <svg width="58" height="58" viewBox="0 0 58 58">
+        <rect width="58" height="58" rx="7" fill="#0D1B2A"/>
+        <rect x="10" y="10" width="8" height="38" fill="#C9A84C"/>
+        <rect x="40" y="10" width="8" height="38" fill="#C9A84C"/>
+        <rect x="10" y="25" width="38" height="8" fill="#C9A84C"/>
+        <line x1="29" y1="7" x2="10" y2="48" stroke="#C9A84C" stroke-width="5" stroke-linecap="round"/>
+        <line x1="29" y1="7" x2="48" y2="48" stroke="#C9A84C" stroke-width="5" stroke-linecap="round"/>
+        <rect x="17" y="25" width="24" height="9" fill="#0D1B2A"/>
+      </svg>
+      <div class="overview-cell-name">Architectural<br/>Monogram</div>
+    </div>
+    <div class="overview-cell" onclick="go('c2',2)">
+      <div class="overview-cell-num">02</div>
+      <svg width="58" height="58" viewBox="0 0 58 58">
+        <rect width="58" height="58" rx="7" fill="#1A1A1A"/>
+        <rect x="9" y="12" width="40" height="9" rx="1" fill="#F7F5F2"/>
+        <rect x="20" y="25" width="18" height="8" rx="1" fill="#F7F5F2"/>
+        <rect x="9" y="37" width="40" height="9" rx="1" fill="#F7F5F2"/>
+        <rect x="9" y="49" width="40" height="5" rx="2.5" fill="#E85D26"/>
+      </svg>
+      <div class="overview-cell-name">Foundation<br/>I-Beam</div>
+    </div>
+    <div class="overview-cell" onclick="go('c3',3)">
+      <div class="overview-cell-num">03</div>
+      <svg width="58" height="58" viewBox="0 0 58 58">
+        <rect width="58" height="58" rx="7" fill="#1B4332"/>
+        <polygon points="29,6 51,29 29,52 7,29" fill="#52B788"/>
+        <polygon points="29,16 41,29 29,42 17,29" fill="#1B4332"/>
+        <polygon points="24,6 34,6 29,16" fill="#1B4332"/>
+      </svg>
+      <div class="overview-cell-name">Cornerstone<br/>Diamond</div>
+    </div>
+    <div class="overview-cell" onclick="go('c4',4)">
+      <div class="overview-cell-num">04</div>
+      <svg width="58" height="58" viewBox="0 0 58 58">
+        <rect width="58" height="58" rx="7" fill="#0A1931"/>
+        <polyline points="8,44 29,12 50,44" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+        <rect x="8" y="48" width="42" height="5" rx="2.5" fill="#D4A843"/>
+      </svg>
+      <div class="overview-cell-name">Structural<br/>Peak</div>
+    </div>
+    <div class="overview-cell" onclick="go('c5',5)">
+      <div class="overview-cell-num">05</div>
+      <svg width="58" height="58" viewBox="0 0 58 58">
+        <rect width="58" height="58" rx="7" fill="#0D1B2A"/>
+        <rect x="18" y="10" width="34" height="22" rx="3" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="1.5"/>
+        <rect x="12" y="18" width="34" height="22" rx="3" fill="none" stroke="rgba(201,168,76,0.6)" stroke-width="1.5"/>
+        <rect x="6" y="26" width="34" height="22" rx="3" fill="rgba(201,168,76,0.12)" stroke="#C9A84C" stroke-width="2"/>
+      </svg>
+      <div class="overview-cell-name">Blueprint<br/>Precision</div>
+    </div>
+  </div>
+
+  <div class="rec-grid">
+    <div class="rec-card">
+      <div class="rec-card-tag">Recommended for Trust &amp; Heritage</div>
+      <h4>Direction 01 &mdash; Architectural Monogram</h4>
+      <p>Best for long-term brand equity. The RHA monogram carries institutional weight — it's a signature, not just a logo. Navy + gold communicates premium trust universally across Sri Lankan and diaspora audiences.</p>
+    </div>
+    <div class="rec-card green">
+      <div class="rec-card-tag">Recommended for Differentiation</div>
+      <h4>Direction 03 &mdash; Cornerstone Diamond</h4>
+      <p>Forest green is almost completely unused in Sri Lanka's construction sector. This direction stands out while feeling premium and sustainable — ideal if R.H.A. wants to own a distinct visual territory.</p>
+    </div>
+  </div>
+
+  <div class="type-specimen">
+    <h3>Typography Preview</h3>
+    <div class="type-row">
+      <div class="type-label">Display / Logotype &mdash; Barlow Condensed 800</div>
+      <div class="t1">R.H.A. CONSTRUCTION</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Wordmark &mdash; Barlow 600, tracked</div>
+      <div class="t2">R.H.A. Construction</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Body &mdash; Inter 400</div>
+      <div class="t3">Building excellence across residential, commercial, and renovation projects throughout Sri Lanka. Precision craftsmanship, structural integrity, lasting quality from a family you can trust.</div>
+    </div>
+  </div>
+</div>
+
+<!-- C1: MONOGRAM -->
+<div id="c1" class="section">
+  <div class="concept-header">
+    <div class="concept-number">Direction 01 &middot; Navy + Gold</div>
+    <div class="concept-title">Architectural Monogram</div>
+    <div class="concept-subtitle">Interlocked RHA letterform where H provides columns, A provides the roofline peak, and R anchors the composition as a structural bracket</div>
+  </div>
+  <div class="logo-showcase">
+    <div class="logo-panel" style="background:#0D1B2A">
+      <svg width="230" height="110" viewBox="0 0 230 110">
+        <rect x="0" y="5" width="76" height="76" rx="8" fill="#112240"/>
+        <rect x="13" y="13" width="9" height="55" fill="#C9A84C"/>
+        <rect x="54" y="13" width="9" height="55" fill="#C9A84C"/>
+        <rect x="13" y="31" width="50" height="9" fill="#C9A84C"/>
+        <line x1="38" y1="10" x2="14" y2="67" stroke="#C9A84C" stroke-width="5.5" stroke-linecap="round"/>
+        <line x1="38" y1="10" x2="62" y2="67" stroke="#C9A84C" stroke-width="5.5" stroke-linecap="round"/>
+        <rect x="20" y="32" width="36" height="9" fill="#112240"/>
+        <text x="92" y="38" font-family="'Barlow Condensed',sans-serif" font-size="23" font-weight="800" fill="#FFFFFF" letter-spacing="2">R.H.A.</text>
+        <text x="92" y="57" font-family="'Barlow',sans-serif" font-size="10.5" font-weight="400" fill="#C9A84C" letter-spacing="3.5">CONSTRUCTION</text>
+        <line x1="92" y1="65" x2="228" y2="65" stroke="rgba(201,168,76,0.25)" stroke-width="0.75"/>
+        <text x="92" y="76" font-family="'Inter',sans-serif" font-size="9" fill="rgba(201,168,76,0.4)" letter-spacing="3">SRI LANKA</text>
+      </svg>
+      <div class="logo-panel-label" style="color:rgba(255,255,255,0.28)">Dark / Navy</div>
+    </div>
+    <div class="logo-panel" style="background:#F5F0E8">
+      <svg width="230" height="110" viewBox="0 0 230 110">
+        <rect x="0" y="5" width="76" height="76" rx="8" fill="#0D1B2A"/>
+        <rect x="13" y="13" width="9" height="55" fill="#C9A84C"/>
+        <rect x="54" y="13" width="9" height="55" fill="#C9A84C"/>
+        <rect x="13" y="31" width="50" height="9" fill="#C9A84C"/>
+        <line x1="38" y1="10" x2="14" y2="67" stroke="#C9A84C" stroke-width="5.5" stroke-linecap="round"/>
+        <line x1="38" y1="10" x2="62" y2="67" stroke="#C9A84C" stroke-width="5.5" stroke-linecap="round"/>
+        <rect x="20" y="32" width="36" height="9" fill="#0D1B2A"/>
+        <text x="92" y="38" font-family="'Barlow Condensed',sans-serif" font-size="23" font-weight="800" fill="#0D1B2A" letter-spacing="2">R.H.A.</text>
+        <text x="92" y="57" font-family="'Barlow',sans-serif" font-size="10.5" font-weight="400" fill="#8B6914" letter-spacing="3.5">CONSTRUCTION</text>
+        <line x1="92" y1="65" x2="228" y2="65" stroke="rgba(13,27,42,0.12)" stroke-width="0.75"/>
+        <text x="92" y="76" font-family="'Inter',sans-serif" font-size="9" fill="rgba(13,27,42,0.3)" letter-spacing="3">SRI LANKA</text>
+      </svg>
+      <div class="logo-panel-label" style="color:rgba(0,0,0,0.28)">Light / Cream</div>
+    </div>
+  </div>
+  <div class="lockups-grid">
+    <div class="lockup-cell">
+      <svg width="64" height="64" viewBox="0 0 64 64">
+        <rect width="64" height="64" rx="10" fill="#0D1B2A"/>
+        <rect x="11" y="9" width="9" height="46" fill="#C9A84C"/>
+        <rect x="44" y="9" width="9" height="46" fill="#C9A84C"/>
+        <rect x="11" y="27" width="42" height="10" fill="#C9A84C"/>
+        <line x1="32" y1="6" x2="10" y2="55" stroke="#C9A84C" stroke-width="5" stroke-linecap="round"/>
+        <line x1="32" y1="6" x2="54" y2="55" stroke="#C9A84C" stroke-width="5" stroke-linecap="round"/>
+        <rect x="18" y="27" width="28" height="10" fill="#0D1B2A"/>
+      </svg>
+      <div class="lockup-cell-label">Icon &amp; Favicon</div>
+    </div>
+    <div class="lockup-cell">
+      <svg width="110" height="96" viewBox="0 0 110 96">
+        <rect x="30" y="0" width="50" height="50" rx="7" fill="#0D1B2A"/>
+        <rect x="39" y="7" width="6" height="36" fill="#C9A84C"/>
+        <rect x="65" y="7" width="6" height="36" fill="#C9A84C"/>
+        <rect x="39" y="20" width="32" height="7" fill="#C9A84C"/>
+        <line x1="55" y1="5" x2="39" y2="43" stroke="#C9A84C" stroke-width="4" stroke-linecap="round"/>
+        <line x1="55" y1="5" x2="71" y2="43" stroke="#C9A84C" stroke-width="4" stroke-linecap="round"/>
+        <rect x="45" y="20" width="20" height="7" fill="#0D1B2A"/>
+        <text x="55" y="68" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-size="15" font-weight="800" fill="#1a1a1a" letter-spacing="2.5">R.H.A.</text>
+        <text x="55" y="82" text-anchor="middle" font-family="'Barlow',sans-serif" font-size="7" fill="#8B6914" letter-spacing="2.5">CONSTRUCTION</text>
+      </svg>
+      <div class="lockup-cell-label">Stacked Lockup</div>
+    </div>
+    <div class="lockup-cell">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+        <svg width="48" height="48" viewBox="0 0 48 48">
+          <rect width="48" height="48" rx="7" fill="#0D1B2A"/>
+          <rect x="8" y="6" width="7" height="36" fill="#C9A84C"/>
+          <rect x="33" y="6" width="7" height="36" fill="#C9A84C"/>
+          <rect x="8" y="20" width="32" height="8" fill="#C9A84C"/>
+          <line x1="24" y1="4" x2="8" y2="42" stroke="#C9A84C" stroke-width="4" stroke-linecap="round"/>
+          <line x1="24" y1="4" x2="40" y2="42" stroke="#C9A84C" stroke-width="4" stroke-linecap="round"/>
+          <rect x="13" y="20" width="22" height="8" fill="#0D1B2A"/>
+        </svg>
+        <svg width="32" height="32" viewBox="0 0 32 32">
+          <rect width="32" height="32" rx="5" fill="#0D1B2A"/>
+          <rect x="5" y="5" width="5" height="22" fill="#C9A84C"/>
+          <rect x="22" y="5" width="5" height="22" fill="#C9A84C"/>
+          <rect x="5" y="13" width="22" height="6" fill="#C9A84C"/>
+          <line x1="16" y1="3" x2="5" y2="27" stroke="#C9A84C" stroke-width="3" stroke-linecap="round"/>
+          <line x1="16" y1="3" x2="27" y2="27" stroke="#C9A84C" stroke-width="3" stroke-linecap="round"/>
+          <rect x="9" y="13" width="14" height="6" fill="#0D1B2A"/>
+        </svg>
+      </div>
+      <div class="lockup-cell-label">48px · 32px Scale</div>
+    </div>
+  </div>
+  <div class="palette-row">
+    <div class="swatch"><div class="swatch-color" style="background:#0A1931"></div><div class="swatch-info"><div class="swatch-name">Deep Navy</div><div class="swatch-hex">#0A1931</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#0D1B2A"></div><div class="swatch-info"><div class="swatch-name">Navy Dark</div><div class="swatch-hex">#0D1B2A</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#C9A84C"></div><div class="swatch-info"><div class="swatch-name">Brass Gold</div><div class="swatch-hex">#C9A84C</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#D4A843"></div><div class="swatch-info"><div class="swatch-name">Gold Light</div><div class="swatch-hex">#D4A843</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#FAFAF7"></div><div class="swatch-info"><div class="swatch-name">Cream</div><div class="swatch-hex">#FAFAF7</div></div></div>
+  </div>
+  <div class="rationale">
+    <h3>Design Rationale</h3>
+    <div class="rationale-grid">
+      <div class="rationale-item"><h4>The Monogram Logic</h4><p>Each letter earns its place structurally: H provides twin vertical columns (load-bearing pillars), the A diagonal cuts upward as a roofline peak, and the R's curve anchors the composition like a structural bracket. The mark reads as both initials and an architectural elevation simultaneously.</p></div>
+      <div class="rationale-item"><h4>Navy + Gold Heritage</h4><p>Deep navy communicates institutional trust and precision — the palette of top engineering firms and premier property developers. The brass-gold accent reads as craftsmanship and longevity. This combination performs exceptionally well at all scales, from business cards to vehicle signage.</p></div>
+      <div class="rationale-item"><h4>Sri Lanka Market Fit</h4><p>Sri Lankan clients associate navy-and-gold with formality and establishment — ideal for communicating credibility with banks, contractors, and government procurement. Diaspora clients researching online see it as internationally comparable to premium firms.</p></div>
+      <div class="rationale-item"><h4>Scalability</h4><p>The interlocked form uses strokes that never thin below 1px at 16×16 favicon size. The badge format works cleanly as an app icon, rubber stamp, embossed stationery emblem, or WhatsApp profile picture without modification.</p></div>
+    </div>
+  </div>
+  <button class="pick-btn" onclick="alert('Great choice! Direction 01 \u2014 Architectural Monogram selected. Share this with your designer or reply here to refine further into final assets.')">&#10022; Select Direction 01 &mdash; Architectural Monogram</button>
+</div>
+
+<!-- C2: I-BEAM -->
+<div id="c2" class="section">
+  <div class="concept-header">
+    <div class="concept-number">Direction 02 &middot; Charcoal + Orange</div>
+    <div class="concept-title">Foundation I-Beam</div>
+    <div class="concept-subtitle">Abstract structural steel profile — simultaneously an I-beam, the letter H, and three courses of masonry, grounded by an orange foundation line</div>
+  </div>
+  <div class="logo-showcase">
+    <div class="logo-panel" style="background:#1A1A1A">
+      <svg width="210" height="100" viewBox="0 0 210 100">
+        <rect x="0" y="6" width="52" height="13" rx="1.5" fill="#F7F5F2"/>
+        <rect x="15" y="23" width="22" height="11" rx="1.5" fill="#F7F5F2"/>
+        <rect x="0" y="38" width="52" height="13" rx="1.5" fill="#F7F5F2"/>
+        <rect x="0" y="56" width="52" height="7" rx="3.5" fill="#E85D26"/>
+        <text x="68" y="32" font-family="'Barlow Condensed',sans-serif" font-size="24" font-weight="800" fill="#F7F5F2" letter-spacing="1.5">R.H.A.</text>
+        <text x="68" y="52" font-family="'Barlow',sans-serif" font-size="10" font-weight="400" fill="#E85D26" letter-spacing="4">CONSTRUCTION</text>
+        <rect x="68" y="56" width="142" height="7" rx="3.5" fill="#E85D26"/>
+      </svg>
+      <div class="logo-panel-label" style="color:rgba(255,255,255,0.25)">Dark Charcoal</div>
+    </div>
+    <div class="logo-panel" style="background:#F7F5F2">
+      <svg width="210" height="100" viewBox="0 0 210 100">
+        <rect x="0" y="6" width="52" height="13" rx="1.5" fill="#2C2C2C"/>
+        <rect x="15" y="23" width="22" height="11" rx="1.5" fill="#2C2C2C"/>
+        <rect x="0" y="38" width="52" height="13" rx="1.5" fill="#2C2C2C"/>
+        <rect x="0" y="56" width="52" height="7" rx="3.5" fill="#E85D26"/>
+        <text x="68" y="32" font-family="'Barlow Condensed',sans-serif" font-size="24" font-weight="800" fill="#1A1A1A" letter-spacing="1.5">R.H.A.</text>
+        <text x="68" y="52" font-family="'Barlow',sans-serif" font-size="10" font-weight="400" fill="#E85D26" letter-spacing="4">CONSTRUCTION</text>
+        <rect x="68" y="56" width="142" height="7" rx="3.5" fill="#E85D26"/>
+      </svg>
+      <div class="logo-panel-label" style="color:rgba(0,0,0,0.25)">Light Stone</div>
+    </div>
+  </div>
+  <div class="lockups-grid">
+    <div class="lockup-cell">
+      <svg width="52" height="62" viewBox="0 0 52 62">
+        <rect x="0" y="0" width="52" height="14" rx="2" fill="#2C2C2C"/>
+        <rect x="14" y="18" width="24" height="12" rx="2" fill="#2C2C2C"/>
+        <rect x="0" y="34" width="52" height="14" rx="2" fill="#2C2C2C"/>
+        <rect x="0" y="52" width="52" height="10" rx="5" fill="#E85D26"/>
+      </svg>
+      <div class="lockup-cell-label">Icon Only</div>
+    </div>
+    <div class="lockup-cell">
+      <svg width="120" height="82" viewBox="0 0 120 82">
+        <rect x="32" y="0" width="56" height="13" rx="2" fill="#2C2C2C"/>
+        <rect x="44" y="17" width="32" height="11" rx="2" fill="#2C2C2C"/>
+        <rect x="32" y="32" width="56" height="13" rx="2" fill="#2C2C2C"/>
+        <rect x="32" y="49" width="56" height="8" rx="4" fill="#E85D26"/>
+        <text x="60" y="69" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-size="13" font-weight="800" fill="#2C2C2C" letter-spacing="2">R.H.A.</text>
+        <text x="60" y="80" text-anchor="middle" font-family="'Barlow',sans-serif" font-size="6.5" fill="#E85D26" letter-spacing="2">CONSTRUCTION</text>
+      </svg>
+      <div class="lockup-cell-label">Stacked Lockup</div>
+    </div>
+    <div class="lockup-cell">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+        <svg width="48" height="48" viewBox="0 0 48 48">
+          <rect width="48" height="48" rx="7" fill="#1A1A1A"/>
+          <rect x="6" y="7" width="36" height="9" rx="1" fill="#F7F5F2"/>
+          <rect x="15" y="20" width="18" height="8" rx="1" fill="#F7F5F2"/>
+          <rect x="6" y="32" width="36" height="9" rx="1" fill="#F7F5F2"/>
+          <rect x="6" y="43" width="36" height="4" rx="2" fill="#E85D26"/>
+        </svg>
+        <svg width="32" height="32" viewBox="0 0 32 32">
+          <rect width="32" height="32" rx="5" fill="#1A1A1A"/>
+          <rect x="4" y="5" width="24" height="6" rx="1" fill="#F7F5F2"/>
+          <rect x="10" y="13" width="12" height="5" rx="1" fill="#F7F5F2"/>
+          <rect x="4" y="21" width="24" height="6" rx="1" fill="#F7F5F2"/>
+          <rect x="4" y="28" width="24" height="3" rx="1.5" fill="#E85D26"/>
+        </svg>
+      </div>
+      <div class="lockup-cell-label">48px · 32px Scale</div>
+    </div>
+  </div>
+  <div class="palette-row">
+    <div class="swatch"><div class="swatch-color" style="background:#1A1A1A"></div><div class="swatch-info"><div class="swatch-name">Charcoal</div><div class="swatch-hex">#1A1A1A</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#2C2C2C"></div><div class="swatch-info"><div class="swatch-name">Carbon</div><div class="swatch-hex">#2C2C2C</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#E85D26"></div><div class="swatch-info"><div class="swatch-name">Safety Orange</div><div class="swatch-hex">#E85D26</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#F07040"></div><div class="swatch-info"><div class="swatch-name">Orange Light</div><div class="swatch-hex">#F07040</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#F7F5F2"></div><div class="swatch-info"><div class="swatch-name">Stone White</div><div class="swatch-hex">#F7F5F2</div></div></div>
+  </div>
+  <div class="rationale">
+    <h3>Design Rationale</h3>
+    <div class="rationale-grid">
+      <div class="rationale-item"><h4>The I-Beam Symbol</h4><p>The structural I-beam is the most universal symbol of construction engineering worldwide. Here it's abstracted into three bars with the center web narrower than the flanges — recognizable to engineers and clients alike without being literal. The form simultaneously reads as the letter H, encoding the family initial.</p></div>
+      <div class="rationale-item"><h4>Foundation Line Device</h4><p>The orange baseline is a key design device: it runs the full width of the wordmark, anchoring the brand like a foundation anchors a structure. It acts as a visual connector between mark and text, and the orange hue signals energy and hands-on expertise — honoring construction's physical nature.</p></div>
+      <div class="rationale-item"><h4>Industrial-Modern Palette</h4><p>Charcoal-and-orange avoids generic black while feeling more serious than warm brown. At large format (vehicle wraps, site signage), high-contrast dark + orange is the most legible combination in outdoor conditions — critical in Sri Lanka's bright sun.</p></div>
+      <div class="rationale-item"><h4>Favicon Scalability</h4><p>The three-bar I-beam is the most favicon-friendly of all five directions. At 16×16 pixels, three rectangles are clearly legible with no ambiguity. The orange accent reads even at tiny sizes as a colored bottom strip, acting as an instant brand color cue.</p></div>
+    </div>
+  </div>
+  <button class="pick-btn" style="background:#E85D26" onclick="alert('Direction 02 \u2014 Foundation I-Beam selected!')">&#10022; Select Direction 02 &mdash; Foundation I-Beam</button>
+</div>
+
+<!-- C3: CORNERSTONE -->
+<div id="c3" class="section">
+  <div class="concept-header">
+    <div class="concept-number">Direction 03 &middot; Forest Green + Off-White</div>
+    <div class="concept-title">Cornerstone Diamond</div>
+    <div class="concept-subtitle">A rotated square with a precision-cut top notch — the first stone of a foundation being set, a compass pointing to growth, a gemstone of quality</div>
+  </div>
+  <div class="logo-showcase">
+    <div class="logo-panel" style="background:#1B4332">
+      <svg width="230" height="110" viewBox="0 0 230 110">
+        <polygon points="38,4 65,38 38,72 11,38" fill="#52B788"/>
+        <polygon points="38,16 53,38 38,60 23,38" fill="#1B4332"/>
+        <polygon points="33,4 43,4 38,16" fill="#1B4332"/>
+        <line x1="80" y1="15" x2="80" y2="95" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <text x="95" y="37" font-family="'Barlow Condensed',sans-serif" font-size="24" font-weight="800" fill="#F5F0E8" letter-spacing="2">R.H.A.</text>
+        <text x="95" y="57" font-family="'Barlow',sans-serif" font-size="10.5" font-weight="300" fill="#52B788" letter-spacing="4">CONSTRUCTION</text>
+        <line x1="95" y1="66" x2="228" y2="66" stroke="rgba(82,183,136,0.3)" stroke-width="0.5"/>
+        <text x="95" y="78" font-family="'Inter',sans-serif" font-size="9" fill="rgba(245,240,232,0.35)" letter-spacing="3">SRI LANKA</text>
+      </svg>
+      <div class="logo-panel-label" style="color:rgba(255,255,255,0.3)">Forest Green</div>
+    </div>
+    <div class="logo-panel" style="background:#F5F0E8">
+      <svg width="230" height="110" viewBox="0 0 230 110">
+        <polygon points="38,4 65,38 38,72 11,38" fill="#1B4332"/>
+        <polygon points="38,16 53,38 38,60 23,38" fill="#F5F0E8"/>
+        <polygon points="33,4 43,4 38,16" fill="#F5F0E8"/>
+        <line x1="80" y1="15" x2="80" y2="95" stroke="rgba(27,67,50,0.15)" stroke-width="1"/>
+        <text x="95" y="37" font-family="'Barlow Condensed',sans-serif" font-size="24" font-weight="800" fill="#1B4332" letter-spacing="2">R.H.A.</text>
+        <text x="95" y="57" font-family="'Barlow',sans-serif" font-size="10.5" font-weight="300" fill="#2D6A4F" letter-spacing="4">CONSTRUCTION</text>
+        <line x1="95" y1="66" x2="228" y2="66" stroke="rgba(27,67,50,0.12)" stroke-width="0.5"/>
+        <text x="95" y="78" font-family="'Inter',sans-serif" font-size="9" fill="rgba(27,67,50,0.3)" letter-spacing="3">SRI LANKA</text>
+      </svg>
+      <div class="logo-panel-label" style="color:rgba(0,0,0,0.3)">Off-White / Warm</div>
+    </div>
+  </div>
+  <div class="lockups-grid">
+    <div class="lockup-cell">
+      <svg width="58" height="68" viewBox="0 0 58 68">
+        <polygon points="29,4 54,29 29,54 4,29" fill="#1B4332"/>
+        <polygon points="29,14 42,29 29,44 16,29" fill="#F5F0E8"/>
+        <polygon points="24,4 34,4 29,14" fill="#F5F0E8"/>
+      </svg>
+      <div class="lockup-cell-label">Icon Only</div>
+    </div>
+    <div class="lockup-cell">
+      <svg width="112" height="96" viewBox="0 0 112 96">
+        <polygon points="56,4 74,25 56,46 38,25" fill="#1B4332"/>
+        <polygon points="56,13 67,25 56,37 45,25" fill="#F5F0E8"/>
+        <polygon points="51,4 61,4 56,13" fill="#F5F0E8"/>
+        <text x="56" y="64" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-size="16" font-weight="800" fill="#1B4332" letter-spacing="2.5">R.H.A.</text>
+        <text x="56" y="78" text-anchor="middle" font-family="'Barlow',sans-serif" font-size="7" fill="#2D6A4F" letter-spacing="2">CONSTRUCTION</text>
+      </svg>
+      <div class="lockup-cell-label">Stacked Lockup</div>
+    </div>
+    <div class="lockup-cell">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+        <svg width="48" height="48" viewBox="0 0 48 48">
+          <rect width="48" height="48" rx="8" fill="#1B4332"/>
+          <polygon points="24,5 40,24 24,43 8,24" fill="#52B788"/>
+          <polygon points="24,13 32,24 24,35 16,24" fill="#1B4332"/>
+          <polygon points="19,5 29,5 24,13" fill="#1B4332"/>
+        </svg>
+        <svg width="32" height="32" viewBox="0 0 32 32">
+          <rect width="32" height="32" rx="5" fill="#1B4332"/>
+          <polygon points="16,4 27,16 16,28 5,16" fill="#52B788"/>
+          <polygon points="16,10 22,16 16,22 10,16" fill="#1B4332"/>
+          <polygon points="12,4 20,4 16,10" fill="#1B4332"/>
+        </svg>
+      </div>
+      <div class="lockup-cell-label">48px · 32px Scale</div>
+    </div>
+  </div>
+  <div class="palette-row">
+    <div class="swatch"><div class="swatch-color" style="background:#0D2A1C"></div><div class="swatch-info"><div class="swatch-name">Deep Forest</div><div class="swatch-hex">#0D2A1C</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#1B4332"></div><div class="swatch-info"><div class="swatch-name">Forest Green</div><div class="swatch-hex">#1B4332</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#2D6A4F"></div><div class="swatch-info"><div class="swatch-name">Mid Green</div><div class="swatch-hex">#2D6A4F</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#52B788"></div><div class="swatch-info"><div class="swatch-name">Sage</div><div class="swatch-hex">#52B788</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#F5F0E8"></div><div class="swatch-info"><div class="swatch-name">Warm Off-White</div><div class="swatch-hex">#F5F0E8</div></div></div>
+  </div>
+  <div class="rationale">
+    <h3>Design Rationale</h3>
+    <div class="rationale-grid">
+      <div class="rationale-item"><h4>The Cornerstone Symbol</h4><p>The cornerstone is the most architecturally loaded symbol available — the first stone set in a foundation, from which everything else is aligned. The notch removed from the top creates an upward arrow in negative space: aspiration, precision, forward momentum. The diamond orientation transforms a simple square into a dynamic mark.</p></div>
+      <div class="rationale-item"><h4>Green Differentiation</h4><p>In Sri Lanka's construction sector, virtually every established firm uses navy, red, or dark brown. Forest green is completely underutilized — a genuine competitive differentiation opportunity. It also communicates longevity, sustainability, and a connection to Sri Lanka's lush natural identity.</p></div>
+      <div class="rationale-item"><h4>The Warm Off-White</h4><p>Rather than pure white, #F5F0E8 gives warmth and implies craftsmanship — the color of fresh plaster, premium paper stock, and handmade materials. It prevents the palette feeling sterile while keeping the brand human and approachable despite its geometric precision.</p></div>
+      <div class="rationale-item"><h4>Pattern Versatility</h4><p>The diamond form tiles beautifully into a repeating pattern for branded materials — letterhead backgrounds, envelope linings, site hoarding graphics. This secondary pattern asset is a built-in design bonus that most other mark types don't inherently provide.</p></div>
+    </div>
+  </div>
+  <button class="pick-btn" style="background:#1B4332;color:#F5F0E8" onclick="alert('Direction 03 \u2014 Cornerstone Diamond selected!')">&#10022; Select Direction 03 &mdash; Cornerstone Diamond</button>
+</div>
+
+<!-- C4: PEAK -->
+<div id="c4" class="section">
+  <div class="concept-header">
+    <div class="concept-number">Direction 04 &middot; Navy + Gold (Heritage)</div>
+    <div class="concept-title">Structural Peak</div>
+    <div class="concept-subtitle">A 60&deg; roofline chevron with a gold foundation bar &mdash; simultaneously a roofline, a shield, an upward arrow, and the letter A distilled to geometry</div>
+  </div>
+  <div class="logo-showcase">
+    <div class="logo-panel" style="background:#0A1931">
+      <svg width="220" height="110" viewBox="0 0 220 110">
+        <polyline points="10,74 38,22 66,74" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+        <rect x="10" y="82" width="56" height="8" rx="4" fill="#D4A843"/>
+        <text x="86" y="44" font-family="'Barlow Condensed',sans-serif" font-size="26" font-weight="800" fill="#FFFFFF" letter-spacing="2">R.H.A.</text>
+        <text x="86" y="65" font-family="'Barlow',sans-serif" font-size="10" font-weight="300" fill="#D4A843" letter-spacing="5">CONSTRUCTION</text>
+        <rect x="86" y="82" width="134" height="8" rx="4" fill="#D4A843"/>
+      </svg>
+      <div class="logo-panel-label" style="color:rgba(255,255,255,0.25)">Deep Navy</div>
+    </div>
+    <div class="logo-panel" style="background:#FAFAF7">
+      <svg width="220" height="110" viewBox="0 0 220 110">
+        <polyline points="10,74 38,22 66,74" fill="none" stroke="#0A1931" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+        <rect x="10" y="82" width="56" height="8" rx="4" fill="#D4A843"/>
+        <text x="86" y="44" font-family="'Barlow Condensed',sans-serif" font-size="26" font-weight="800" fill="#0A1931" letter-spacing="2">R.H.A.</text>
+        <text x="86" y="65" font-family="'Barlow',sans-serif" font-size="10" font-weight="300" fill="#8B6914" letter-spacing="5">CONSTRUCTION</text>
+        <rect x="86" y="82" width="134" height="8" rx="4" fill="#D4A843"/>
+      </svg>
+      <div class="logo-panel-label" style="color:rgba(0,0,0,0.25)">Premium Cream</div>
+    </div>
+  </div>
+  <div class="lockups-grid">
+    <div class="lockup-cell">
+      <svg width="54" height="60" viewBox="0 0 54 60">
+        <polyline points="4,50 27,10 50,50" fill="none" stroke="#0A1931" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+        <rect x="4" y="54" width="46" height="6" rx="3" fill="#D4A843"/>
+      </svg>
+      <div class="lockup-cell-label">Icon Only</div>
+    </div>
+    <div class="lockup-cell">
+      <svg width="112" height="82" viewBox="0 0 112 82">
+        <polyline points="28,44 56,8 84,44" fill="none" stroke="#0A1931" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+        <rect x="28" y="50" width="56" height="5" rx="2.5" fill="#D4A843"/>
+        <text x="56" y="67" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-size="14" font-weight="800" fill="#0A1931" letter-spacing="2.5">R.H.A.</text>
+        <text x="56" y="79" text-anchor="middle" font-family="'Barlow',sans-serif" font-size="6.5" fill="#8B6914" letter-spacing="2">CONSTRUCTION</text>
+      </svg>
+      <div class="lockup-cell-label">Stacked Lockup</div>
+    </div>
+    <div class="lockup-cell">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+        <svg width="48" height="48" viewBox="0 0 48 48">
+          <rect width="48" height="48" rx="7" fill="#0A1931"/>
+          <polyline points="8,38 24,10 40,38" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+          <rect x="8" y="42" width="32" height="4" rx="2" fill="#D4A843"/>
+        </svg>
+        <svg width="32" height="32" viewBox="0 0 32 32">
+          <rect width="32" height="32" rx="5" fill="#0A1931"/>
+          <polyline points="6,26 16,8 26,26" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+          <rect x="6" y="28" width="20" height="3" rx="1.5" fill="#D4A843"/>
+        </svg>
+      </div>
+      <div class="lockup-cell-label">48px · 32px Scale</div>
+    </div>
+  </div>
+  <div class="palette-row">
+    <div class="swatch"><div class="swatch-color" style="background:#0A1931"></div><div class="swatch-info"><div class="swatch-name">Deep Navy</div><div class="swatch-hex">#0A1931</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#112240"></div><div class="swatch-info"><div class="swatch-name">Navy Mid</div><div class="swatch-hex">#112240</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#D4A843"></div><div class="swatch-info"><div class="swatch-name">Heritage Gold</div><div class="swatch-hex">#D4A843</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#B8913A"></div><div class="swatch-info"><div class="swatch-name">Dark Gold</div><div class="swatch-hex">#B8913A</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#FAFAF7"></div><div class="swatch-info"><div class="swatch-name">Cream</div><div class="swatch-hex">#FAFAF7</div></div></div>
+  </div>
+  <div class="rationale">
+    <h3>Design Rationale</h3>
+    <div class="rationale-grid">
+      <div class="rationale-item"><h4>The Peak Form</h4><p>The 60&deg; open chevron is one of the most legible brand marks possible — two angled strokes meeting at a point. Every viewer decodes it as "house/roof" within milliseconds. But the execution here is architectural precision: stroke weight, angle, and proportion are engineered, not hand-drawn. The open form creates elegance through simplicity.</p></div>
+      <div class="rationale-item"><h4>Shield Subtext</h4><p>The chevron-plus-bar reads simultaneously as a roofline and as an heraldic shield badge. This dual reading is powerful for a construction brand — it says both "we build" (roofline) and "we protect your investment" (shield). The gold foundation bar completes both readings simultaneously.</p></div>
+      <div class="rationale-item"><h4>Maximum Legibility</h4><p>This direction has the highest instant-recognition score of all five concepts. At speed on a vehicle wrap, the chevron+bar is readable. For Sri Lanka's outdoor signage — bright tropical conditions, large format applications — this mark is the most functionally effective choice.</p></div>
+      <div class="rationale-item"><h4>Heritage Typography</h4><p>This direction pairs most naturally with Playfair Display (serif) for R.H.A. plus Barlow for CONSTRUCTION — creating a premium contrast between expressive display type and engineered sans-serif. It's the most classical and heritage-oriented typographic option available.</p></div>
+    </div>
+  </div>
+  <button class="pick-btn" onclick="alert('Direction 04 \u2014 Structural Peak selected!')">&#10022; Select Direction 04 &mdash; Structural Peak</button>
+</div>
+
+<!-- C5: GRID -->
+<div id="c5" class="section">
+  <div class="concept-header">
+    <div class="concept-number">Direction 05 &middot; Charcoal + Navy</div>
+    <div class="concept-title">Blueprint Precision</div>
+    <div class="concept-subtitle">Three offset outline rectangles suggesting stacked blueprints, building layers, or construction sequence — precision as a brand value made visible</div>
+  </div>
+  <div class="logo-showcase">
+    <div class="logo-panel" style="background:#0D1B2A">
+      <svg width="220" height="100" viewBox="0 0 220 100">
+        <rect x="20" y="14" width="48" height="30" rx="3" fill="none" stroke="rgba(201,168,76,0.28)" stroke-width="1.5"/>
+        <rect x="13" y="24" width="48" height="30" rx="3" fill="none" stroke="rgba(201,168,76,0.58)" stroke-width="1.5"/>
+        <rect x="6" y="34" width="48" height="30" rx="3" fill="rgba(201,168,76,0.1)" stroke="#C9A84C" stroke-width="2"/>
+        <text x="72" y="42" font-family="'Barlow Condensed',sans-serif" font-size="26" font-weight="800" fill="#FFFFFF" letter-spacing="2">R.H.A.</text>
+        <text x="72" y="63" font-family="'Barlow',sans-serif" font-size="10" font-weight="300" fill="rgba(201,168,76,0.65)" letter-spacing="5">CONSTRUCTION</text>
+      </svg>
+      <div class="logo-panel-label" style="color:rgba(255,255,255,0.25)">Dark Navy</div>
+    </div>
+    <div class="logo-panel" style="background:#FFFFFF">
+      <svg width="220" height="100" viewBox="0 0 220 100">
+        <rect x="20" y="14" width="48" height="30" rx="3" fill="none" stroke="rgba(26,26,26,0.14)" stroke-width="1.5"/>
+        <rect x="13" y="24" width="48" height="30" rx="3" fill="none" stroke="rgba(26,26,26,0.38)" stroke-width="1.5"/>
+        <rect x="6" y="34" width="48" height="30" rx="3" fill="rgba(13,27,42,0.06)" stroke="#0D1B2A" stroke-width="2"/>
+        <text x="72" y="42" font-family="'Barlow Condensed',sans-serif" font-size="26" font-weight="800" fill="#1A1A1A" letter-spacing="2">R.H.A.</text>
+        <text x="72" y="63" font-family="'Barlow',sans-serif" font-size="10" font-weight="300" fill="#5a6070" letter-spacing="5">CONSTRUCTION</text>
+      </svg>
+      <div class="logo-panel-label" style="color:rgba(0,0,0,0.25)">White / Pure</div>
+    </div>
+  </div>
+  <div class="lockups-grid">
+    <div class="lockup-cell">
+      <svg width="56" height="56" viewBox="0 0 56 56">
+        <rect x="18" y="6" width="34" height="24" rx="3" fill="none" stroke="rgba(26,26,26,0.18)" stroke-width="1.5"/>
+        <rect x="11" y="16" width="34" height="24" rx="3" fill="none" stroke="rgba(26,26,26,0.48)" stroke-width="1.5"/>
+        <rect x="4" y="26" width="34" height="24" rx="3" fill="rgba(13,27,42,0.05)" stroke="#0D1B2A" stroke-width="2"/>
+      </svg>
+      <div class="lockup-cell-label">Icon Only</div>
+    </div>
+    <div class="lockup-cell">
+      <svg width="112" height="80" viewBox="0 0 112 80">
+        <rect x="38" y="4" width="40" height="24" rx="3" fill="none" stroke="rgba(26,26,26,0.2)" stroke-width="1.5"/>
+        <rect x="32" y="12" width="40" height="24" rx="3" fill="none" stroke="rgba(26,26,26,0.45)" stroke-width="1.5"/>
+        <rect x="26" y="20" width="40" height="24" rx="3" fill="rgba(13,27,42,0.05)" stroke="#1A1A1A" stroke-width="1.5"/>
+        <text x="56" y="58" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-size="13" font-weight="800" fill="#1A1A1A" letter-spacing="2.5">R.H.A.</text>
+        <text x="56" y="71" text-anchor="middle" font-family="'Barlow',sans-serif" font-size="6.5" fill="#5a6070" letter-spacing="2">CONSTRUCTION</text>
+      </svg>
+      <div class="lockup-cell-label">Stacked Lockup</div>
+    </div>
+    <div class="lockup-cell">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+        <svg width="48" height="48" viewBox="0 0 48 48">
+          <rect width="48" height="48" rx="7" fill="#0D1B2A"/>
+          <rect x="17" y="8" width="24" height="16" rx="2" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="1.5"/>
+          <rect x="12" y="16" width="24" height="16" rx="2" fill="none" stroke="rgba(201,168,76,0.6)" stroke-width="1.5"/>
+          <rect x="7" y="24" width="24" height="16" rx="2" fill="rgba(201,168,76,0.12)" stroke="#C9A84C" stroke-width="1.5"/>
+        </svg>
+        <svg width="32" height="32" viewBox="0 0 32 32">
+          <rect width="32" height="32" rx="5" fill="#0D1B2A"/>
+          <rect x="12" y="5" width="17" height="12" rx="2" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="1"/>
+          <rect x="7" y="10" width="17" height="12" rx="2" fill="none" stroke="rgba(201,168,76,0.6)" stroke-width="1"/>
+          <rect x="3" y="15" width="17" height="12" rx="2" fill="rgba(201,168,76,0.1)" stroke="#C9A84C" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="lockup-cell-label">48px · 32px Scale</div>
+    </div>
+  </div>
+  <div class="palette-row">
+    <div class="swatch"><div class="swatch-color" style="background:#1A1A1A"></div><div class="swatch-info"><div class="swatch-name">Charcoal</div><div class="swatch-hex">#1A1A1A</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#0D1B2A"></div><div class="swatch-info"><div class="swatch-name">Blueprint Navy</div><div class="swatch-hex">#0D1B2A</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#C9A84C"></div><div class="swatch-info"><div class="swatch-name">Brass Accent</div><div class="swatch-hex">#C9A84C</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#5A6070"></div><div class="swatch-info"><div class="swatch-name">Blueprint Gray</div><div class="swatch-hex">#5A6070</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#FFFFFF;border:1px solid var(--border)"></div><div class="swatch-info"><div class="swatch-name">Pure White</div><div class="swatch-hex">#FFFFFF</div></div></div>
+  </div>
+  <div class="rationale">
+    <h3>Design Rationale</h3>
+    <div class="rationale-grid">
+      <div class="rationale-item"><h4>The Blueprint Language</h4><p>Three offset rectangles encode the language of architectural blueprints and construction drawings — layers of plans, materials being stacked, a building sequence unfolding. The mark uses outline-over-fill to make negative space do as much work as positive form, a hallmark of sophisticated graphic design practice.</p></div>
+      <div class="rationale-item"><h4>Precision as Brand Value</h4><p>This is the most intellectually sophisticated of the five directions. It reads as a firm that thinks carefully — about details, about process, about craft. For diaspora clients researching R.H.A. online, it signals a standard of professionalism comparable to international architecture studios.</p></div>
+      <div class="rationale-item"><h4>Typographic Clarity</h4><p>The mark's restrained complexity demands a clean, geometric wordmark. Barlow in two weights (Bold R.H.A. + Light CONSTRUCTION) creates typographic hierarchy without serif ornamentation. The weight contrast becomes the primary design statement rather than the letter shapes themselves.</p></div>
+      <div class="rationale-item"><h4>Scalability Notes</h4><p>This direction is the most technically demanding at small sizes. The outer offset rectangles should be simplified (filled) below 32×32 to maintain legibility. Recommended minimum use size: 48px for the icon-only mark. At large format, the stacked outline rectangles are dramatic and sophisticated.</p></div>
+    </div>
+  </div>
+  <button class="pick-btn" style="background:#0D1B2A;color:#C9A84C;border:1px solid rgba(201,168,76,0.35)" onclick="alert('Direction 05 \u2014 Blueprint Precision selected!')">&#10022; Select Direction 05 &mdash; Blueprint Precision</button>
+</div>
+
+<!-- BRAND SYSTEM -->
+<div id="system" class="section">
+  <div class="concept-header">
+    <div class="concept-number">Full Brand System</div>
+    <div class="concept-title">Fonts, Colours &amp; Dev Tokens</div>
+    <div class="concept-subtitle">Ready-to-implement CSS variables and Tailwind config for developer handoff</div>
+  </div>
+
+  <div class="type-specimen">
+    <h3>Typography System</h3>
+    <div class="type-row">
+      <div class="type-label">Display / Logotype &mdash; Barlow Condensed 800</div>
+      <div class="t1">R.H.A. CONSTRUCTION</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Wordmark &mdash; Barlow SemiBold, letter-spaced</div>
+      <div class="t2">R.H.A. Construction</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Body Copy &mdash; Inter Regular 400</div>
+      <div class="t3">Building excellence across residential, commercial, and renovation projects throughout Sri Lanka. Precision craftsmanship, structural integrity, lasting quality from a family you can trust.</div>
+    </div>
+    <div class="type-row" style="border-bottom:none;margin:0;padding:0">
+      <div class="type-label" style="margin-bottom:12px">Google Fonts Import</div>
+      <code style="display:block;background:#0a0d12;padding:16px;border-radius:8px;font-size:12px;line-height:1.8;color:#a8b4cc">@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;700;800&amp;family=Barlow+Condensed:wght@700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap');</code>
+    </div>
+  </div>
+
+  <div class="rationale">
+    <h3>CSS Custom Properties</h3>
+    <pre style="background:#060810;border-radius:10px;padding:24px;overflow-x:auto;font-size:12.5px;line-height:2;color:#a8b4cc;margin:0"><span style="color:#52B788">/* ── Palette A: Navy + Gold (Directions 01 &amp; 04) ── */</span>
+--rha-navy-900:  <span style="color:#C9A84C">#0A1931</span>;
+--rha-navy-800:  <span style="color:#C9A84C">#0D1B2A</span>;
+--rha-navy-700:  <span style="color:#C9A84C">#112240</span>;
+--rha-gold-600:  <span style="color:#C9A84C">#B8913A</span>;
+--rha-gold-500:  <span style="color:#C9A84C">#C9A84C</span>;
+--rha-gold-400:  <span style="color:#C9A84C">#D4A843</span>;
+--rha-cream:     <span style="color:#C9A84C">#FAFAF7</span>;
+
+<span style="color:#E85D26">/* ── Palette B: Charcoal + Orange (Direction 02) ── */</span>
+--rha-charcoal:  <span style="color:#E85D26">#1A1A1A</span>;
+--rha-carbon:    <span style="color:#E85D26">#2C2C2C</span>;
+--rha-orange:    <span style="color:#E85D26">#E85D26</span>;
+--rha-orange-l:  <span style="color:#E85D26">#F07040</span>;
+--rha-stone:     <span style="color:#E85D26">#F7F5F2</span>;
+
+<span style="color:#52B788">/* ── Palette C: Forest Green (Direction 03) ── */</span>
+--rha-green-900: <span style="color:#52B788">#0D2A1C</span>;
+--rha-green-700: <span style="color:#52B788">#1B4332</span>;
+--rha-green-500: <span style="color:#52B788">#2D6A4F</span>;
+--rha-sage:      <span style="color:#52B788">#52B788</span>;
+--rha-warm:      <span style="color:#52B788">#F5F0E8</span>;
+
+<span style="color:#a8b4cc">/* ── Typography ── */</span>
+--rha-font-display: 'Barlow Condensed', sans-serif;
+--rha-font-body:    'Inter', sans-serif;</pre>
+  </div>
+
+  <div class="rationale" style="margin-top:16px">
+    <h3>Tailwind v3 Config</h3>
+    <pre style="background:#060810;border-radius:10px;padding:24px;overflow-x:auto;font-size:12.5px;line-height:2;color:#a8b4cc;margin:0"><span style="color:#a8b4cc">// tailwind.config.js</span>
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        'rha-navy':    { DEFAULT: <span style="color:#C9A84C">'#0D1B2A'</span>, 900: <span style="color:#C9A84C">'#0A1931'</span>, 700: <span style="color:#C9A84C">'#112240'</span> },
+        'rha-gold':    { DEFAULT: <span style="color:#C9A84C">'#C9A84C'</span>, 400: <span style="color:#C9A84C">'#D4A843'</span>, 600: <span style="color:#C9A84C">'#B8913A'</span> },
+        'rha-orange':  { DEFAULT: <span style="color:#E85D26">'#E85D26'</span>, 400: <span style="color:#E85D26">'#F07040'</span> },
+        'rha-green':   { DEFAULT: <span style="color:#52B788">'#1B4332'</span>, 500: <span style="color:#52B788">'#2D6A4F'</span>, 400: <span style="color:#52B788">'#52B788'</span> },
+        'rha-cream':   <span style="color:#C9A84C">'#FAFAF7'</span>,
+        'rha-warm':    <span style="color:#52B788">'#F5F0E8'</span>,
+        'rha-charcoal':<span style="color:#a8b4cc">'#2C2C2C'</span>,
+        'rha-stone':   <span style="color:#a8b4cc">'#F7F5F2'</span>,
+      },
+      fontFamily: {
+        display: [<span style="color:#52B788">'Barlow Condensed'</span>, 'sans-serif'],
+        body:    [<span style="color:#52B788">'Inter'</span>, 'sans-serif'],
+        barlow:  [<span style="color:#52B788">'Barlow'</span>, 'sans-serif'],
+      },
+    },
+  },
+}</pre>
+  </div>
+
+  <div class="rationale" style="margin-top:16px">
+    <h3>Export &amp; Size Matrix</h3>
+    <div class="rationale-grid">
+      <div class="rationale-item">
+        <h4>SVG Checklist</h4>
+        <p>&#10003; All text converted to outline paths<br/>&#10003; ViewBox set to <code>0 0 [w] [h]</code><br/>&#10003; No embedded raster images<br/>&#10003; Colors as direct hex (no CSS vars)<br/>&#10003; Min stroke: 1.5px at 16px display size<br/>&#10003; Both light and dark variants exported<br/>&#10003; Tested at 16×16 physical pixels</p>
+      </div>
+      <div class="rationale-item">
+        <h4>Application Size Matrix</h4>
+        <p><strong>Favicon ICO:</strong> 16, 32, 48px<br/><strong>App icon:</strong> 180px (iOS) / 192px (Android)<br/><strong>WhatsApp profile:</strong> 400×400px<br/><strong>Email signature:</strong> 120×40px @2x<br/><strong>Letterhead:</strong> 200px wide<br/><strong>Business card:</strong> 300px wide<br/><strong>Signage / vehicles:</strong> SVG vector (infinite)</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /main -->
+
+<script>
+  function go(id, idx) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    document.querySelectorAll('.tab-btn')[idx].classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>

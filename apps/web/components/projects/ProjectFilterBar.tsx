@@ -25,10 +25,10 @@ export function ProjectFilterBar({ projects }: { projects: LocalizedProject[] })
         <button
           type="button"
           onClick={() => setActiveCategory(null)}
-          className={`rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${
+          className={`rounded-full border px-4 py-2 text-sm font-semibold transition-colors duration-300 ${
             activeCategory === null
-              ? "border-safety-orange bg-safety-orange text-white"
-              : "border-concrete-200 text-charcoal-800 hover:border-safety-orange"
+              ? "border-gold-500 bg-gold-500 text-ink-950"
+              : "border-sand-200 text-ink-800 hover:border-gold-400"
           }`}
         >
           {common("allCategories")}
@@ -38,10 +38,10 @@ export function ProjectFilterBar({ projects }: { projects: LocalizedProject[] })
             key={category}
             type="button"
             onClick={() => setActiveCategory(category)}
-            className={`rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${
+            className={`rounded-full border px-4 py-2 text-sm font-semibold transition-colors duration-300 ${
               activeCategory === category
-                ? "border-safety-orange bg-safety-orange text-white"
-                : "border-concrete-200 text-charcoal-800 hover:border-safety-orange"
+                ? "border-gold-500 bg-gold-500 text-ink-950"
+                : "border-sand-200 text-ink-800 hover:border-gold-400"
             }`}
           >
             {tc(category)}
@@ -50,7 +50,7 @@ export function ProjectFilterBar({ projects }: { projects: LocalizedProject[] })
       </div>
 
       {filtered.length === 0 ? (
-        <p className="mt-10 text-concrete-600">{t("noResults")}</p>
+        <p className="mt-10 text-sand-600">{t("noResults")}</p>
       ) : (
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((project) => (

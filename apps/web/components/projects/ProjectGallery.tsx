@@ -6,8 +6,13 @@ export function ProjectGallery({ images }: { images: LocalizedProject["images"] 
   return (
     <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
       {images.map((image) => (
-        <div key={image.src} className="aspect-[3/2] overflow-hidden rounded bg-charcoal-800">
-          <img src={image.src} alt={image.alt.en} loading="lazy" className="h-full w-full object-cover" />
+        <div key={image.src} className="group aspect-[3/2] overflow-hidden rounded-sm bg-ink-800">
+          <img
+            src={image.src}
+            alt={image.alt.en}
+            loading="lazy"
+            className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+          />
         </div>
       ))}
     </div>

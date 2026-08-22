@@ -6,6 +6,8 @@ import { getAllTestimonials, localizeTestimonial } from "@/lib/content/testimoni
 import { siteConfig } from "@/lib/config/site";
 import { Section } from "@/components/ui/Section";
 import { LinkButton } from "@/components/ui/Button";
+import { Reveal } from "@/components/ui/Reveal";
+import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 import { ServiceCard } from "@/components/services/ServiceCard";
 import { ProjectCard } from "@/components/projects/ProjectCard";
 import { TestimonialCard } from "@/components/testimonials/TestimonialCard";
@@ -34,101 +36,125 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   return (
     <>
-      <section className="relative overflow-hidden bg-charcoal-900 text-white">
-        <div className="hazard-rule" />
-        <div className="container-page grid gap-10 py-20 md:py-28 lg:grid-cols-2 lg:items-center">
-          <div>
-            <h1 className="text-4xl font-black leading-tight md:text-5xl">{t("heroTitle")}</h1>
-            <p className="mt-5 max-w-xl text-lg text-concrete-200">{t("heroSubtitle")}</p>
-            <div className="mt-8 flex flex-wrap gap-4">
+      <section className="blueprint-grid relative overflow-hidden bg-ink-900 text-white">
+        <div className="container-page grid gap-12 py-24 md:py-32 lg:grid-cols-2 lg:items-center">
+          <Reveal>
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold-400">{siteConfig.companyName}</p>
+            <h1 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] md:text-6xl">{t("heroTitle")}</h1>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-sand-200">{t("heroSubtitle")}</p>
+            <div className="mt-9 flex flex-wrap gap-4">
               <LinkButton href="/quote">{t("heroCtaPrimary")}</LinkButton>
               <LinkButton href="/projects" variant="ghost">
                 {t("heroCtaSecondary")}
               </LinkButton>
             </div>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="rounded border border-white/10 bg-white/5 p-6 text-center">
-              <p className="text-4xl font-black text-safety-yellow">{siteConfig.yearsInBusiness}+</p>
-              <p className="mt-2 text-sm text-concrete-200">{tCommon("yearsInBusiness")}</p>
+          </Reveal>
+          <Reveal delay={150}>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="rounded-sm border border-white/10 bg-white/5 p-7 text-center backdrop-blur-sm transition-colors duration-300 hover:border-gold-400/40">
+                <p className="font-serif text-4xl font-semibold text-gold-400">
+                  <AnimatedCounter value={siteConfig.yearsInBusiness} suffix="+" />
+                </p>
+                <p className="mt-2 text-sm text-sand-200">{tCommon("yearsInBusiness")}</p>
+              </div>
+              <div className="rounded-sm border border-white/10 bg-white/5 p-7 text-center backdrop-blur-sm transition-colors duration-300 hover:border-gold-400/40">
+                <p className="font-serif text-4xl font-semibold text-gold-400">
+                  <AnimatedCounter value={siteConfig.projectsCompleted} suffix="+" />
+                </p>
+                <p className="mt-2 text-sm text-sand-200">{tCommon("projectsCompleted")}</p>
+              </div>
             </div>
-            <div className="rounded border border-white/10 bg-white/5 p-6 text-center">
-              <p className="text-4xl font-black text-safety-yellow">{siteConfig.projectsCompleted}+</p>
-              <p className="mt-2 text-sm text-concrete-200">{tCommon("projectsCompleted")}</p>
-            </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      <Section tone="muted">
-        <h2 className="text-center text-sm font-semibold uppercase tracking-widest text-concrete-600">
-          {t("trustBarTitle")}
-        </h2>
+      <Section tone="muted" className="!py-10">
+        <Reveal>
+          <h2 className="text-center text-sm font-semibold uppercase tracking-[0.2em] text-sand-600">
+            {t("trustBarTitle")}
+          </h2>
+        </Reveal>
       </Section>
 
       <Section>
-        <div className="text-center">
-          <h2 className="text-3xl font-bold text-charcoal-900">{t("servicesTitle")}</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-concrete-600">{t("servicesSubtitle")}</p>
-        </div>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
-            <ServiceCard key={service.slug} service={service} />
+        <Reveal>
+          <div className="text-center">
+            <h2 className="font-serif text-3xl font-semibold text-ink-900 md:text-4xl">{t("servicesTitle")}</h2>
+            <p className="mx-auto mt-3 max-w-2xl text-sand-600">{t("servicesSubtitle")}</p>
+          </div>
+        </Reveal>
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, index) => (
+            <Reveal key={service.slug} delay={index * 80}>
+              <ServiceCard service={service} />
+            </Reveal>
           ))}
         </div>
       </Section>
 
       {featuredProjects.length > 0 && (
         <Section tone="muted">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-charcoal-900">{t("featuredProjectsTitle")}</h2>
-            <p className="mx-auto mt-3 max-w-2xl text-concrete-600">{t("featuredProjectsSubtitle")}</p>
-          </div>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {featuredProjects.map((project) => (
-              <ProjectCard key={project.slug} project={project} />
+          <Reveal>
+            <div className="text-center">
+              <h2 className="font-serif text-3xl font-semibold text-ink-900 md:text-4xl">{t("featuredProjectsTitle")}</h2>
+              <p className="mx-auto mt-3 max-w-2xl text-sand-600">{t("featuredProjectsSubtitle")}</p>
+            </div>
+          </Reveal>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {featuredProjects.map((project, index) => (
+              <Reveal key={project.slug} delay={index * 80}>
+                <ProjectCard project={project} />
+              </Reveal>
             ))}
           </div>
-          <div className="mt-10 text-center">
+          <Reveal className="mt-12 text-center">
             <LinkButton href="/projects" variant="secondary">
               {tCommon("viewAllProjects")}
             </LinkButton>
-          </div>
+          </Reveal>
         </Section>
       )}
 
       <Section>
-        <h2 className="text-center text-3xl font-bold text-charcoal-900">{t("whyUsTitle")}</h2>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {whyUs.map((item) => (
-            <div key={item.title} className="rounded border border-concrete-200 p-6">
-              <Icon name={item.icon} className="h-8 w-8 text-safety-orange" />
-              <h3 className="mt-4 font-bold text-charcoal-900">{item.title}</h3>
-              <p className="mt-2 text-sm text-concrete-600">{item.body}</p>
-            </div>
+        <Reveal>
+          <h2 className="text-center font-serif text-3xl font-semibold text-ink-900 md:text-4xl">{t("whyUsTitle")}</h2>
+        </Reveal>
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {whyUs.map((item, index) => (
+            <Reveal key={item.title} delay={index * 80}>
+              <div className="h-full rounded-sm border border-sand-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gold-400/60 hover:shadow-soft">
+                <Icon name={item.icon} className="h-8 w-8 text-gold-500" />
+                <h3 className="mt-4 font-serif text-lg font-semibold text-ink-900">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-sand-600">{item.body}</p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </Section>
 
       {testimonials.length > 0 && (
         <Section tone="muted">
-          <h2 className="text-center text-3xl font-bold text-charcoal-900">{t("testimonialsTitle")}</h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {testimonials.map((testimonial) => (
-              <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+          <Reveal>
+            <h2 className="text-center font-serif text-3xl font-semibold text-ink-900 md:text-4xl">{t("testimonialsTitle")}</h2>
+          </Reveal>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {testimonials.map((testimonial, index) => (
+              <Reveal key={testimonial.id} delay={index * 80}>
+                <TestimonialCard testimonial={testimonial} />
+              </Reveal>
             ))}
           </div>
         </Section>
       )}
 
       <Section tone="dark">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold">{t("ctaTitle")}</h2>
-          <p className="mx-auto mt-3 max-w-xl text-concrete-200">{t("ctaSubtitle")}</p>
-          <LinkButton href="/quote" className="mt-8">
+        <Reveal className="text-center">
+          <h2 className="font-serif text-3xl font-semibold md:text-4xl">{t("ctaTitle")}</h2>
+          <p className="mx-auto mt-3 max-w-xl text-sand-200">{t("ctaSubtitle")}</p>
+          <LinkButton href="/quote" className="mt-9">
             {tCommon("getQuote")}
           </LinkButton>
-        </div>
+        </Reveal>
       </Section>
     </>
   );

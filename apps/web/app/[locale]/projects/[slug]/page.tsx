@@ -7,6 +7,7 @@ import { getAllProjects, getProjectBySlug, localizeProject } from "@/lib/content
 import { markdownToHtml } from "@/lib/content/markdown";
 import { Section } from "@/components/ui/Section";
 import { LinkButton } from "@/components/ui/Button";
+import { Reveal } from "@/components/ui/Reveal";
 import { ProjectGallery } from "@/components/projects/ProjectGallery";
 import { CaseStudyBody } from "@/components/projects/CaseStudyBody";
 
@@ -44,52 +45,55 @@ export default async function ProjectDetailPage({
 
   return (
     <>
-      <section className="bg-charcoal-900 py-16 text-white">
-        <div className="hazard-rule" />
-        <div className="container-page pt-10">
-          <LinkButton href="/projects" variant="ghost" className="mb-6">
-            ← {tc("backToProjects")}
-          </LinkButton>
-          <p className="text-sm font-semibold uppercase tracking-wide text-safety-yellow">
-            {tCategories(localized.category)}
-          </p>
-          <h1 className="mt-2 text-4xl font-black">{localized.title}</h1>
-          <div className="mt-4 flex flex-wrap gap-x-8 gap-y-2 text-sm text-concrete-200">
-            <span>
-              {t("locationLabel")}: {localized.location}
-            </span>
-            <span>
-              {t("yearLabel")}: {localized.year}
-            </span>
-          </div>
+      <section className="blueprint-grid bg-ink-900 py-20 text-white">
+        <div className="container-page">
+          <Reveal>
+            <LinkButton href="/projects" variant="ghost" className="mb-6">
+              ← {tc("backToProjects")}
+            </LinkButton>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">
+              {tCategories(localized.category)}
+            </p>
+            <h1 className="mt-3 font-serif text-4xl font-semibold md:text-5xl">{localized.title}</h1>
+            <div className="mt-5 flex flex-wrap gap-x-8 gap-y-2 text-sm text-sand-200">
+              <span>
+                {t("locationLabel")}: {localized.location}
+              </span>
+              <span>
+                {t("yearLabel")}: {localized.year}
+              </span>
+            </div>
+          </Reveal>
         </div>
       </section>
 
       {cover && (
-        <div className="aspect-[16/7] w-full overflow-hidden bg-charcoal-800">
+        <div className="aspect-[16/7] w-full overflow-hidden bg-ink-800">
           <img src={cover.src} alt={cover.alt[locale as Locale]} className="h-full w-full object-cover" />
         </div>
       )}
 
       <Section>
-        <div className="mx-auto max-w-3xl">
+        <Reveal as="div" className="mx-auto max-w-3xl">
           <CaseStudyBody html={bodyHtml} />
-        </div>
+        </Reveal>
       </Section>
 
       {localized.images.length > 1 && (
         <Section tone="muted">
-          <ProjectGallery images={localized.images} />
+          <Reveal>
+            <ProjectGallery images={localized.images} />
+          </Reveal>
         </Section>
       )}
 
       <Section tone="dark">
-        <div className="text-center">
-          <h2 className="text-2xl font-bold">{tc("getQuote")}</h2>
-          <LinkButton href="/quote" className="mt-6">
+        <Reveal className="text-center">
+          <h2 className="font-serif text-2xl font-semibold">{tc("getQuote")}</h2>
+          <LinkButton href="/quote" className="mt-7">
             {tc("getQuote")}
           </LinkButton>
-        </div>
+        </Reveal>
       </Section>
     </>
   );

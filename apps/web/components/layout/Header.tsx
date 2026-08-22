@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/lib/i18n/navigation";
 import { siteConfig } from "@/lib/config/site";
@@ -20,12 +20,22 @@ export function Header() {
   const t = useTranslations("nav");
   const tc = useTranslations("common");
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    function onScroll() {
+      setScrolled(window.scrollY > 8);
+    }
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <header className="sticky top-0 z-50">
-      <div className="bg-charcoal-900 text-white">
+      <div className="bg-ink-950 text-white">
         <div className="container-page flex h-9 items-center justify-between text-xs">
-          <a href={`tel:${siteConfig.phoneHref}`} className="flex items-center gap-1.5 font-semibold text-safety-yellow">
+          <a href={`tel:${siteConfig.phoneHref}`} className="flex items-center gap-1.5 font-semibold text-gold-400 transition-colors hover:text-gold-300">
             <Icon name="phone" className="h-3.5 w-3.5" />
             {siteConfig.phoneDisplay}
           </a>
@@ -33,18 +43,22 @@ export function Header() {
         </div>
       </div>
 
-      <div className="border-b border-concrete-200 bg-white">
-        <div className="container-page flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 text-lg font-bold text-charcoal-900">
-            <img src="/images/site/logo.svg" alt={siteConfig.companyName} className="h-8 w-auto" />
+      <div
+        className={`border-b bg-white/90 backdrop-blur-md transition-shadow duration-300 ${
+          scrolled ? "border-sand-200 shadow-soft" : "border-transparent"
+        }`}
+      >
+        <div className="container-page flex h-20 items-center justify-between">
+          <Link href="/" className="flex items-center">
+            <img src="/images/site/logo.svg" alt={siteConfig.companyName} className="h-10 w-auto" />
           </Link>
 
-          <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary">
+          <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-semibold text-charcoal-800 hover:text-safety-orange"
+                className="text-sm font-medium tracking-wide text-ink-800 transition-colors hover:text-gold-600"
               >
                 {t(item.key)}
               </Link>
@@ -54,7 +68,7 @@ export function Header() {
           <div className="hidden lg:block">
             <Link
               href="/quote"
-              className="inline-flex items-center rounded bg-safety-orange px-5 py-2.5 text-sm font-semibold uppercase tracking-wide text-white hover:bg-safety-orange-dark"
+              className="inline-flex items-center rounded-sm bg-gold-500 px-5 py-2.5 text-sm font-semibold uppercase tracking-wide text-ink-950 shadow-gold transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-600"
             >
               {tc("getQuote")}
             </Link>
@@ -62,43 +76,54 @@ export function Header() {
 
           <button
             type="button"
-            className="p-2 lg:hidden"
+            className="flex h-10 w-10 items-center justify-center lg:hidden"
             aria-label="Toggle menu"
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
           >
-            <span className="block h-0.5 w-6 bg-charcoal-900" />
-            <span className="mt-1.5 block h-0.5 w-6 bg-charcoal-900" />
-            <span className="mt-1.5 block h-0.5 w-6 bg-charcoal-900" />
+            <span className="relative block h-4 w-6">
+              <span
+                className={`absolute left-0 block h-0.5 w-6 bg-ink-900 transition-all duration-300 ${open ? "top-[7px] rotate-45" : "top-0"}`}
+              />
+              <span
+                className={`absolute left-0 top-[7px] block h-0.5 w-6 bg-ink-900 transition-opacity duration-200 ${open ? "opacity-0" : "opacity-100"}`}
+              />
+              <span
+                className={`absolute left-0 block h-0.5 w-6 bg-ink-900 transition-all duration-300 ${open ? "top-[7px] -rotate-45" : "top-[14px]"}`}
+              />
+            </span>
           </button>
         </div>
 
-        {open && (
-          <nav className="border-t border-concrete-200 lg:hidden" aria-label="Mobile">
-            <ul className="container-page flex flex-col py-2">
-              {navItems.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="block py-3 text-sm font-semibold text-charcoal-800"
-                    onClick={() => setOpen(false)}
-                  >
-                    {t(item.key)}
-                  </Link>
-                </li>
-              ))}
-              <li className="py-3">
+        <nav
+          className={`overflow-hidden border-t border-sand-200 transition-[max-height] duration-300 ease-out lg:hidden ${
+            open ? "max-h-96" : "max-h-0 border-t-0"
+          }`}
+          aria-label="Mobile"
+        >
+          <ul className="container-page flex flex-col py-2">
+            {navItems.map((item) => (
+              <li key={item.href}>
                 <Link
-                  href="/quote"
+                  href={item.href}
+                  className="block py-3 text-sm font-medium text-ink-800"
                   onClick={() => setOpen(false)}
-                  className="inline-flex w-full items-center justify-center rounded bg-safety-orange px-5 py-2.5 text-sm font-semibold uppercase tracking-wide text-white"
                 >
-                  {tc("getQuote")}
+                  {t(item.key)}
                 </Link>
               </li>
-            </ul>
-          </nav>
-        )}
+            ))}
+            <li className="py-3">
+              <Link
+                href="/quote"
+                onClick={() => setOpen(false)}
+                className="inline-flex w-full items-center justify-center rounded-sm bg-gold-500 px-5 py-2.5 text-sm font-semibold uppercase tracking-wide text-ink-950"
+              >
+                {tc("getQuote")}
+              </Link>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
   );

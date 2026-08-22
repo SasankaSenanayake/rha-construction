@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>R.H.A. Construction — Evolved Logo Concepts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;700;800&family=Barlow+Condensed:wght@700;800&family=Cormorant+Garamond:wght@600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f5f0e8;
+      --card-bg: #fff;
+      --border: #e2d9c8;
+      --text: #1a1612;
+      --muted: #7a6e5e;
+      --dim: #b0a898;
+      --gold: #B8860B;
+      --gold-l: #D4A843;
+      --gold-pale: #f0e4bc;
+      --gold-bg: #fdf8ec;
+      --navy: #0D1B2A;
+      --cream: #faf6ee;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+    /* ── HEADER ── */
+    .header {
+      background: var(--navy);
+      padding: 56px 24px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% -20%, rgba(184,134,11,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .header-kicker {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--gold-l); margin-bottom: 14px;
+    }
+    .header h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(28px, 5vw, 56px); font-weight: 800;
+      color: #fff; letter-spacing: -0.01em; margin-bottom: 10px;
+    }
+    .header h1 em { color: var(--gold-l); font-style: normal; }
+    .header p { font-size: 15px; color: rgba(255,255,255,0.55); max-width: 560px; margin: 0 auto 28px; line-height: 1.65; }
+
+    /* ── ORIGINAL LOGO ANALYSIS ── */
+    .analysis {
+      max-width: 900px; margin: 0 auto;
+      padding: 40px 24px 0;
+    }
+    .analysis-inner {
+      display: grid; grid-template-columns: 220px 1fr; gap: 32px;
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 16px; padding: 32px; align-items: start;
+    }
+    .original-logo-box {
+      background: #f2ede6; border-radius: 10px; padding: 24px;
+      display: flex; align-items: center; justify-content: center;
+      min-height: 180px;
+    }
+    .analysis-title {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+    }
+    .dna-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .dna-item {
+      background: var(--gold-bg); border: 1px solid var(--gold-pale);
+      border-radius: 8px; padding: 12px;
+    }
+    .dna-item strong { font-size: 12px; font-weight: 700; color: var(--text); display: block; margin-bottom: 4px; }
+    .dna-item span { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+    /* ── TABS ── */
+    .tabs-wrap {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(245,240,232,0.94); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border); padding: 0 24px;
+    }
+    .tabs { display: flex; max-width: 900px; margin: 0 auto; overflow-x: auto; scrollbar-width: none; }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tab-btn {
+      flex-shrink: 0; padding: 15px 20px; font-size: 13px; font-weight: 500;
+      color: var(--muted); background: none; border: none;
+      border-bottom: 2px solid transparent; cursor: pointer;
+      transition: color 0.2s, border-color 0.2s; white-space: nowrap;
+    }
+    .tab-btn:hover { color: var(--text); }
+    .tab-btn.active { color: var(--gold); border-bottom-color: var(--gold); font-weight: 600; }
+
+    /* ── MAIN ── */
+    .main { max-width: 900px; margin: 0 auto; padding: 0 24px 80px; }
+    .section { display: none; padding-top: 40px; }
+    .section.active { display: block; }
+
+    /* ── CONCEPT HEADER ── */
+    .ch { margin-bottom: 32px; }
+    .ch-num { font-size: 10px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--dim); margin-bottom: 6px; }
+    .ch-title { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .ch-sub { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    /* ── LOGO SHOWCASE ── */
+    .showcase { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); border-radius: 16px; overflow: hidden; margin-bottom: 32px; }
+    .panel { padding: 56px 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; min-height: 260px; }
+    .panel-lbl { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; }
+
+    /* ── LOCKUPS ── */
+    .lockups { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--border); border-radius: 14px; overflow: hidden; margin-bottom: 32px; }
+    .lc { background: var(--cream); padding: 28px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; min-height: 160px; }
+    .lc-lbl { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dim); }
+
+    /* ── RATIONALE ── */
+    .rat { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 28px 32px; margin-bottom: 32px; }
+    .rat h3 { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    .rat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .rat-item h4 { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .rat-item p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+    .dna-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
+    .pill {
+      padding: 5px 12px; border-radius: 100px; font-size: 11px; font-weight: 600;
+      background: var(--gold-bg); border: 1px solid var(--gold-pale); color: var(--gold);
+    }
+    .pill.kept { background: #e8f5ee; border-color: #b8ddc8; color: #1b6b3a; }
+    .pill.evolved { background: #eef1f8; border-color: #c0c8dc; color: #1a3a7a; }
+
+    .pick-btn {
+      width: 100%; padding: 15px; background: var(--navy); color: var(--gold-l);
+      border: none; border-radius: 8px; font-size: 14px; font-weight: 700;
+      font-family: 'Barlow', sans-serif; letter-spacing: 0.06em; cursor: pointer;
+      transition: background 0.2s, transform 0.15s; margin-top: 8px;
+    }
+    .pick-btn:hover { background: #112240; transform: translateY(-1px); }
+
+    /* ── OVERVIEW ── */
+    .ov-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 40px; }
+    .ov-card {
+      background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px;
+      padding: 32px 28px; cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s;
+      display: flex; flex-direction: column; align-items: center; gap: 20px;
+    }
+    .ov-card:hover { border-color: var(--gold); box-shadow: 0 4px 24px rgba(184,134,11,0.1); }
+    .ov-card-num { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dim); }
+    .ov-card-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: var(--navy); text-align: center; }
+    .ov-card-sub { font-size: 12px; color: var(--muted); text-align: center; line-height: 1.5; }
+
+    @media (max-width: 640px) {
+      .analysis-inner { grid-template-columns: 1fr; }
+      .showcase { grid-template-columns: 1fr; }
+      .rat-grid { grid-template-columns: 1fr; }
+      .ov-grid { grid-template-columns: 1fr; }
+      .lockups { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-kicker">Brand Evolution · Abstracting the Original</div>
+  <h1>R.H.A. <em>Construction</em></h1>
+  <p>Four evolved directions built directly from your existing logo's DNA — the gold roofline, chimney, horizon line, and RHA identity — refined and modernized without abandoning what's already yours.</p>
+</div>
+
+<!-- ORIGINAL LOGO ANALYSIS -->
+<div class="analysis">
+  <div class="analysis-inner">
+    <div>
+      <div class="original-logo-box">
+        <!-- Faithful recreation of the original RHA logo as SVG -->
+        <svg width="170" height="160" viewBox="0 0 170 160">
+          <!-- Gold house silhouette -->
+          <!-- Chimney -->
+          <rect x="22" y="14" width="16" height="30" fill="#B8860B"/>
+          <!-- Left roof slope -->
+          <polygon points="14,70 80,22 80,70" fill="#B8860B"/>
+          <!-- House body -->
+          <rect x="14" y="60" width="66" height="30" fill="#B8860B"/>
+          <!-- 4-pane window (darker cutout) -->
+          <rect x="38" y="42" width="22" height="18" fill="#8B6200" opacity="0.4"/>
+          <line x1="49" y1="42" x2="49" y2="60" stroke="#8B6200" stroke-width="1.5" opacity="0.6"/>
+          <line x1="38" y1="51" x2="60" y2="51" stroke="#8B6200" stroke-width="1.5" opacity="0.6"/>
+          <!-- Horizontal line extending right -->
+          <line x1="80" y1="60" x2="165" y2="60" stroke="#B8860B" stroke-width="3.5"/>
+          <!-- RHA text -->
+          <text x="40" y="112" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-size="28" font-weight="700" fill="#1a1612" letter-spacing="4">RHA</text>
+          <!-- CONSTRUCTIONS text -->
+          <text x="83" y="130" text-anchor="middle" font-family="'Inter',sans-serif" font-size="8.5" font-weight="500" fill="#1a1612" letter-spacing="5">CONSTRUCTIONS</text>
+          <!-- Gold underline -->
+          <line x1="28" y1="138" x2="138" y2="138" stroke="#B8860B" stroke-width="1.5"/>
+        </svg>
+      </div>
+    </div>
+    <div>
+      <div class="analysis-title">Brand DNA — What We're Abstracting</div>
+      <div class="dna-grid">
+        <div class="dna-item">
+          <strong>🏠 The Roofline Peak</strong>
+          <span>Asymmetric house silhouette with a clear peaked roof. The most iconic element — immediately reads as "construction/home".</span>
+        </div>
+        <div class="dna-item">
+          <strong>🏗️ The Chimney</strong>
+          <span>Vertical accent on the left side of the peak. Adds character and asymmetry that makes the mark distinctive.</span>
+        </div>
+        <div class="dna-item">
+          <strong>➡ The Horizon Line</strong>
+          <span>The gold horizontal line extending from the roofline is architecturally significant — like an elevation drawing's ground line.</span>
+        </div>
+        <div class="dna-item">
+          <strong>▦ The Window Grid</strong>
+          <span>2×2 grid detail. Can be abstracted into a precision square detail or used as a supporting texture element.</span>
+        </div>
+        <div class="dna-item">
+          <strong>🟡 The Gold Palette</strong>
+          <span>Warm mustard gold is the clear brand colour. All four evolutions keep gold as the primary/mark colour.</span>
+        </div>
+        <div class="dna-item">
+          <strong>🔤 RHA + CONSTRUCTIONS</strong>
+          <span>The lettermark hierarchy is strong. Serified RHA as primary, tracked caps CONSTRUCTIONS as secondary.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tabs-wrap" style="margin-top:24px">
+  <div class="tabs">
+    <button class="tab-btn active" onclick="go('overview',0)">All Directions</button>
+    <button class="tab-btn" onclick="go('a',1)">A · Refined House</button>
+    <button class="tab-btn" onclick="go('b',2)">B · Peak + Line</button>
+    <button class="tab-btn" onclick="go('c',3)">C · Elevation Mark</button>
+    <button class="tab-btn" onclick="go('d',4)">D · Geometric Badge</button>
+    <button class="tab-btn" onclick="go('e',5)">E · Construction Hybrid</button>
+    <button class="tab-btn" onclick="go('f',6)">F · Commercial Builder</button>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- ══ OVERVIEW ══ -->
+<div id="overview" class="section active">
+  <div class="ch">
+    <div class="ch-num">Four Evolved Directions</div>
+    <div class="ch-title">Same DNA, Elevated Form</div>
+    <div class="ch-sub">Each concept keeps the gold roofline and RHA identity — just redrawn with precision and modern typographic refinement. Click to explore any direction in full.</div>
+  </div>
+
+  <div class="ov-grid">
+    <!-- A -->
+    <div class="ov-card" onclick="go('a',1)">
+      <div class="ov-card-num">Direction A</div>
+      <svg width="200" height="90" viewBox="0 0 200 90">
+        <!-- Refined house silhouette -->
+        <rect x="22" y="10" width="10" height="22" fill="#B8860B"/>
+        <polygon points="16,52 58,18 58,52" fill="#B8860B"/>
+        <rect x="16" y="44" width="42" height="18" fill="#B8860B"/>
+        <!-- 4-pane window refined -->
+        <rect x="27" y="30" width="16" height="12" fill="rgba(0,0,0,0.2)"/>
+        <line x1="35" y1="30" x2="35" y2="42" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+        <line x1="27" y1="36" x2="43" y2="36" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+        <!-- Horizon line -->
+        <line x1="58" y1="46" x2="115" y2="46" stroke="#B8860B" stroke-width="2.5"/>
+        <!-- Wordmark -->
+        <text x="125" y="36" font-family="'Cormorant Garamond',Georgia,serif" font-size="20" font-weight="700" fill="#1a1612" letter-spacing="3">RHA</text>
+        <text x="125" y="52" font-family="'Inter',sans-serif" font-size="7" fill="#7a6e5e" letter-spacing="3.5">CONSTRUCTIONS</text>
+        <line x1="125" y1="60" x2="200" y2="60" stroke="#B8860B" stroke-width="1.2"/>
+      </svg>
+      <div class="ov-card-title">Refined House</div>
+      <div class="ov-card-sub">The original silhouette redrawn with geometric precision. Cleanest line weights, crisper proportions, refined typography. Most familiar evolution for existing clients.</div>
+    </div>
+    <!-- B -->
+    <div class="ov-card" onclick="go('b',2)">
+      <div class="ov-card-num">Direction B</div>
+      <svg width="200" height="90" viewBox="0 0 200 90">
+        <!-- Abstract peak + chimney stroke -->
+        <line x1="16" y1="56" x2="200" y2="56" stroke="#B8860B" stroke-width="2"/>
+        <!-- Chimney tab -->
+        <rect x="24" y="36" width="7" height="20" fill="#B8860B"/>
+        <!-- Peak chevron open -->
+        <polyline points="16,56 54,18 92,56" fill="none" stroke="#B8860B" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+        <!-- Wordmark -->
+        <text x="105" y="38" font-family="'Cormorant Garamond',Georgia,serif" font-size="22" font-weight="700" fill="#1a1612" letter-spacing="3">RHA</text>
+        <text x="105" y="56" font-family="'Inter',sans-serif" font-size="7" fill="#7a6e5e" letter-spacing="3.5">CONSTRUCTIONS</text>
+        <line x1="105" y1="64" x2="198" y2="64" stroke="#B8860B" stroke-width="1.2"/>
+      </svg>
+      <div class="ov-card-title">Peak + Line</div>
+      <div class="ov-card-sub">The essence of the original distilled to two elements: the open peak stroke and the horizon line. The chimney becomes a clean vertical tab. Maximum elegance.</div>
+    </div>
+    <!-- C -->
+    <div class="ov-card" onclick="go('c',3)">
+      <div class="ov-card-num">Direction C</div>
+      <svg width="200" height="90" viewBox="0 0 200 90">
+        <!-- Elevation line drawing style -->
+        <line x1="16" y1="62" x2="115" y2="62" stroke="#B8860B" stroke-width="2"/>
+        <!-- House elevation outline only -->
+        <rect x="20" y="30" width="8" height="32" fill="#B8860B"/><!-- chimney -->
+        <polyline points="16,62 20,62 20,50 28,50 28,30 60,30 60,50 68,50 68,62 115,62" fill="none" stroke="#B8860B" stroke-width="2.5" stroke-linejoin="round"/>
+        <!-- Roof peak line -->
+        <polyline points="14,50 44,22 74,50" fill="none" stroke="#B8860B" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+        <!-- Window detail -->
+        <rect x="36" y="40" width="16" height="10" fill="none" stroke="#B8860B" stroke-width="1.2"/>
+        <!-- Wordmark -->
+        <text x="122" y="38" font-family="'Cormorant Garamond',Georgia,serif" font-size="20" font-weight="700" fill="#1a1612" letter-spacing="3">RHA</text>
+        <text x="122" y="54" font-family="'Inter',sans-serif" font-size="6.5" fill="#7a6e5e" letter-spacing="3.5">CONSTRUCTIONS</text>
+        <line x1="122" y1="62" x2="198" y2="62" stroke="#B8860B" stroke-width="1.2"/>
+      </svg>
+      <div class="ov-card-title">Elevation Mark</div>
+      <div class="ov-card-sub">The house drawn as an architectural elevation line drawing — outline only, blueprint precision. The window grid remains as a refined detail. Feels technical and credible.</div>
+    </div>
+    <!-- D -->
+    <div class="ov-card" onclick="go('d',4)">
+      <div class="ov-card-num">Direction D</div>
+      <svg width="200" height="90" viewBox="0 0 200 90">
+        <!-- Geometric badge pentagon -->
+        <polygon points="52,16 82,16 92,38 82,62 22,62 12,38 22,16" fill="#B8860B"/>
+        <!-- Chimney tab on top -->
+        <rect x="38" y="6" width="12" height="12" fill="#B8860B"/>
+        <!-- 2x2 window grid cutout -->
+        <rect x="28" y="34" width="18" height="14" fill="rgba(0,0,0,0.25)"/>
+        <line x1="37" y1="34" x2="37" y2="48" stroke="rgba(255,255,255,0.4)" stroke-width="1.2"/>
+        <line x1="28" y1="41" x2="46" y2="41" stroke="rgba(255,255,255,0.4)" stroke-width="1.2"/>
+        <!-- Inner peak outline -->
+        <polyline points="22,40 52,18 82,40" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-linejoin="round"/>
+        <!-- Wordmark -->
+        <text x="105" y="36" font-family="'Cormorant Garamond',Georgia,serif" font-size="20" font-weight="700" fill="#1a1612" letter-spacing="3">RHA</text>
+        <text x="105" y="52" font-family="'Inter',sans-serif" font-size="6.5" fill="#7a6e5e" letter-spacing="3.5">CONSTRUCTIONS</text>
+        <line x1="105" y1="60" x2="198" y2="60" stroke="#B8860B" stroke-width="1.2"/>
+      </svg>
+      <div class="ov-card-title">Geometric Badge</div>
+      <div class="ov-card-sub">The house form compressed into a solid badge — a hexagonal/pentagonal shield with the roofline peak, chimney tab, and window grid all preserved as abstract details.</div>
+    </div>
+    <!-- E -->
+    <div class="ov-card" onclick="go('e',5)">
+      <div class="ov-card-num">Direction E</div>
+      <svg width="200" height="90" viewBox="0 0 200 90">
+        <!-- Foundation block -->
+        <rect x="30" y="38" width="40" height="18" fill="rgba(184,134,11,0.15)"/>
+        <!-- Window Grid -->
+        <rect x="48" y="34" width="14" height="10" fill="#B8860B"/>
+        <line x1="55" y1="34" x2="55" y2="44" stroke="#fff" stroke-width="1"/>
+        <line x1="48" y1="39" x2="62" y2="39" stroke="#fff" stroke-width="1"/>
+        <!-- Horizon line -->
+        <line x1="16" y1="56" x2="115" y2="56" stroke="#B8860B" stroke-width="2.5"/>
+        <line x1="30" y1="62" x2="70" y2="62" stroke="#B8860B" stroke-width="0.8" stroke-dasharray="3 2"/>
+        <!-- Chimney -->
+        <rect x="27" y="28" width="7" height="28" fill="#B8860B"/>
+        <!-- Peak -->
+        <polyline points="16,56 50,18 84,56" fill="none" stroke="#B8860B" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+        <!-- Wordmark -->
+        <text x="122" y="38" font-family="'Cormorant Garamond',Georgia,serif" font-size="20" font-weight="700" fill="#1a1612" letter-spacing="3">RHA</text>
+        <text x="122" y="54" font-family="'Inter',sans-serif" font-size="6.5" fill="#7a6e5e" letter-spacing="3.5">CONSTRUCTIONS</text>
+        <line x1="122" y1="62" x2="198" y2="62" stroke="#B8860B" stroke-width="1.2"/>
+      </svg>
+      <div class="ov-card-title">Construction Hybrid</div>
+      <div class="ov-card-sub">Blends the modern open peak of Direction B with the solid foundation and window details of the original. Enhanced with structural details for a stronger builder aesthetic.</div>
+    </div>
+    <!-- F -->
+    <div class="ov-card" onclick="go('f',6)">
+      <div class="ov-card-num">Direction F</div>
+      <svg width="200" height="90" viewBox="0 0 200 90">
+        <!-- Horizon line -->
+        <line x1="16" y1="62" x2="115" y2="62" stroke="#B8860B" stroke-width="2.5"/>
+        <!-- Tower 1 -->
+        <rect x="25" y="24" width="20" height="38" fill="none" stroke="#B8860B" stroke-width="2"/>
+        <!-- Tower 2 -->
+        <rect x="50" y="36" width="25" height="26" fill="none" stroke="#B8860B" stroke-width="2"/>
+        <!-- Crane on Tower 1 -->
+        <line x1="35" y1="24" x2="35" y2="10" stroke="#B8860B" stroke-width="1.5"/>
+        <line x1="20" y1="16" x2="65" y2="16" stroke="#B8860B" stroke-width="1.5"/>
+        <line x1="60" y1="16" x2="60" y2="28" stroke="#B8860B" stroke-width="1" stroke-dasharray="2 1"/>
+        <!-- Solid foundation base -->
+        <rect x="25" y="50" width="50" height="12" fill="#B8860B"/>
+        <!-- Window grid punched out -->
+        <rect x="55" y="52" width="12" height="8" fill="#f2ede6"/>
+        <line x1="61" y1="52" x2="61" y2="60" stroke="#B8860B" stroke-width="1"/>
+        <line x1="55" y1="56" x2="67" y2="56" stroke="#B8860B" stroke-width="1"/>
+        <!-- Wordmark -->
+        <text x="122" y="38" font-family="'Cormorant Garamond',Georgia,serif" font-size="20" font-weight="700" fill="#1a1612" letter-spacing="3">RHA</text>
+        <text x="122" y="54" font-family="'Inter',sans-serif" font-size="6.5" fill="#7a6e5e" letter-spacing="3.5">CONSTRUCTIONS</text>
+        <line x1="122" y1="62" x2="198" y2="62" stroke="#B8860B" stroke-width="1.2"/>
+      </svg>
+      <div class="ov-card-title">Commercial Builder</div>
+      <div class="ov-card-sub">Replaces the residential house with commercial building sketches, a construction crane, and geometric structural framing. A pure pivot toward commercial construction.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ A: REFINED HOUSE ══ -->
+<div id="a" class="section">
+  <div class="ch">
+    <div class="ch-num">Direction A</div>
+    <div class="ch-title">Refined House</div>
+    <div class="ch-sub">The original silhouette redrawn with geometric precision — same composition, same elements, same gold. But now every angle is considered, every stroke weight deliberate, and the typography is replaced with something worthy of a premium builder.</div>
+  </div>
+
+  <div class="dna-pills">
+    <span class="pill kept">✓ Kept: House silhouette</span>
+    <span class="pill kept">✓ Kept: Chimney</span>
+    <span class="pill kept">✓ Kept: Horizon line</span>
+    <span class="pill kept">✓ Kept: Window grid</span>
+    <span class="pill kept">✓ Kept: Gold palette</span>
+    <span class="pill evolved">↑ Evolved: Proportions</span>
+    <span class="pill evolved">↑ Evolved: Typography</span>
+    <span class="pill evolved">↑ Evolved: Line precision</span>
+  </div>
+
+  <div class="showcase">
+    <!-- Light (original context) -->
+    <div class="panel" style="background:#f2ede6">
+      <svg width="240" height="130" viewBox="0 0 240 130">
+        <!-- Chimney - precise rectangle -->
+        <rect x="18" y="8" width="11" height="28" fill="#B8860B"/>
+        <!-- Left roof triangle body -->
+        <polygon points="10,68 62,20 62,68" fill="#B8860B"/>
+        <!-- House body rectangle -->
+        <rect x="10" y="56" width="52" height="24" fill="#B8860B"/>
+        <!-- Window grid - refined 2x2, lighter overlay -->
+        <rect x="24" y="38" width="22" height="16" fill="rgba(0,0,0,0.22)"/>
+        <line x1="35" y1="38" x2="35" y2="54" stroke="rgba(255,255,255,0.45)" stroke-width="1.5"/>
+        <line x1="24" y1="46" x2="46" y2="46" stroke="rgba(255,255,255,0.45)" stroke-width="1.5"/>
+        <!-- Horizon line — precise, same height as roofline base -->
+        <line x1="62" y1="60" x2="138" y2="60" stroke="#B8860B" stroke-width="3"/>
+        <!-- Small terminus dot -->
+        <circle cx="62" cy="60" r="3" fill="#B8860B"/>
+        <!-- Wordmark RHA — Cormorant Garamond -->
+        <text x="150" y="46" font-family="'Cormorant Garamond',Georgia,serif" font-size="26" font-weight="700" fill="#1a1612" letter-spacing="5">RHA</text>
+        <!-- Thin rule -->
+        <line x1="150" y1="55" x2="235" y2="55" stroke="#B8860B" stroke-width="0.8" opacity="0.6"/>
+        <!-- CONSTRUCTIONS -->
+        <text x="150" y="68" font-family="'Inter',sans-serif" font-size="7.5" font-weight="500" fill="#4a3f2f" letter-spacing="4">CONSTRUCTIONS</text>
+        <!-- Bottom gold rule -->
+        <line x1="85" y1="110" x2="200" y2="110" stroke="#B8860B" stroke-width="1.5"/>
+        <!-- Stacked version below -->
+        <text x="140" y="95" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="13" font-weight="700" fill="#1a1612" letter-spacing="3" opacity="0.4">RHA</text>
+      </svg>
+      <div class="panel-lbl" style="color:rgba(0,0,0,0.3)">Original Context · Cream</div>
+    </div>
+    <!-- Dark -->
+    <div class="panel" style="background:#0D1B2A">
+      <svg width="240" height="130" viewBox="0 0 240 130">
+        <rect x="18" y="8" width="11" height="28" fill="#D4A843"/>
+        <polygon points="10,68 62,20 62,68" fill="#D4A843"/>
+        <rect x="10" y="56" width="52" height="24" fill="#D4A843"/>
+        <rect x="24" y="38" width="22" height="16" fill="rgba(13,27,42,0.45)"/>
+        <line x1="35" y1="38" x2="35" y2="54" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+        <line x1="24" y1="46" x2="46" y2="46" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+        <line x1="62" y1="60" x2="138" y2="60" stroke="#D4A843" stroke-width="3"/>
+        <circle cx="62" cy="60" r="3" fill="#D4A843"/>
+        <text x="150" y="46" font-family="'Cormorant Garamond',Georgia,serif" font-size="26" font-weight="700" fill="#F5F0E8" letter-spacing="5">RHA</text>
+        <line x1="150" y1="55" x2="235" y2="55" stroke="#D4A843" stroke-width="0.8" opacity="0.5"/>
+        <text x="150" y="68" font-family="'Inter',sans-serif" font-size="7.5" font-weight="400" fill="#D4A843" letter-spacing="4">CONSTRUCTIONS</text>
+      </svg>
+      <div class="panel-lbl" style="color:rgba(255,255,255,0.25)">Dark / Navy</div>
+    </div>
+  </div>
+
+  <div class="lockups">
+    <div class="lc">
+      <!-- Icon only square -->
+      <svg width="70" height="70" viewBox="0 0 70 70">
+        <rect x="22" y="8" width="11" height="26" fill="#B8860B"/>
+        <polygon points="12,58 52,14 52,58" fill="#B8860B"/>
+        <rect x="12" y="46" width="40" height="20" fill="#B8860B"/>
+        <rect x="22" y="30" width="18" height="14" fill="rgba(0,0,0,0.25)"/>
+        <line x1="31" y1="30" x2="31" y2="44" stroke="rgba(255,255,255,0.45)" stroke-width="1.5"/>
+        <line x1="22" y1="37" x2="40" y2="37" stroke="rgba(255,255,255,0.45)" stroke-width="1.5"/>
+      </svg>
+      <div class="lc-lbl">Icon Only</div>
+    </div>
+    <div class="lc">
+      <!-- Stacked -->
+      <svg width="120" height="110" viewBox="0 0 120 110">
+        <rect x="43" y="4" width="9" height="22" fill="#B8860B"/>
+        <polygon points="36,50 72,12 72,50" fill="#B8860B"/>
+        <rect x="36" y="41" width="36" height="18" fill="#B8860B"/>
+        <rect x="46" y="26" width="16" height="12" fill="rgba(0,0,0,0.22)"/>
+        <line x1="54" y1="26" x2="54" y2="38" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+        <line x1="46" y1="32" x2="62" y2="32" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+        <text x="60" y="76" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="18" font-weight="700" fill="#1a1612" letter-spacing="4">RHA</text>
+        <text x="60" y="90" text-anchor="middle" font-family="'Inter',sans-serif" font-size="6" fill="#7a6e5e" letter-spacing="3.5">CONSTRUCTIONS</text>
+        <line x1="30" y1="97" x2="90" y2="97" stroke="#B8860B" stroke-width="1"/>
+      </svg>
+      <div class="lc-lbl">Stacked Lockup</div>
+    </div>
+    <div class="lc">
+      <div style="display:flex;flex-direction:column;gap:10px;align-items:center">
+        <svg width="48" height="48" viewBox="0 0 48 48">
+          <rect width="48" height="48" rx="6" fill="#f2ede6"/>
+          <rect x="14" y="6" width="8" height="18" fill="#B8860B"/>
+          <polygon points="8,38 32,10 32,38" fill="#B8860B"/>
+          <rect x="8" y="30" width="24" height="14" fill="#B8860B"/>
+          <rect x="13" y="20" width="12" height="9" fill="rgba(0,0,0,0.22)"/>
+          <line x1="19" y1="20" x2="19" y2="29" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+          <line x1="13" y1="24" x2="25" y2="24" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+          <line x1="32" y1="32" x2="44" y2="32" stroke="#B8860B" stroke-width="2"/>
+        </svg>
+        <svg width="32" height="32" viewBox="0 0 32 32">
+          <rect width="32" height="32" rx="4" fill="#f2ede6"/>
+          <rect x="9" y="4" width="6" height="12" fill="#B8860B"/>
+          <polygon points="5,24 20,8 20,24" fill="#B8860B"/>
+          <rect x="5" y="18" width="15" height="10" fill="#B8860B"/>
+          <line x1="20" y1="21" x2="30" y2="21" stroke="#B8860B" stroke-width="2"/>
+        </svg>
+      </div>
+      <div class="lc-lbl">48px · 32px Scale</div>
+    </div>
+  </div>
+
+  <div class="rat">
+    <h3>Why This Evolution Works</h3>
+    <div class="rat-grid">
+      <div class="rat-item"><h4>Zero disruption to brand recognition</h4><p>Existing clients, signage, and stationery can be updated gradually because the core form is identical. There's no confusion, no relearning — just the same logo looking considerably more professional.</p></div>
+      <div class="rat-item"><h4>What specifically changes</h4><p>The roof angle is tightened to a precise 45°. The chimney is aligned to a grid. The window grid proportions are corrected. The horizon line is given a deliberate terminus. Typography moves from a basic serif to Cormorant Garamond, a proper display serif used by premium real-estate brands.</p></div>
+      <div class="rat-item"><h4>The gold evolution</h4><p>The original's warm mustard is refined to #B8860B (Dark Goldenrod) — a deeper, richer gold that holds its richness on screen and in print, and avoids looking "flat" at small sizes.</p></div>
+      <div class="rat-item"><h4>Ideal for</h4><p>This is the safest choice for a family business with existing brand recognition. It says "we're still who you know, but we've grown" — which is exactly the message for reaching new diaspora and commercial clients.</p></div>
+    </div>
+  </div>
+  <button class="pick-btn" onclick="alert('Direction A selected! This will be refined into full assets.')">✦ Select Direction A — Refined House</button>
+</div>
+
+<!-- ══ B: PEAK + LINE ══ -->
+<div id="b" class="section">
+  <div class="ch">
+    <div class="ch-num">Direction B · Most Modern</div>
+    <div class="ch-title">Peak + Line</div>
+    <div class="ch-sub">The original logo reduced to its two most powerful gestures: the open peak stroke (roof) and the horizon line. The chimney becomes a clean vertical tab on the left leg. Every unnecessary element is removed — only the essential remains.</div>
+  </div>
+
+  <div class="dna-pills">
+    <span class="pill kept">✓ Kept: Roofline peak</span>
+    <span class="pill kept">✓ Kept: Chimney (as tab)</span>
+    <span class="pill kept">✓ Kept: Horizon line</span>
+    <span class="pill kept">✓ Kept: Gold palette</span>
+    <span class="pill evolved">↑ Evolved: House → pure geometry</span>
+    <span class="pill evolved">↑ Evolved: Open stroke vs filled form</span>
+    <span class="pill evolved">↑ New: Connected horizon</span>
+  </div>
+
+  <div class="showcase">
+    <div class="panel" style="background:#f2ede6">
+      <svg width="240" height="120" viewBox="0 0 240 120">
+        <!-- Full horizon line -->
+        <line x1="8" y1="68" x2="145" y2="68" stroke="#B8860B" stroke-width="3"/>
+        <!-- Chimney tab on left leg of peak -->
+        <rect x="22" y="34" width="9" height="34" fill="#B8860B"/>
+        <!-- Open peak chevron — from horizon line, rising to point -->
+        <polyline points="8,68 55,20 102,68" fill="none" stroke="#B8860B" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+        <!-- Wordmark -->
+        <text x="158" y="46" font-family="'Cormorant Garamond',Georgia,serif" font-size="26" font-weight="700" fill="#1a1612" letter-spacing="5">RHA</text>
+        <line x1="158" y1="56" x2="235" y2="56" stroke="#B8860B" stroke-width="0.8" opacity="0.5"/>
+        <text x="158" y="70" font-family="'Inter',sans-serif" font-size="7.5" font-weight="500" fill="#4a3f2f" letter-spacing="4">CONSTRUCTIONS</text>
+      </svg>
+      <div class="panel-lbl" style="color:rgba(0,0,0,0.3)">Cream Background</div>
+    </div>
+    <div class="panel" style="background:#1a1612">
+      <svg width="240" height="120" viewBox="0 0 240 120">
+        <line x1="8" y1="68" x2="145" y2="68" stroke="#D4A843" stroke-width="3"/>
+        <rect x="22" y="34" width="9" height="34" fill="#D4A843"/>
+        <polyline points="8,68 55,20 102,68" fill="none" stroke="#D4A843" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+        <text x="158" y="46" font-family="'Cormorant Garamond',Georgia,serif" font-size="26" font-weight="700" fill="#F5F0E8" letter-spacing="5">RHA</text>
+        <line x1="158" y1="56" x2="235" y2="56" stroke="#D4A843" stroke-width="0.8" opacity="0.4"/>
+        <text x="158" y="70" font-family="'Inter',sans-serif" font-size="7.5" font-weight="400" fill="#D4A843" letter-spacing="4">CONSTRUCTIONS</text>
+      </svg>
+      <div class="panel-lbl" style="color:rgba(255,255,255,0.25)">Dark Background</div>
+    </div>
+  </div>
+
+  <div class="lockups">
+    <div class="lc">
+      <svg width="80" height="70" viewBox="0 0 80 70">
+        <line x1="4" y1="60" x2="76" y2="60" stroke="#B8860B" stroke-width="3"/>
+        <rect x="16" y="32" width="8" height="28" fill="#B8860B"/>
+        <polyline points="4,60 40,14 76,60" fill="none" stroke="#B8860B" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+      </svg>
+      <div class="lc-lbl">Icon Only</div>
+    </div>
+    <div class="lc">
+      <svg width="120" height="100" viewBox="0 0 120 100">
+        <line x1="20" y1="58" x2="100" y2="58" stroke="#B8860B" stroke-width="2.5"/>
+        <rect x="29" y="35" width="7" height="23" fill="#B8860B"/>
+        <polyline points="20,58 60,16 100,58" fill="none" stroke="#B8860B" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+        <text x="60" y="76" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="16" font-weight="700" fill="#1a1612" letter-spacing="3">RHA</text>
+        <text x="60" y="90" text-anchor="middle" font-family="'Inter',sans-serif" font-size="6" fill="#7a6e5e" letter-spacing="3">CONSTRUCTIONS</text>
+      </svg>
+      <div class="lc-lbl">Stacked Lockup</div>
+    </div>
+    <div class="lc">
+      <div style="display:flex;flex-direction:column;gap:10px;align-items:center">
+        <svg width="48" height="48" viewBox="0 0 48 48">
+          <rect width="48" height="48" rx="6" fill="#f2ede6"/>
+          <line x1="4" y1="38" x2="44" y2="38" stroke="#B8860B" stroke-width="2.5"/>
+          <rect x="10" y="22" width="6" height="16" fill="#B8860B"/>
+          <polyline points="4,38 24,10 44,38" fill="none" stroke="#B8860B" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+        </svg>
+        <svg width="32" height="32" viewBox="0 0 32 32">
+          <rect width="32" height="32" rx="4" fill="#0D1B2A"/>
+          <line x1="3" y1="26" x2="29" y2="26" stroke="#D4A843" stroke-width="2"/>
+          <rect x="7" y="15" width="5" height="11" fill="#D4A843"/>
+          <polyline points="3,26 16,8 29,26" fill="none" stroke="#D4A843" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="lc-lbl">48px · 32px Scale</div>
+    </div>
+  </div>
+
+  <div class="rat">
+    <h3>Why This Evolution Works</h3>
+    <div class="rat-grid">
+      <div class="rat-item"><h4>The power of reduction</h4><p>The original logo's most recognizable gesture isn't the filled house — it's the peak-and-line composition. By opening the form (stroke vs fill) and connecting the horizon line to the peak base, the mark becomes dramatically more sophisticated without losing a single piece of recognizable DNA.</p></div>
+      <div class="rat-item"><h4>The chimney stays</h4><p>The chimney is kept as a solid vertical tab on the left leg of the peak. This preserves the original's asymmetry and character — it's what makes the mark feel like a specific building rather than a generic icon. At small sizes it simplifies naturally.</p></div>
+      <div class="rat-item"><h4>Outdoor legibility</h4><p>Open stroke marks are dramatically more legible on vehicle wraps, site hoardings, and embroidered uniforms than filled silhouettes. The thick 6px peak stroke against any background reads clearly from a distance.</p></div>
+      <div class="rat-item"><h4>Ideal for</h4><p>This is the strongest direction for businesses wanting to feel modern and premium while maintaining a clear construction identity. It will look exceptional on business cards, company letterhead, WhatsApp profiles, and website headers.</p></div>
+    </div>
+  </div>
+  <button class="pick-btn" onclick="alert('Direction B selected!')">✦ Select Direction B — Peak + Line</button>
+</div>
+
+<!-- ══ C: ELEVATION MARK ══ -->
+<div id="c" class="section">
+  <div class="ch">
+    <div class="ch-num">Direction C · Most Architectural</div>
+    <div class="ch-title">Elevation Mark</div>
+    <div class="ch-sub">The house drawn as an architectural elevation — outline only, like a technical drawing. The window grid is retained as a precision detail. This direction reads as "we draw before we build" — signalling technical expertise and precision craftsmanship.</div>
+  </div>
+
+  <div class="dna-pills">
+    <span class="pill kept">✓ Kept: Roofline shape</span>
+    <span class="pill kept">✓ Kept: Chimney</span>
+    <span class="pill kept">✓ Kept: Horizon line</span>
+    <span class="pill kept">✓ Kept: Window grid</span>
+    <span class="pill kept">✓ Kept: Gold</span>
+    <span class="pill evolved">↑ Evolved: Filled → outline/technical</span>
+    <span class="pill evolved">↑ New: Elevation drawing language</span>
+  </div>
+
+  <div class="showcase">
+    <div class="panel" style="background:#f2ede6">
+      <svg width="240" height="120" viewBox="0 0 240 120">
+        <!-- Ground line full width -->
+        <line x1="6" y1="80" x2="138" y2="80" stroke="#B8860B" stroke-width="2.5"/>
+        <!-- Chimney outline -->
+        <rect x="20" y="36" width="10" height="44" fill="none" stroke="#B8860B" stroke-width="2.5"/>
+        <!-- Roof peak -->
+        <polyline points="10,72 55,22 100,72" fill="none" stroke="#B8860B" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+        <!-- House walls -->
+        <line x1="10" y1="72" x2="10" y2="80" stroke="#B8860B" stroke-width="2.5"/>
+        <line x1="100" y1="72" x2="100" y2="80" stroke="#B8860B" stroke-width="2.5"/>
+        <!-- Window grid -->
+        <rect x="38" y="50" width="20" height="15" fill="none" stroke="#B8860B" stroke-width="1.8"/>
+        <line x1="48" y1="50" x2="48" y2="65" stroke="#B8860B" stroke-width="1"/>
+        <line x1="38" y1="57" x2="58" y2="57" stroke="#B8860B" stroke-width="1"/>
+        <!-- Door outline -->
+        <rect x="70" y="60" width="18" height="20" fill="none" stroke="#B8860B" stroke-width="1.8"/>
+        <!-- Wordmark -->
+        <text x="152" y="46" font-family="'Cormorant Garamond',Georgia,serif" font-size="26" font-weight="700" fill="#1a1612" letter-spacing="5">RHA</text>
+        <line x1="152" y1="56" x2="233" y2="56" stroke="#B8860B" stroke-width="0.8" opacity="0.4"/>
+        <text x="152" y="70" font-family="'Inter',sans-serif" font-size="7.5" font-weight="500" fill="#4a3f2f" letter-spacing="4">CONSTRUCTIONS</text>
+      </svg>
+      <div class="panel-lbl" style="color:rgba(0,0,0,0.3)">Cream Background</div>
+    </div>
+    <div class="panel" style="background:#0D1B2A">
+      <svg width="240" height="120" viewBox="0 0 240 120">
+        <line x1="6" y1="80" x2="138" y2="80" stroke="#D4A843" stroke-width="2.5"/>
+        <rect x="20" y="36" width="10" height="44" fill="none" stroke="#D4A843" stroke-width="2.5"/>
+        <polyline points="10,72 55,22 100,72" fill="none" stroke="#D4A843" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+        <line x1="10" y1="72" x2="10" y2="80" stroke="#D4A843" stroke-width="2.5"/>
+        <line x1="100" y1="72" x2="100" y2="80" stroke="#D4A843" stroke-width="2.5"/>
+        <rect x="38" y="50" width="20" height="15" fill="none" stroke="#D4A843" stroke-width="1.8"/>
+        <line x1="48" y1="50" x2="48" y2="65" stroke="#D4A843" stroke-width="1"/>
+        <line x1="38" y1="57" x2="58" y2="57" stroke="#D4A843" stroke-width="1"/>
+        <rect x="70" y="60" width="18" height="20" fill="none" stroke="#D4A843" stroke-width="1.8"/>
+        <text x="152" y="46" font-family="'Cormorant Garamond',Georgia,serif" font-size="26" font-weight="700" fill="#F5F0E8" letter-spacing="5">RHA</text>
+        <line x1="152" y1="56" x2="233" y2="56" stroke="#D4A843" stroke-width="0.8" opacity="0.3"/>
+        <text x="152" y="70" font-family="'Inter',sans-serif" font-size="7.5" font-weight="400" fill="#D4A843" letter-spacing="4">CONSTRUCTIONS</text>
+      </svg>
+      <div class="panel-lbl" style="color:rgba(255,255,255,0.25)">Dark Background</div>
+    </div>
+  </div>
+
+  <div class="lockups">
+    <div class="lc">
+      <svg width="80" height="68" viewBox="0 0 80 68">
+        <line x1="4" y1="60" x2="76" y2="60" stroke="#B8860B" stroke-width="2"/>
+        <rect x="14" y="24" width="8" height="36" fill="none" stroke="#B8860B" stroke-width="2"/>
+        <polyline points="4,54 40,14 76,54" fill="none" stroke="#B8860B" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+        <line x1="4" y1="54" x2="4" y2="60" stroke="#B8860B" stroke-width="2"/>
+        <line x1="76" y1="54" x2="76" y2="60" stroke="#B8860B" stroke-width="2"/>
+        <rect x="30" y="36" width="14" height="10" fill="none" stroke="#B8860B" stroke-width="1.5"/>
+        <line x1="37" y1="36" x2="37" y2="46" stroke="#B8860B" stroke-width="1"/>
+        <line x1="30" y1="41" x2="44" y2="41" stroke="#B8860B" stroke-width="1"/>
+        <rect x="54" y="42" width="14" height="18" fill="none" stroke="#B8860B" stroke-width="1.5"/>
+      </svg>
+      <div class="lc-lbl">Icon Only</div>
+    </div>
+    <div class="lc">
+      <svg width="120" height="100" viewBox="0 0 120 100">
+        <line x1="10" y1="62" x2="110" y2="62" stroke="#B8860B" stroke-width="2"/>
+        <rect x="18" y="30" width="7" height="32" fill="none" stroke="#B8860B" stroke-width="2"/>
+        <polyline points="10,56 60,14 110,56" fill="none" stroke="#B8860B" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+        <line x1="10" y1="56" x2="10" y2="62" stroke="#B8860B" stroke-width="2"/>
+        <line x1="110" y1="56" x2="110" y2="62" stroke="#B8860B" stroke-width="2"/>
+        <rect x="44" y="38" width="14" height="10" fill="none" stroke="#B8860B" stroke-width="1.5"/>
+        <line x1="51" y1="38" x2="51" y2="48" stroke="#B8860B" stroke-width="0.8"/>
+        <line x1="44" y1="43" x2="58" y2="43" stroke="#B8860B" stroke-width="0.8"/>
+        <text x="60" y="78" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="16" font-weight="700" fill="#1a1612" letter-spacing="3">RHA</text>
+        <text x="60" y="92" text-anchor="middle" font-family="'Inter',sans-serif" font-size="5.5" fill="#7a6e5e" letter-spacing="3">CONSTRUCTIONS</text>
+      </svg>
+      <div class="lc-lbl">Stacked Lockup</div>
+    </div>
+    <div class="lc">
+      <div style="display:flex;flex-direction:column;gap:10px;align-items:center">
+        <svg width="48" height="48" viewBox="0 0 48 48">
+          <rect width="48" height="48" rx="6" fill="#f2ede6"/>
+          <line x1="4" y1="40" x2="44" y2="40" stroke="#B8860B" stroke-width="2"/>
+          <rect x="8" y="22" width="6" height="18" fill="none" stroke="#B8860B" stroke-width="1.8"/>
+          <polyline points="4,36 24,10 44,36" fill="none" stroke="#B8860B" stroke-width="2" stroke-linejoin="round"/>
+          <line x1="4" y1="36" x2="4" y2="40" stroke="#B8860B" stroke-width="2"/>
+          <line x1="44" y1="36" x2="44" y2="40" stroke="#B8860B" stroke-width="2"/>
+          <rect x="22" y="24" width="10" height="8" fill="none" stroke="#B8860B" stroke-width="1.2"/>
+        </svg>
+        <svg width="32" height="32" viewBox="0 0 32 32">
+          <rect width="32" height="32" rx="4" fill="#0D1B2A"/>
+          <line x1="2" y1="27" x2="30" y2="27" stroke="#D4A843" stroke-width="1.5"/>
+          <rect x="4" y="14" width="5" height="13" fill="none" stroke="#D4A843" stroke-width="1.5"/>
+          <polyline points="2,24 16,6 30,24" fill="none" stroke="#D4A843" stroke-width="2" stroke-linejoin="round"/>
+          <line x1="2" y1="24" x2="2" y2="27" stroke="#D4A843" stroke-width="1.5"/>
+          <line x1="30" y1="24" x2="30" y2="27" stroke="#D4A843" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="lc-lbl">48px · 32px Scale</div>
+    </div>
+  </div>
+
+  <div class="rat">
+    <h3>Why This Evolution Works</h3>
+    <div class="rat-grid">
+      <div class="rat-item"><h4>Technical credibility</h4><p>Drawing the house as a technical elevation outline immediately communicates "we design before we build." It positions R.H.A. as an architectural and engineering firm, not just a contractor — an important distinction for commercial and renovation clients.</p></div>
+      <div class="rat-item"><h4>The window and door detail</h4><p>The window grid from the original is retained in its natural position. A door outline is added to complete the elevation reading. Both details become invisible at small sizes but add richness at business card and letterhead scale.</p></div>
+      <div class="rat-item"><h4>Blueprint aesthetic appeal</h4><p>There's significant cultural resonance in Sri Lanka for technical drawing aesthetics — they signal education, qualifications, and professional standards. This mark would look exceptional on framed certificates, office wall signage, and printed portfolios.</p></div>
+      <div class="rat-item"><h4>Ideal for</h4><p>Best fit for a construction company that handles design-and-build, architectural work, or renovation services where design expertise is a selling point. Particularly effective for international/diaspora clients who value technical credibility.</p></div>
+    </div>
+  </div>
+  <button class="pick-btn" onclick="alert('Direction C selected!')">✦ Select Direction C — Elevation Mark</button>
+</div>
+
+<!-- ══ D: GEOMETRIC BADGE ══ -->
+<div id="d" class="section">
+  <div class="ch">
+    <div class="ch-num">Direction D · Most Versatile</div>
+    <div class="ch-title">Geometric Badge</div>
+    <div class="ch-sub">The house silhouette compressed into a solid geometric badge — a precise pentagon/shield form with the roofline peak, chimney tab, and 2×2 window grid all preserved as abstract details. The most compact and versatile of the four directions.</div>
+  </div>
+
+  <div class="dna-pills">
+    <span class="pill kept">✓ Kept: Roofline peak</span>
+    <span class="pill kept">✓ Kept: Chimney (as tab)</span>
+    <span class="pill kept">✓ Kept: Window grid (2×2)</span>
+    <span class="pill kept">✓ Kept: Gold filled</span>
+    <span class="pill evolved">↑ Evolved: House → badge/shield</span>
+    <span class="pill evolved">↑ New: Compact square form</span>
+    <span class="pill evolved">↑ New: Works as app icon natively</span>
+  </div>
+
+  <div class="showcase">
+    <div class="panel" style="background:#f2ede6">
+      <svg width="240" height="120" viewBox="0 0 240 120">
+        <!-- Pentagon badge — house shape as geometric form -->
+        <!-- Main body -->
+        <path d="M 20,96 L 20,50 L 58,14 L 96,50 L 96,96 Z" fill="#B8860B"/>
+        <!-- Chimney tab -->
+        <rect x="34" y="4" width="12" height="14" fill="#B8860B"/>
+        <!-- Inner peak highlight -->
+        <polyline points="20,50 58,16 96,50" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1.5" stroke-linejoin="round"/>
+        <!-- Window grid 2×2 — white overlay -->
+        <rect x="34" y="58" width="20" height="16" fill="rgba(0,0,0,0.25)"/>
+        <line x1="44" y1="58" x2="44" y2="74" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+        <line x1="34" y1="66" x2="54" y2="66" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+        <!-- Wordmark -->
+        <text x="114" y="46" font-family="'Cormorant Garamond',Georgia,serif" font-size="26" font-weight="700" fill="#1a1612" letter-spacing="5">RHA</text>
+        <line x1="114" y1="56" x2="233" y2="56" stroke="#B8860B" stroke-width="0.8" opacity="0.5"/>
+        <text x="114" y="70" font-family="'Inter',sans-serif" font-size="7.5" font-weight="500" fill="#4a3f2f" letter-spacing="4">CONSTRUCTIONS</text>
+      </svg>
+      <div class="panel-lbl" style="color:rgba(0,0,0,0.3)">Cream / Original Context</div>
+    </div>
+    <div class="panel" style="background:#0D1B2A">
+      <svg width="240" height="120" viewBox="0 0 240 120">
+        <path d="M 20,96 L 20,50 L 58,14 L 96,50 L 96,96 Z" fill="#D4A843"/>
+        <rect x="34" y="4" width="12" height="14" fill="#D4A843"/>
+        <polyline points="20,50 58,16 96,50" fill="none" stroke="rgba(13,27,42,0.25)" stroke-width="1.5" stroke-linejoin="round"/>
+        <rect x="34" y="58" width="20" height="16" fill="rgba(13,27,42,0.35)"/>
+        <line x1="44" y1="58" x2="44" y2="74" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+        <line x1="34" y1="66" x2="54" y2="66" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+        <text x="114" y="46" font-family="'Cormorant Garamond',Georgia,serif" font-size="26" font-weight="700" fill="#F5F0E8" letter-spacing="5">RHA</text>
+        <line x1="114" y1="56" x2="233" y2="56" stroke="#D4A843" stroke-width="0.8" opacity="0.4"/>
+        <text x="114" y="70" font-family="'Inter',sans-serif" font-size="7.5" font-weight="400" fill="#D4A843" letter-spacing="4">CONSTRUCTIONS</text>
+      </svg>
+      <div class="panel-lbl" style="color:rgba(255,255,255,0.25)">Dark Background</div>
+    </div>
+  </div>
+
+  <div class="lockups">
+    <div class="lc">
+      <svg width="70" height="80" viewBox="0 0 70 80">
+        <path d="M 8,74 L 8,38 L 35,8 L 62,38 L 62,74 Z" fill="#B8860B"/>
+        <rect x="25" y="0" width="10" height="10" fill="#B8860B"/>
+        <rect x="18" y="48" width="16" height="12" fill="rgba(0,0,0,0.25)"/>
+        <line x1="26" y1="48" x2="26" y2="60" stroke="rgba(255,255,255,0.45)" stroke-width="1.5"/>
+        <line x1="18" y1="54" x2="34" y2="54" stroke="rgba(255,255,255,0.45)" stroke-width="1.5"/>
+        <polyline points="8,38 35,10 62,38" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+      <div class="lc-lbl">Icon Only</div>
+    </div>
+    <div class="lc">
+      <svg width="120" height="100" viewBox="0 0 120 100">
+        <path d="M 30,76 L 30,46 L 60,16 L 90,46 L 90,76 Z" fill="#B8860B"/>
+        <rect x="52" y="8" width="10" height="10" fill="#B8860B"/>
+        <rect x="44" y="54" width="14" height="10" fill="rgba(0,0,0,0.25)"/>
+        <line x1="51" y1="54" x2="51" y2="64" stroke="rgba(255,255,255,0.45)" stroke-width="1.2"/>
+        <line x1="44" y1="59" x2="58" y2="59" stroke="rgba(255,255,255,0.45)" stroke-width="1.2"/>
+        <text x="60" y="90" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="14" font-weight="700" fill="#1a1612" letter-spacing="3">RHA CONSTRUCTIONS</text>
+      </svg>
+      <div class="lc-lbl">Stacked Lockup</div>
+    </div>
+    <div class="lc">
+      <div style="display:flex;flex-direction:column;gap:10px;align-items:center">
+        <svg width="48" height="48" viewBox="0 0 48 48">
+          <rect width="48" height="48" rx="8" fill="#f2ede6"/>
+          <path d="M 7,44 L 7,26 L 24,8 L 41,26 L 41,44 Z" fill="#B8860B"/>
+          <rect x="19" y="2" width="10" height="8" fill="#B8860B"/>
+          <rect x="14" y="30" width="12" height="10" fill="rgba(0,0,0,0.25)"/>
+          <line x1="20" y1="30" x2="20" y2="40" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+          <line x1="14" y1="35" x2="26" y2="35" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+        </svg>
+        <svg width="32" height="32" viewBox="0 0 32 32">
+          <rect width="32" height="32" rx="5" fill="#B8860B"/>
+          <path d="M 4,28 L 4,16 L 16,4 L 28,16 L 28,28 Z" fill="rgba(0,0,0,0.2)"/>
+          <rect x="11" y="1" width="10" height="5" fill="#B8860B" opacity="0"/>
+          <rect x="10" y="18" width="8" height="7" fill="rgba(0,0,0,0.35)"/>
+          <line x1="14" y1="18" x2="14" y2="25" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+          <line x1="10" y1="21" x2="18" y2="21" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="lc-lbl">48px · 32px Scale</div>
+    </div>
+  </div>
+
+  <div class="rat">
+    <h3>Why This Evolution Works</h3>
+    <div class="rat-grid">
+      <div class="rat-item"><h4>All-in-one versatility</h4><p>The badge form works natively as an app icon, WhatsApp profile picture, email avatar, vehicle decal, embroidered patch, rubber stamp, and business card mark — all without any adaptation. The existing logo doesn't work at those scales; this one does.</p></div>
+      <div class="rat-item"><h4>Familiar but transformed</h4><p>The overall silhouette is recognizably "house" but the geometric precision transforms the perception from amateur to professional. The chimney tab, peak outline, and window grid are all preserved from the original at a glance.</p></div>
+      <div class="rat-item"><h4>The window grid as brand detail</h4><p>The 2×2 grid from the original logo is retained inside the badge as a dark panel detail. It's the brand's signature quirk — now elevated into a deliberate design element rather than a floating icon overlay.</p></div>
+      <div class="rat-item"><h4>Ideal for</h4><p>The most practical choice for a family construction business that needs one logo to do everything — from WhatsApp profile to site hoarding. The badge format is trusted, familiar, and universally decoded as authoritative across all cultures and client types.</p></div>
+    </div>
+  </div>
+  <button class="pick-btn" onclick="alert('Direction D selected!')">✦ Select Direction D — Geometric Badge</button>
+</div>
+
+<!-- ══ E: CONSTRUCTION HYBRID ══ -->
+<div id="e" class="section">
+  <div class="ch">
+    <div class="ch-num">Direction E · Modern Hybrid</div>
+    <div class="ch-title">Peak + Foundation</div>
+    <div class="ch-sub">A hybrid approach based on Direction B, retaining the modern open peak but reintroducing the solid foundation and window grid from the original logo. This grounds the mark, giving it a much stronger "construction" vibe while keeping the contemporary line-art aesthetic.</div>
+  </div>
+
+  <div class="dna-pills">
+    <span class="pill kept">✓ Kept: Roofline peak</span>
+    <span class="pill kept">✓ Kept: Chimney (as tab)</span>
+    <span class="pill kept">✓ Kept: Horizon line</span>
+    <span class="pill kept">✓ Kept: Window grid</span>
+    <span class="pill evolved">↑ Evolved: Open roof + solid base</span>
+    <span class="pill new">✦ New: Structural foundation aesthetic</span>
+  </div>
+
+  <div class="showcase">
+    <div class="panel" style="background:#f2ede6">
+      <svg width="240" height="130" viewBox="0 0 240 130">
+        <!-- Foundation block (gives construction weight) -->
+        <rect x="25" y="44" width="60" height="24" fill="rgba(184,134,11,0.15)"/>
+        <!-- Window Grid in the foundation -->
+        <rect x="52" y="38" width="18" height="14" fill="#B8860B"/>
+        <line x1="61" y1="38" x2="61" y2="52" stroke="#f2ede6" stroke-width="1.5"/>
+        <line x1="52" y1="45" x2="70" y2="45" stroke="#f2ede6" stroke-width="1.5"/>
+        <!-- Full horizon line -->
+        <line x1="8" y1="68" x2="145" y2="68" stroke="#B8860B" stroke-width="3"/>
+        <!-- Base construction line detail -->
+        <line x1="25" y1="74" x2="85" y2="74" stroke="#B8860B" stroke-width="1" stroke-dasharray="4 2"/>
+        <!-- Chimney tab on left leg -->
+        <rect x="22" y="34" width="9" height="34" fill="#B8860B"/>
+        <!-- Open peak chevron -->
+        <polyline points="8,68 55,20 102,68" fill="none" stroke="#B8860B" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+        <!-- Wordmark -->
+        <text x="158" y="46" font-family="'Cormorant Garamond',Georgia,serif" font-size="26" font-weight="700" fill="#1a1612" letter-spacing="5">RHA</text>
+        <line x1="158" y1="56" x2="235" y2="56" stroke="#B8860B" stroke-width="0.8" opacity="0.5"/>
+        <text x="158" y="70" font-family="'Inter',sans-serif" font-size="7.5" font-weight="500" fill="#4a3f2f" letter-spacing="4">CONSTRUCTIONS</text>
+      </svg>
+      <div class="panel-lbl" style="color:rgba(0,0,0,0.3)">Cream Background</div>
+    </div>
+    <div class="panel" style="background:#1a1612">
+      <svg width="240" height="130" viewBox="0 0 240 130">
+        <!-- Foundation block -->
+        <rect x="25" y="44" width="60" height="24" fill="rgba(212,168,67,0.1)"/>
+        <!-- Window Grid -->
+        <rect x="52" y="38" width="18" height="14" fill="#D4A843"/>
+        <line x1="61" y1="38" x2="61" y2="52" stroke="#1a1612" stroke-width="1.5"/>
+        <line x1="52" y1="45" x2="70" y2="45" stroke="#1a1612" stroke-width="1.5"/>
+        <!-- Horizon line -->
+        <line x1="8" y1="68" x2="145" y2="68" stroke="#D4A843" stroke-width="3"/>
+        <!-- Base construction line detail -->
+        <line x1="25" y1="74" x2="85" y2="74" stroke="#D4A843" stroke-width="1" stroke-dasharray="4 2"/>
+        <!-- Chimney -->
+        <rect x="22" y="34" width="9" height="34" fill="#D4A843"/>
+        <!-- Open peak chevron -->
+        <polyline points="8,68 55,20 102,68" fill="none" stroke="#D4A843" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+        <!-- Wordmark -->
+        <text x="158" y="46" font-family="'Cormorant Garamond',Georgia,serif" font-size="26" font-weight="700" fill="#F5F0E8" letter-spacing="5">RHA</text>
+        <line x1="158" y1="56" x2="235" y2="56" stroke="#D4A843" stroke-width="0.8" opacity="0.4"/>
+        <text x="158" y="70" font-family="'Inter',sans-serif" font-size="7.5" font-weight="400" fill="#D4A843" letter-spacing="4">CONSTRUCTIONS</text>
+      </svg>
+      <div class="panel-lbl" style="color:rgba(255,255,255,0.25)">Dark Background</div>
+    </div>
+  </div>
+
+  <div class="rat">
+    <h3>Why This Evolution Works</h3>
+    <div class="rat-grid">
+      <div class="rat-item"><h4>The Best of Both Worlds</h4><p>Combines the striking modern minimalism of the open peak from Direction B with the reassuring solidity and familiar window elements of the original logo. It bridges the gap between old and new seamlessly.</p></div>
+      <div class="rat-item"><h4>Construction DNA Strengthened</h4><p>The addition of the subtle foundation block and dashed "blueprint" footing line below the horizon reinforces the construction nature of the business, answering the need for a stronger builder aesthetic.</p></div>
+    </div>
+  </div>
+  <button class="pick-btn" onclick="alert('Direction E selected!')">✦ Select Direction E — Modern Hybrid</button>
+</div>
+
+<!-- ══ F: COMMERCIAL BUILDER ══ -->
+<div id="f" class="section">
+  <div class="ch">
+    <div class="ch-num">Direction F · Building Sketch</div>
+    <div class="ch-title">Commercial Builder</div>
+    <div class="ch-sub">Pivots away from the residential peaked roof entirely, replacing it with staggered commercial building outlines, a construction crane, and structural bracing. Retains the original brand's foundation and 2x2 window grid to maintain a subtle connection.</div>
+  </div>
+
+  <div class="dna-pills">
+    <span class="pill kept">✓ Kept: Horizon line</span>
+    <span class="pill kept">✓ Kept: Window grid</span>
+    <span class="pill kept">✓ Kept: Gold palette</span>
+    <span class="pill evolved">↑ Evolved: Residential → Commercial</span>
+    <span class="pill new">✦ New: Tower crane and high-rise geometry</span>
+    <span class="pill new">✦ New: Structural bracing lines</span>
+  </div>
+
+  <div class="showcase">
+    <!-- Light -->
+    <div class="panel" style="background:#f2ede6">
+      <svg width="240" height="130" viewBox="0 0 240 130">
+        <!-- Horizon line -->
+        <line x1="8" y1="75" x2="145" y2="75" stroke="#B8860B" stroke-width="3"/>
+        <line x1="25" y1="82" x2="85" y2="82" stroke="#B8860B" stroke-width="1" stroke-dasharray="4 2"/>
+        
+        <!-- Tower 1 -->
+        <rect x="22" y="30" width="24" height="45" fill="none" stroke="#B8860B" stroke-width="2.5"/>
+        <!-- Tower 2 -->
+        <rect x="52" y="44" width="30" height="31" fill="none" stroke="#B8860B" stroke-width="2.5"/>
+        
+        <!-- Scaffold / Crane -->
+        <line x1="34" y1="30" x2="34" y2="12" stroke="#B8860B" stroke-width="2"/>
+        <line x1="16" y1="18" x2="72" y2="18" stroke="#B8860B" stroke-width="2"/>
+        <line x1="16" y1="18" x2="16" y2="22" stroke="#B8860B" stroke-width="2"/>
+        <line x1="66" y1="18" x2="66" y2="34" stroke="#B8860B" stroke-width="1.5" stroke-dasharray="3 2"/>
+        
+        <!-- Foundation Block -->
+        <rect x="22" y="60" width="60" height="15" fill="#B8860B"/>
+        <!-- Window grid punched out -->
+        <rect x="58" y="62" width="16" height="11" fill="#f2ede6"/>
+        <line x1="66" y1="62" x2="66" y2="73" stroke="#B8860B" stroke-width="1.5"/>
+        <line x1="58" y1="67.5" x2="74" y2="67.5" stroke="#B8860B" stroke-width="1.5"/>
+        
+        <!-- Structural cross-bracing in Tower 1 -->
+        <polyline points="22,45 46,60" fill="none" stroke="#B8860B" stroke-width="1" opacity="0.5"/>
+        <polyline points="46,45 22,60" fill="none" stroke="#B8860B" stroke-width="1" opacity="0.5"/>
+        
+        <!-- Wordmark -->
+        <text x="158" y="52" font-family="'Cormorant Garamond',Georgia,serif" font-size="26" font-weight="700" fill="#1a1612" letter-spacing="5">RHA</text>
+        <line x1="158" y1="62" x2="235" y2="62" stroke="#B8860B" stroke-width="0.8" opacity="0.5"/>
+        <text x="158" y="76" font-family="'Inter',sans-serif" font-size="7.5" font-weight="500" fill="#4a3f2f" letter-spacing="4">CONSTRUCTIONS</text>
+      </svg>
+      <div class="panel-lbl" style="color:rgba(0,0,0,0.3)">Cream Background</div>
+    </div>
+    <!-- Dark -->
+    <div class="panel" style="background:#1a1612">
+      <svg width="240" height="130" viewBox="0 0 240 130">
+        <!-- Horizon line -->
+        <line x1="8" y1="75" x2="145" y2="75" stroke="#D4A843" stroke-width="3"/>
+        <line x1="25" y1="82" x2="85" y2="82" stroke="#D4A843" stroke-width="1" stroke-dasharray="4 2"/>
+        
+        <!-- Tower 1 -->
+        <rect x="22" y="30" width="24" height="45" fill="none" stroke="#D4A843" stroke-width="2.5"/>
+        <!-- Tower 2 -->
+        <rect x="52" y="44" width="30" height="31" fill="none" stroke="#D4A843" stroke-width="2.5"/>
+        
+        <!-- Scaffold / Crane -->
+        <line x1="34" y1="30" x2="34" y2="12" stroke="#D4A843" stroke-width="2"/>
+        <line x1="16" y1="18" x2="72" y2="18" stroke="#D4A843" stroke-width="2"/>
+        <line x1="16" y1="18" x2="16" y2="22" stroke="#D4A843" stroke-width="2"/>
+        <line x1="66" y1="18" x2="66" y2="34" stroke="#D4A843" stroke-width="1.5" stroke-dasharray="3 2"/>
+        
+        <!-- Foundation Block -->
+        <rect x="22" y="60" width="60" height="15" fill="#D4A843"/>
+        <!-- Window grid punched out -->
+        <rect x="58" y="62" width="16" height="11" fill="#1a1612"/>
+        <line x1="66" y1="62" x2="66" y2="73" stroke="#D4A843" stroke-width="1.5"/>
+        <line x1="58" y1="67.5" x2="74" y2="67.5" stroke="#D4A843" stroke-width="1.5"/>
+        
+        <!-- Structural cross-bracing in Tower 1 -->
+        <polyline points="22,45 46,60" fill="none" stroke="#D4A843" stroke-width="1" opacity="0.4"/>
+        <polyline points="46,45 22,60" fill="none" stroke="#D4A843" stroke-width="1" opacity="0.4"/>
+        
+        <!-- Wordmark -->
+        <text x="158" y="52" font-family="'Cormorant Garamond',Georgia,serif" font-size="26" font-weight="700" fill="#F5F0E8" letter-spacing="5">RHA</text>
+        <line x1="158" y1="62" x2="235" y2="62" stroke="#D4A843" stroke-width="0.8" opacity="0.4"/>
+        <text x="158" y="76" font-family="'Inter',sans-serif" font-size="7.5" font-weight="400" fill="#D4A843" letter-spacing="4">CONSTRUCTIONS</text>
+      </svg>
+      <div class="panel-lbl" style="color:rgba(255,255,255,0.25)">Dark Background</div>
+    </div>
+  </div>
+
+  <div class="rat">
+    <h3>Why This Evolution Works</h3>
+    <div class="rat-grid">
+      <div class="rat-item"><h4>Immediate Commercial Signalling</h4><p>Replacing the domestic peaked roof with staggered commercial buildings and a crane communicates scale. It instantly says "we build big things," pushing the company identity firmly into the commercial sector.</p></div>
+      <div class="rat-item"><h4>Connecting Past & Future</h4><p>Despite the structural change, keeping the familiar golden horizon line and embedding the signature 2x2 window grid into the new foundation ensures the mark still feels like R.H.A. Construction to existing clients.</p></div>
+    </div>
+  </div>
+  <button class="pick-btn" onclick="alert('Direction F selected!')">✦ Select Direction F — Commercial Builder</button>
+</div>
+
+</div><!-- /main -->
+
+<script>
+  function go(id, idx) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    document.querySelectorAll('.tab-btn')[idx].classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>

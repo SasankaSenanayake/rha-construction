@@ -7,18 +7,46 @@ html {
 }
 
 body {
-  @apply bg-white font-sans text-charcoal-900 antialiased;
+  @apply bg-sand-50 font-sans text-ink-900 antialiased;
 }
 
-.hazard-rule {
-  height: 4px;
-  background: repeating-linear-gradient(
-    -45deg,
-    theme("colors.safety.orange"),
-    theme("colors.safety.orange") 12px,
-    theme("colors.charcoal.900") 12px,
-    theme("colors.charcoal.900") 24px
-  );
+/* Thin gold gradient divider, replaces the old hazard-stripe rule. */
+.accent-rule {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, theme("colors.gold.500") 20%, theme("colors.gold.400") 50%, theme("colors.gold.500") 80%, transparent);
+}
+
+/* Faint architectural grid texture for dark hero/CTA sections — CSS only, no image weight. */
+.blueprint-grid {
+  position: relative;
+  isolation: isolate;
+}
+
+.blueprint-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(227, 199, 125, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(227, 199, 125, 0.07) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 90%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.blueprint-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 85% 0%, rgba(201, 162, 39, 0.16), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.blueprint-grid > * {
+  position: relative;
+  z-index: 1;
 }
 
 .container-page {
@@ -26,13 +54,46 @@ body {
 }
 
 .case-study-body h2 {
-  @apply mt-8 text-xl font-bold text-charcoal-900 first:mt-0;
+  @apply mt-10 font-serif text-2xl font-semibold text-ink-900 first:mt-0;
 }
 
 .case-study-body p {
-  @apply mt-3 leading-relaxed text-concrete-600;
+  @apply mt-3 leading-relaxed text-sand-600;
 }
 
 .case-study-body ul {
-  @apply mt-3 list-disc space-y-1 pl-5 text-concrete-600;
+  @apply mt-3 list-disc space-y-1.5 pl-5 text-sand-600;
+}
+
+/* Scroll-reveal primitive — see components/ui/Reveal.tsx. Starts hidden so
+   content never flashes visible before JS attaches the observer. */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }

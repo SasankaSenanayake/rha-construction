@@ -3,14 +3,18 @@ import type { LocalizedTestimonial } from "@/lib/content/testimonials";
 
 export function TestimonialCard({ testimonial }: { testimonial: LocalizedTestimonial }) {
   return (
-    <figure className="rounded border border-concrete-200 bg-white p-6">
-      <div className="flex gap-0.5 text-safety-yellow" aria-hidden="true">
+    <figure className="flex h-full flex-col rounded-sm border border-sand-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-gold-400/60 hover:shadow-soft-lg">
+      <div className="flex gap-0.5 text-gold-500" aria-hidden="true">
         {Array.from({ length: 5 }).map((_, index) => (
-          <Icon key={index} name="star" className={`h-4 w-4 ${index < testimonial.rating ? "" : "opacity-25"}`} />
+          <Icon key={index} name="star" className={`h-4 w-4 ${index < testimonial.rating ? "" : "opacity-20"}`} />
         ))}
       </div>
-      <blockquote className="mt-4 text-sm leading-relaxed text-charcoal-800">“{testimonial.quote}”</blockquote>
-      <figcaption className="mt-4 text-sm font-semibold text-charcoal-900">{testimonial.clientName}</figcaption>
+      <blockquote className="mt-4 flex-1 font-serif text-lg leading-relaxed text-ink-800">
+        &ldquo;{testimonial.quote}&rdquo;
+      </blockquote>
+      <figcaption className="mt-5 border-t border-sand-100 pt-4 text-sm font-semibold text-ink-900">
+        {testimonial.clientName}
+      </figcaption>
     </figure>
   );
 }

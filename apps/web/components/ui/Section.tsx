@@ -7,9 +7,13 @@ export function Section({
   ...rest
 }: { tone?: "light" | "dark" | "muted" } & HTMLAttributes<HTMLElement>) {
   const toneClasses =
-    tone === "dark" ? "bg-charcoal-900 text-white" : tone === "muted" ? "bg-concrete-100" : "bg-white";
+    tone === "dark"
+      ? "blueprint-grid bg-ink-900 text-white"
+      : tone === "muted"
+        ? "bg-sand-100"
+        : "bg-sand-50";
   return (
-    <section className={`${toneClasses} py-16 md:py-24 ${className}`} {...rest}>
+    <section className={`${toneClasses} py-16 md:py-28 ${className}`} {...rest}>
       <div className="container-page">{children}</div>
     </section>
   );

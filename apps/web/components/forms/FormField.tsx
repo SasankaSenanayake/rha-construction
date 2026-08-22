@@ -13,7 +13,7 @@ export function FormField({
 }) {
   return (
     <div>
-      <label htmlFor={htmlFor} className="block text-sm font-semibold text-charcoal-800">
+      <label htmlFor={htmlFor} className="block text-sm font-semibold text-ink-800">
         {label}
       </label>
       <div className="mt-1.5">{children}</div>
@@ -27,4 +27,4 @@ export function FormField({
 }
 
 export const inputClassName =
-  "w-full rounded border border-concrete-200 px-3 py-2.5 text-sm text-charcoal-900 focus:border-safety-orange focus:outline-none focus:ring-1 focus:ring-safety-orange";
+  "w-full rounded-sm border border-sand-200 bg-white px-3 py-2.5 text-sm text-ink-900 transition-colors duration-200 focus:border-gold-500 focus:outline-none focus:ring-1 focus:ring-gold-500";

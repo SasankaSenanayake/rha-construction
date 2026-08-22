@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@rha/shared";
 import { getAllServices, localizeService } from "@/lib/content/services";
 import { Section } from "@/components/ui/Section";
+import { Reveal } from "@/components/ui/Reveal";
 import { ServiceCard } from "@/components/services/ServiceCard";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -18,13 +19,17 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
 
   return (
     <Section>
-      <div className="text-center">
-        <h1 className="text-4xl font-black text-charcoal-900">{t("title")}</h1>
-        <p className="mx-auto mt-3 max-w-2xl text-concrete-600">{t("subtitle")}</p>
-      </div>
-      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {services.map((service) => (
-          <ServiceCard key={service.slug} service={service} />
+      <Reveal>
+        <div className="text-center">
+          <h1 className="font-serif text-4xl font-semibold text-ink-900 md:text-5xl">{t("title")}</h1>
+          <p className="mx-auto mt-3 max-w-2xl text-sand-600">{t("subtitle")}</p>
+        </div>
+      </Reveal>
+      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {services.map((service, index) => (
+          <Reveal key={service.slug} delay={index * 80}>
+            <ServiceCard service={service} />
+          </Reveal>
         ))}
       </div>
     </Section>

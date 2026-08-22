@@ -18,20 +18,20 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-charcoal-950 text-concrete-200">
-      <div className="hazard-rule" />
-      <div className="container-page grid gap-10 py-14 md:grid-cols-4">
+    <footer className="bg-ink-950 text-sand-200">
+      <div className="accent-rule" />
+      <div className="container-page grid gap-10 py-16 md:grid-cols-4">
         <div>
-          <p className="text-lg font-bold text-white">{siteConfig.companyName}</p>
-          <p className="mt-3 text-sm">{tf("tagline")}</p>
+          <img src="/images/site/logo.svg" alt={siteConfig.companyName} className="h-9 w-auto brightness-0 invert" />
+          <p className="mt-4 max-w-xs text-sm leading-relaxed">{tf("tagline")}</p>
         </div>
 
         <div>
-          <p className="text-sm font-semibold uppercase tracking-wide text-white">{tf("quickLinks")}</p>
-          <ul className="mt-4 space-y-2 text-sm">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">{tf("quickLinks")}</p>
+          <ul className="mt-4 space-y-2.5 text-sm">
             {links.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="hover:text-safety-yellow">
+                <Link href={link.href} className="transition-colors hover:text-gold-300">
                   {t(link.key)}
                 </Link>
               </li>
@@ -40,36 +40,40 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="text-sm font-semibold uppercase tracking-wide text-white">{tf("getInTouch")}</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">{tf("getInTouch")}</p>
           <ul className="mt-4 space-y-3 text-sm">
             <li className="flex items-start gap-2">
-              <Icon name="phone" className="mt-0.5 h-4 w-4 shrink-0 text-safety-orange" />
-              <a href={`tel:${siteConfig.phoneHref}`}>{siteConfig.phoneDisplay}</a>
+              <Icon name="phone" className="mt-0.5 h-4 w-4 shrink-0 text-gold-500" />
+              <a href={`tel:${siteConfig.phoneHref}`} className="transition-colors hover:text-gold-300">
+                {siteConfig.phoneDisplay}
+              </a>
             </li>
             <li className="flex items-start gap-2">
-              <Icon name="mail" className="mt-0.5 h-4 w-4 shrink-0 text-safety-orange" />
-              <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+              <Icon name="mail" className="mt-0.5 h-4 w-4 shrink-0 text-gold-500" />
+              <a href={`mailto:${siteConfig.email}`} className="transition-colors hover:text-gold-300">
+                {siteConfig.email}
+              </a>
             </li>
             <li className="flex items-start gap-2">
-              <Icon name="map-pin" className="mt-0.5 h-4 w-4 shrink-0 text-safety-orange" />
+              <Icon name="map-pin" className="mt-0.5 h-4 w-4 shrink-0 text-gold-500" />
               <span>{siteConfig.address}</span>
             </li>
           </ul>
         </div>
 
         <div>
-          <p className="text-sm font-semibold uppercase tracking-wide text-white">{tf("businessHours")}</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">{tf("businessHours")}</p>
           <ul className="mt-4 space-y-2 text-sm">
             <li className="flex justify-between gap-4">
-              <span>{tf("weekdays")}</span>
+              <span className="text-sand-400">{tf("weekdays")}</span>
               <span>{siteConfig.businessHours.weekdays}</span>
             </li>
             <li className="flex justify-between gap-4">
-              <span>{tf("saturday")}</span>
+              <span className="text-sand-400">{tf("saturday")}</span>
               <span>{siteConfig.businessHours.saturday}</span>
             </li>
             <li className="flex justify-between gap-4">
-              <span>{tf("sunday")}</span>
+              <span className="text-sand-400">{tf("sunday")}</span>
               <span>{tf("closed")}</span>
             </li>
           </ul>
@@ -77,7 +81,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10 py-6">
-        <p className="container-page text-xs text-concrete-400">
+        <p className="container-page text-xs text-sand-400">
           © {year} {siteConfig.companyName}. {tf("rightsReserved")}
         </p>
       </div>

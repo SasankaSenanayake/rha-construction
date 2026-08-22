@@ -7,6 +7,7 @@ import { getAllServices, getServiceBySlug, localizeService } from "@/lib/content
 import { Section } from "@/components/ui/Section";
 import { LinkButton } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
+import { Reveal } from "@/components/ui/Reveal";
 import { ProcessSteps } from "@/components/services/ProcessSteps";
 
 export function generateStaticParams() {
@@ -40,31 +41,41 @@ export default async function ServiceDetailPage({
 
   return (
     <>
-      <section className="bg-charcoal-900 py-16 text-white">
-        <div className="hazard-rule" />
-        <div className="container-page pt-10">
-          <span className="flex h-14 w-14 items-center justify-center rounded bg-white/10 text-safety-yellow">
-            <Icon name={localized.icon as never} className="h-7 w-7" />
-          </span>
-          <h1 className="mt-4 text-4xl font-black">{localized.title}</h1>
-          <p className="mt-3 max-w-2xl text-lg text-concrete-200">{localized.shortDescription}</p>
+      <section className="blueprint-grid bg-ink-900 py-20 text-white">
+        <div className="container-page">
+          <Reveal>
+            <span className="flex h-14 w-14 items-center justify-center rounded-sm bg-white/10 text-gold-400">
+              <Icon name={localized.icon as never} className="h-7 w-7" />
+            </span>
+            <h1 className="mt-5 font-serif text-4xl font-semibold md:text-5xl">{localized.title}</h1>
+            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-sand-200">{localized.shortDescription}</p>
+          </Reveal>
         </div>
       </section>
 
       <Section>
-        <h2 className="text-2xl font-bold text-charcoal-900">{t("processTitle")}</h2>
-        <div className="mt-6">
+        <Reveal>
+          <h2 className="font-serif text-2xl font-semibold text-ink-900">{t("processTitle")}</h2>
+        </Reveal>
+        <div className="mt-7">
           <ProcessSteps steps={localized.processSteps} />
         </div>
       </Section>
 
       {localized.gallery.length > 0 && (
         <Section tone="muted">
-          <h2 className="text-2xl font-bold text-charcoal-900">{t("galleryTitle")}</h2>
-          <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3">
+          <Reveal>
+            <h2 className="font-serif text-2xl font-semibold text-ink-900">{t("galleryTitle")}</h2>
+          </Reveal>
+          <div className="mt-7 grid grid-cols-2 gap-4 md:grid-cols-3">
             {localized.gallery.map((image) => (
-              <div key={image.src} className="aspect-[3/2] overflow-hidden rounded bg-charcoal-800">
-                <img src={image.src} alt={image.alt[locale as Locale]} loading="lazy" className="h-full w-full object-cover" />
+              <div key={image.src} className="group aspect-[3/2] overflow-hidden rounded-sm bg-ink-800">
+                <img
+                  src={image.src}
+                  alt={image.alt[locale as Locale]}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                />
               </div>
             ))}
           </div>
@@ -72,12 +83,12 @@ export default async function ServiceDetailPage({
       )}
 
       <Section tone="dark">
-        <div className="text-center">
-          <h2 className="text-2xl font-bold">{t("ctaTitle")}</h2>
-          <LinkButton href="/quote" className="mt-6">
+        <Reveal className="text-center">
+          <h2 className="font-serif text-2xl font-semibold">{t("ctaTitle")}</h2>
+          <LinkButton href="/quote" className="mt-7">
             {tc("getQuote")}
           </LinkButton>
-        </div>
+        </Reveal>
       </Section>
     </>
   );
