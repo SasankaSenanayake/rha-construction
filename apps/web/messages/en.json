@@ -1,0 +1,152 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "projects": "Projects",
+    "testimonials": "Testimonials",
+    "contact": "Contact",
+    "quote": "Get a Quote"
+  },
+  "common": {
+    "getQuote": "Get a Quote",
+    "callNow": "Call Now",
+    "whatsapp": "WhatsApp Us",
+    "readMore": "Read More",
+    "viewAllProjects": "View All Projects",
+    "viewCaseStudy": "View Case Study",
+    "submit": "Submit",
+    "sending": "Sending…",
+    "backToProjects": "Back to Projects",
+    "ourProcess": "Our Process",
+    "gallery": "Gallery",
+    "yearsInBusiness": "Years in Business",
+    "projectsCompleted": "Projects Completed",
+    "allCategories": "All Categories"
+  },
+  "footer": {
+    "tagline": "Building Sri Lanka's homes and businesses with quality you can trust.",
+    "quickLinks": "Quick Links",
+    "getInTouch": "Get in Touch",
+    "businessHours": "Business Hours",
+    "weekdays": "Mon – Fri",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "closed": "Closed",
+    "rightsReserved": "All rights reserved."
+  },
+  "home": {
+    "heroTitle": "Building Sri Lanka, One Project at a Time",
+    "heroSubtitle": "Residential, commercial, and renovation construction handled by a team you can trust — from foundation to finish.",
+    "heroCtaPrimary": "Get a Free Quote",
+    "heroCtaSecondary": "View Our Projects",
+    "trustBarTitle": "Trusted by homeowners and businesses across Sri Lanka",
+    "servicesTitle": "What We Do",
+    "servicesSubtitle": "Full-service construction, from the first sketch to the final coat of paint.",
+    "featuredProjectsTitle": "Featured Projects",
+    "featuredProjectsSubtitle": "A selection of homes and buildings we're proud to have built.",
+    "testimonialsTitle": "What Our Clients Say",
+    "ctaTitle": "Ready to Start Your Project?",
+    "ctaSubtitle": "Tell us about your project and we'll get back to you within one business day.",
+    "whyUsTitle": "Why Choose R.H.A. Construction",
+    "whyUs": {
+      "experienceTitle": "Proven Experience",
+      "experienceBody": "Nearly two decades of delivering residential and commercial projects on time and on budget.",
+      "qualityTitle": "Quality Craftsmanship",
+      "qualityBody": "Skilled tradespeople and rigorous site supervision on every job, big or small.",
+      "transparencyTitle": "Transparent Pricing",
+      "transparencyBody": "Clear quotes and honest communication — no surprise costs partway through your project.",
+      "supportTitle": "Support After Handover",
+      "supportBody": "We stand behind our work with responsive after-handover support."
+    }
+  },
+  "about": {
+    "title": "About R.H.A. Construction",
+    "intro": "R.H.A. Construction has been building homes, offices, and community spaces across Sri Lanka for nearly two decades.",
+    "historyTitle": "Our Story",
+    "historyBody": "Founded by a team of engineers and site supervisors who believed construction should mean honest work and lasting quality, R.H.A. Construction has grown from small residential jobs into a full-service contractor trusted by homeowners, businesses, and diaspora clients building from abroad.",
+    "missionTitle": "Our Mission",
+    "missionBody": "To deliver every project — from a single-room renovation to a multi-storey commercial building — with the same standard of craftsmanship, safety, and transparency.",
+    "teamTitle": "Leadership Team",
+    "whyChooseUsTitle": "Why Homeowners and Businesses Choose Us"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "From new builds to finishing touches, we manage every stage of your construction project.",
+    "processTitle": "How It Works",
+    "galleryTitle": "Recent Work",
+    "ctaTitle": "Interested in this service?",
+    "categories": {
+      "residential": "Residential Construction",
+      "commercial": "Commercial Construction",
+      "renovation": "Renovations & Remodeling",
+      "interior-finishing": "Interior Finishing",
+      "project-management": "Project Management"
+    }
+  },
+  "projects": {
+    "title": "Our Projects",
+    "subtitle": "Browse completed residential and commercial projects from across Sri Lanka.",
+    "filterLabel": "Filter by category",
+    "locationLabel": "Location",
+    "yearLabel": "Year",
+    "categoryLabel": "Category",
+    "noResults": "No projects found in this category yet."
+  },
+  "testimonials": {
+    "title": "Client Testimonials",
+    "subtitle": "Hear from homeowners and businesses we've built for."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Have a question or want to discuss a project? Send us a message and we'll respond within one business day.",
+    "detailsTitle": "Contact Details",
+    "mapTitle": "Find Us",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number (optional)",
+      "message": "Message",
+      "messagePlaceholder": "Tell us a bit about what you need…",
+      "success": "Thanks — your message has been sent. We'll be in touch soon.",
+      "error": "Something went wrong. Please try again, or reach us directly by phone or WhatsApp."
+    }
+  },
+  "quote": {
+    "title": "Get a Quote",
+    "subtitle": "Tell us about your project and we'll prepare a free, no-obligation quote.",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "propertyLocation": "Property Location",
+      "propertyLocationPlaceholder": "e.g. Nugegoda, Colombo",
+      "projectType": "Project Type",
+      "estimatedBudgetRange": "Estimated Budget (LKR)",
+      "preferredContactMethod": "Preferred Contact Method",
+      "projectScopeNotes": "Tell Us About Your Project",
+      "projectScopeNotesPlaceholder": "Describe the scope, size, and timeline of your project…",
+      "desiredStartDate": "Desired Start Date (optional)",
+      "success": "Thanks — your quote request has been received. We'll be in touch within one business day.",
+      "error": "Something went wrong. Please try again, or reach us directly by phone or WhatsApp.",
+      "budgetRanges": {
+        "under-2m": "Under 2 million",
+        "2m-5m": "2 – 5 million",
+        "5m-10m": "5 – 10 million",
+        "10m-25m": "10 – 25 million",
+        "over-25m": "Over 25 million",
+        "not-sure": "Not sure yet"
+      },
+      "contactMethods": {
+        "phone": "Phone",
+        "email": "Email",
+        "whatsapp": "WhatsApp"
+      }
+    }
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "body": "The page you're looking for doesn't exist or has moved.",
+    "cta": "Back to Home"
+  }
+}

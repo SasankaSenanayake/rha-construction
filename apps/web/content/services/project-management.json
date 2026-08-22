@@ -1,0 +1,46 @@
+{
+  "slug": "project-management",
+  "icon": "clipboard",
+  "order": 5,
+  "translations": {
+    "en": {
+      "title": "Project Management",
+      "shortDescription": "End-to-end oversight of your construction project — budget, schedule, and contractor coordination handled for you.",
+      "processSteps": [
+        "Project planning and budgeting",
+        "Contractor and vendor coordination",
+        "Progress tracking and reporting",
+        "Final inspection and sign-off"
+      ],
+      "gallery": [
+        { "src": "/images/services/project-management/gallery-1.svg", "alt": { "en": "Project management on site", "si": "අඩවියේ ව්‍යාපෘති කළමනාකරණය", "ta": "தளத்தில் திட்ட மேலாண்மை" } }
+      ]
+    },
+    "si": {
+      "title": "ව්‍යාපෘති කළමනාකරණය",
+      "shortDescription": "ඔබේ ඉදිකිරීම් ව්‍යාපෘතියේ අන්තයේ සිට අන්තය දක්වා අධීක්ෂණය — අයවැය, කාලසටහන හා කොන්ත්‍රාත්කරු සම්බන්ධීකරණය ඔබ වෙනුවෙන් හසුරුවනු ලැබේ.",
+      "processSteps": [
+        "ව්‍යාපෘති සැලසුම් කිරීම හා අයවැය සකස් කිරීම",
+        "කොන්ත්‍රාත්කරු හා විකුණුම්කරු සම්බන්ධීකරණය",
+        "ප්‍රගතිය නිරීක්ෂණය හා වාර්තා කිරීම",
+        "අවසාන පරීක්ෂාව හා අනුමැතිය"
+      ],
+      "gallery": [
+        { "src": "/images/services/project-management/gallery-1.svg", "alt": { "en": "Project management on site", "si": "අඩවියේ ව්‍යාපෘති කළමනාකරණය", "ta": "தளத்தில் திட்ட மேலாண்மை" } }
+      ]
+    },
+    "ta": {
+      "title": "திட்ட மேலாண்மை",
+      "shortDescription": "உங்கள் கட்டுமான திட்டத்தின் முழுமையான மேற்பார்வை — பட்ஜெட், காலவரிசை மற்றும் ஒப்பந்தக்காரர் ஒருங்கிணைப்பு உங்களுக்காக கையாளப்படுகிறது.",
+      "processSteps": [
+        "திட்ட திட்டமிடல் மற்றும் பட்ஜெட்",
+        "ஒப்பந்தக்காரர் மற்றும் விற்பனையாளர் ஒருங்கிணைப்பு",
+        "முன்னேற்ற கண்காணிப்பு மற்றும் அறிக்கையிடல்",
+        "இறுதி ஆய்வு மற்றும் ஒப்புதல்"
+      ],
+      "gallery": [
+        { "src": "/images/services/project-management/gallery-1.svg", "alt": { "en": "Project management on site", "si": "අඩවියේ ව්‍යාපෘති කළමනාකරණය", "ta": "தளத்தில் திட்ட மேலாண்மை" } }
+      ]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "anoma-wickramasinghe",
+  "clientName": "Anoma Wickramasinghe",
+  "projectSlug": "kandy-retail-renovation",
+  "rating": 4,
+  "translations": {
+    "en": {
+      "quote": "Great communication throughout the renovation. The team worked around our store hours so we never had to close."
+    },
+    "si": {
+      "quote": "ප්‍රතිසංස්කරණය පුරාම විශිෂ්ට සන්නිවේදනයක්. අපගේ වෙළඳසැල් වේලාවන් වටා කණ්ඩායම වැඩ කළ බැවින් අපට කිසි විටෙකත් වසා දැමීමට සිදු නොවීය."
+    },
+    "ta": {
+      "quote": "புதுப்பித்தல் முழுவதும் சிறந்த தொடர்பு. எங்கள் கடை நேரங்களைச் சுற்றி குழு வேலை செய்ததால் நாங்கள் ஒருபோதும் மூட வேண்டியிருக்கவில்லை."
+    }
+  }
+}

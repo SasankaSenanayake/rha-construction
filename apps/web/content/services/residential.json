@@ -1,0 +1,46 @@
+{
+  "slug": "residential",
+  "icon": "home",
+  "order": 1,
+  "translations": {
+    "en": {
+      "title": "Residential Construction",
+      "shortDescription": "New homes and multi-unit residential buildings built to last, from single-family houses to apartment blocks.",
+      "processSteps": [
+        "Initial consultation and site assessment",
+        "Design and permit approval",
+        "Foundation and structural work",
+        "Interior finishing and handover"
+      ],
+      "gallery": [
+        { "src": "/images/services/residential/gallery-1.svg", "alt": { "en": "Residential construction site", "si": "නිවාස ඉදිකිරීම් අඩවිය", "ta": "குடியிருப்பு கட்டுமான தளம்" } }
+      ]
+    },
+    "si": {
+      "title": "නිවාස ඉදිකිරීම්",
+      "shortDescription": "තනි පවුල් නිවාස සිට මහල් නිවාස සංකීර්ණ දක්වා, කල් පවතින නව නිවාස හා බහු ඒකක නේවාසික ගොඩනැගිලි.",
+      "processSteps": [
+        "මූලික උපදේශනය හා අඩවි තක්සේරුව",
+        "සැලසුම් හා අවසර අනුමැතිය",
+        "අත්තිවාරම හා ව්‍යුහාත්මක කටයුතු",
+        "අභ්‍යන්තර නිම කිරීම හා භාරදීම"
+      ],
+      "gallery": [
+        { "src": "/images/services/residential/gallery-1.svg", "alt": { "en": "Residential construction site", "si": "නිවාස ඉදිකිරීම් අඩවිය", "ta": "குடியிருப்பு கட்டுமான தளம்" } }
+      ]
+    },
+    "ta": {
+      "title": "குடியிருப்பு கட்டுமானம்",
+      "shortDescription": "தனிக் குடும்ப வீடுகள் முதல் குடியிருப்பு வளாகங்கள் வரை, நீடித்து நிற்கும் புதிய வீடுகள் மற்றும் பல அலகு குடியிருப்பு கட்டிடங்கள்.",
+      "processSteps": [
+        "ஆரம்ப ஆலோசனை மற்றும் தள மதிப்பீடு",
+        "வடிவமைப்பு மற்றும் அனுமதி ஒப்புதல்",
+        "அஸ்திவாரம் மற்றும் கட்டமைப்பு பணிகள்",
+        "உள்புற அலங்காரம் மற்றும் ஒப்படைப்பு"
+      ],
+      "gallery": [
+        { "src": "/images/services/residential/gallery-1.svg", "alt": { "en": "Residential construction site", "si": "නිවාස ඉදිකිරීම් අඩවිය", "ta": "குடியிருப்பு கட்டுமான தளம்" } }
+      ]
+    }
+  }
+}

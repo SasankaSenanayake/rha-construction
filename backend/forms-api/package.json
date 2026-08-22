@@ -1,0 +1,26 @@
+{
+  "name": "@rha/forms-api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@aws-sdk/client-ses": "^3.685.0",
+    "@aws-sdk/lib-dynamodb": "^3.685.0",
+    "@aws-sdk/client-dynamodb": "^3.685.0",
+    "@rha/shared": "*",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.145",
+    "@types/node": "^20.16.11",
+    "aws-sdk-client-mock": "^4.1.0",
+    "esbuild": "^0.24.0",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.4"
+  }
+}

@@ -1,0 +1,39 @@
+name: Terraform Apply
+
+# Manual, human-gated only — infra changes never run automatically on push.
+# A bad app deploy is instantly fixable by re-running deploy-app.yml; a bad
+# infra apply (e.g. an accidental DynamoDB replacement) can be destructive,
+# so this requires an explicit trigger plus the "production" environment's
+# required reviewers.
+on:
+  workflow_dispatch: {}
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    environment: production
+    defaults:
+      run:
+        working-directory: infra/envs/prod
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.9.8"
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_TERRAFORM_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - run: terraform init -backend-config="bucket=${{ vars.TF_STATE_BUCKET }}"
+
+      - name: Terraform Apply
+        run: |
+          terraform apply -auto-approve -input=false \
+            -var="terraform_state_bucket_arn=arn:aws:s3:::${{ vars.TF_STATE_BUCKET }}"

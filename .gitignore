@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Next.js
+apps/web/.next/
+apps/web/out/
+
+# Lambda build output
+backend/forms-api/dist/
+backend/forms-api/*.zip
+
+# Env files
+.env
+.env.local
+*.env.local
+!.env.example
+
+# Terraform
+infra/**/.terraform/
+infra/**/.terraform.lock.hcl
+infra/**/*.tfstate
+infra/**/*.tfstate.*
+infra/**/terraform.tfvars
+infra/**/*.tfplan
+infra/**/crash.log
+
+# Editor / OS
+.DS_Store
+.vscode/
+*.log
+
+# Test coverage
+coverage/

@@ -1,0 +1,46 @@
+{
+  "slug": "renovation",
+  "icon": "hammer",
+  "order": 3,
+  "translations": {
+    "en": {
+      "title": "Renovations & Remodeling",
+      "shortDescription": "Upgrade, extend, or modernize an existing home or commercial space with minimal disruption.",
+      "processSteps": [
+        "Site survey and scope definition",
+        "Design and material selection",
+        "Phased construction work",
+        "Final walkthrough and handover"
+      ],
+      "gallery": [
+        { "src": "/images/services/renovation/gallery-1.svg", "alt": { "en": "Renovation work in progress", "si": "ප්‍රතිසංස්කරණ කටයුතු", "ta": "புதுப்பித்தல் பணிகள்" } }
+      ]
+    },
+    "si": {
+      "title": "ප්‍රතිසංස්කරණ හා නවීකරණ",
+      "shortDescription": "අවම බාධාවකින් පවතින නිවසක් හෝ වාණිජ අවකාශයක් උසස් කරන්න, දිගු කරන්න, හෝ නවීකරණය කරන්න.",
+      "processSteps": [
+        "අඩවි සමීක්ෂණය හා විෂය පථය නිර්ණය කිරීම",
+        "සැලසුම් හා ද්‍රව්‍ය තේරීම",
+        "අදියරානුකූල ඉදිකිරීම් කටයුතු",
+        "අවසාන පරීක්ෂාව හා භාරදීම"
+      ],
+      "gallery": [
+        { "src": "/images/services/renovation/gallery-1.svg", "alt": { "en": "Renovation work in progress", "si": "ප්‍රතිසංස්කරණ කටයුතු", "ta": "புதுப்பித்தல் பணிகள்" } }
+      ]
+    },
+    "ta": {
+      "title": "புதுப்பித்தல் மற்றும் மறுசீரமைப்பு",
+      "shortDescription": "குறைந்தபட்ச இடையூறுடன் ஏற்கனவே இருக்கும் வீடு அல்லது வணிக இடத்தை மேம்படுத்தவும், விரிவாக்கவும், அல்லது நவீனப்படுத்தவும்.",
+      "processSteps": [
+        "தள ஆய்வு மற்றும் நோக்க வரையறை",
+        "வடிவமைப்பு மற்றும் பொருள் தேர்வு",
+        "கட்டங்களாக கட்டுமான பணிகள்",
+        "இறுதி ஆய்வு மற்றும் ஒப்படைப்பு"
+      ],
+      "gallery": [
+        { "src": "/images/services/renovation/gallery-1.svg", "alt": { "en": "Renovation work in progress", "si": "ප්‍රතිසංස්කරණ කටයුතු", "ta": "புதுப்பித்தல் பணிகள்" } }
+      ]
+    }
+  }
+}

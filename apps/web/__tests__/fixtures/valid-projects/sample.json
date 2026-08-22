@@ -1,0 +1,13 @@
+{
+  "slug": "sample",
+  "category": "residential",
+  "location": "Colombo",
+  "year": 2024,
+  "featured": false,
+  "images": [{ "src": "/images/does-not-matter.svg", "alt": { "en": "a", "si": "a", "ta": "a" } }],
+  "translations": {
+    "en": { "title": "Sample", "summary": "Sample summary", "bodyMd": "Sample body" },
+    "si": { "title": "Sample", "summary": "Sample summary", "bodyMd": "Sample body" },
+    "ta": { "title": "Sample", "summary": "Sample summary", "bodyMd": "Sample body" }
+  }
+}

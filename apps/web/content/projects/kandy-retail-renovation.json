@@ -1,0 +1,30 @@
+{
+  "slug": "kandy-retail-renovation",
+  "category": "renovation",
+  "location": "Kandy",
+  "year": 2023,
+  "featured": false,
+  "images": [
+    {
+      "src": "/images/projects/kandy-retail-renovation/photo-1.svg",
+      "alt": { "en": "Renovated retail storefront in Kandy", "si": "මහනුවර ප්‍රතිසංස්කරණය කළ සිල්ලර වෙළඳසැල් පෙරමුහුණත", "ta": "கண்டியில் புதுப்பிக்கப்பட்ட சில்லறை கடை முகப்பு" }
+    }
+  ],
+  "translations": {
+    "en": {
+      "title": "Retail Storefront Renovation, Kandy",
+      "summary": "A full renovation of an existing retail unit in central Kandy, modernizing the storefront and interior while the business stayed open.",
+      "bodyMd": "## Project Overview\n\nThis long-standing retail store in central Kandy needed a modern refresh — new shopfront, flooring, lighting, and display fixtures — without closing for an extended period.\n\n## Our Approach\n\nWe sequenced the renovation in sections, working evenings and off-peak hours so the store could remain open during the day. The finished space gave the client a modern retail environment on a tight, business-friendly timeline."
+    },
+    "si": {
+      "title": "සිල්ලර වෙළඳසැල් ප්‍රතිසංස්කරණය, මහනුවර",
+      "summary": "මහනුවර මධ්‍යයේ පවතින සිල්ලර ඒකකයක සම්පූර්ණ ප්‍රතිසංස්කරණයක්, ව්‍යාපාරය විවෘතව තිබියදීම වෙළඳසැලේ පෙරමුහුණත හා අභ්‍යන්තරය නවීකරණය කරන ලදී.",
+      "bodyMd": "## ව්‍යාපෘති සාරාංශය\n\nමහනුවර මධ්‍යයේ ඇති මෙම දිගු කලක් පැවති සිල්ලර වෙළඳසැලට දිගු කාලයක් වසා නොදමා නවීන පෙරමුහුණතක්, බිම් ආස්තරණයක්, ආලෝකයක් හා ප්‍රදර්ශන උපාංග අවශ්‍ය විය.\n\n## අපගේ ප්‍රවේශය\n\nදිවා කාලයේ වෙළඳසැල විවෘතව තැබිය හැකි ලෙස අපි සවස් වේලාවන්හි හා අවම කාලවලදී වැඩ කරමින් ප්‍රතිසංස්කරණය කොටස් වශයෙන් සකස් කළෙමු."
+    },
+    "ta": {
+      "title": "சில்லறை கடை புதுப்பித்தல், கண்டி",
+      "summary": "கண்டி மத்தியில் உள்ள ஏற்கனவே இருக்கும் சில்லறை அலகின் முழுமையான புதுப்பித்தல், வணிகம் திறந்திருந்தபடியே கடை முகப்பையும் உட்புறத்தையும் நவீனப்படுத்தியது.",
+      "bodyMd": "## திட்ட மேலோட்டம்\n\nகண்டி மத்தியில் உள்ள இந்த நீண்டகால சில்லறை கடைக்கு நீண்ட காலம் மூடாமல் புதிய கடை முகப்பு, தரை, விளக்குகள் மற்றும் காட்சி பொருத்துதல்கள் தேவைப்பட்டன.\n\n## எங்கள் அணுகுமுறை\n\nபகலில் கடை திறந்திருக்கும் வகையில் மாலை நேரங்களிலும் நேரங்களிலும் வேலை செய்து புதுப்பித்தலை பகுதிகளாக வரிசைப்படுத்தினோம்."
+    }
+  }
+}

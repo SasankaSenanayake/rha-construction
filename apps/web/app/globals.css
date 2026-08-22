@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white font-sans text-charcoal-900 antialiased;
+}
+
+.hazard-rule {
+  height: 4px;
+  background: repeating-linear-gradient(
+    -45deg,
+    theme("colors.safety.orange"),
+    theme("colors.safety.orange") 12px,
+    theme("colors.charcoal.900") 12px,
+    theme("colors.charcoal.900") 24px
+  );
+}
+
+.container-page {
+  @apply mx-auto w-full max-w-6xl px-5;
+}
+
+.case-study-body h2 {
+  @apply mt-8 text-xl font-bold text-charcoal-900 first:mt-0;
+}
+
+.case-study-body p {
+  @apply mt-3 leading-relaxed text-concrete-600;
+}
+
+.case-study-body ul {
+  @apply mt-3 list-disc space-y-1 pl-5 text-concrete-600;
+}

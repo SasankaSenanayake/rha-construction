@@ -1,0 +1,34 @@
+{
+  "slug": "nugegoda-family-home",
+  "category": "residential",
+  "location": "Nugegoda, Colombo",
+  "year": 2025,
+  "featured": true,
+  "images": [
+    {
+      "src": "/images/projects/nugegoda-family-home/photo-1.svg",
+      "alt": { "en": "Exterior of the Nugegoda family home", "si": "නුගේගොඩ පවුල් නිවසේ බාහිර දර්ශනය", "ta": "நுகேகொடை குடும்ப வீட்டின் வெளிப்புறம்" }
+    },
+    {
+      "src": "/images/projects/nugegoda-family-home/photo-2.svg",
+      "alt": { "en": "Living area of the Nugegoda family home", "si": "නුගේගොඩ පවුල් නිවසේ ලිවිං ග් රූම් එක", "ta": "நுகேகொடை குடும்ப வீட்டின் வாழ்விடம்" }
+    }
+  ],
+  "translations": {
+    "en": {
+      "title": "A Modern Family Home in Nugegoda",
+      "summary": "A three-bedroom, two-storey family home built from the ground up on a compact urban plot, blending contemporary design with practical family living.",
+      "bodyMd": "## Project Overview\n\nThis two-storey, three-bedroom home was built for a young family on a 12-perch plot in Nugegoda. The brief called for an open-plan ground floor, a home office, and a design that made the most of natural light on a narrow site.\n\n## Our Approach\n\nOur team managed the project from foundation to handover, coordinating structural, electrical, and plumbing works while keeping the family informed at every milestone. The result is a bright, energy-efficient home completed on schedule and within budget."
+    },
+    "si": {
+      "title": "නුගේගොඩ නවීන පවුල් නිවස",
+      "summary": "නාගරික භූමියක් මත මුල සිට ඉදිකරන ලද කාමර තුනකින් හා මහල් දෙකකින් යුත් පවුල් නිවසක්, නවීන නිර්මාණකරණය හා ප්‍රායෝගික පවුල් ජීවිතය සංකලනය කරයි.",
+      "bodyMd": "## ව්‍යාපෘති සාරාංශය\n\nමෙම මහල් දෙකේ, කාමර තුනේ නිවස නුගේගොඩ පර්චස් 12ක භූමියක තරුණ පවුලක් සඳහා ඉදිකරන ලදී. විවෘත සැලසුම් බිම් මහල, නිවාස කාර්යාලයක් සහ පටු භූමියක ස්වාභාවික ආලෝකය උපරිම කරගත් නිර්මාණයක් අවශ්‍ය විය.\n\n## අපගේ ප්‍රවේශය\n\nඅපගේ කණ්ඩායම අත්තිවාරමේ සිට භාරදීම දක්වා ව්‍යාපෘතිය කළමනාකරණය කළ අතර, සෑම සන්ධිස්ථානයකදීම පවුලට දැනුම් දෙමින් ව්‍යුහාත්මක, විදුලි හා ජලනල කටයුතු සම්බන්ධීකරණය කළේය."
+    },
+    "ta": {
+      "title": "நுகேகொடையில் நவீன குடும்ப வீடு",
+      "summary": "நகர்ப்புற நிலத்தில் அஸ்திவாரத்திலிருந்து கட்டப்பட்ட மூன்று படுக்கையறை, இரு மாடி குடும்ப வீடு, நவீன வடிவமைப்பையும் நடைமுறை குடும்ப வாழ்க்கையையும் இணைக்கிறது.",
+      "bodyMd": "## திட்ட மேலோட்டம்\n\nஇந்த இரு மாடி, மூன்று படுக்கையறை வீடு நுகேகொடையில் 12 பேர்ச் நிலத்தில் ஒரு இளம் குடும்பத்திற்காக கட்டப்பட்டது. திறந்த தள கீழ் மாடி, வீட்டு அலுவலகம் மற்றும் குறுகிய தளத்தில் இயற்கை ஒளியை அதிகபடுத்தும் வடிவமைப்பு தேவைப்பட்டது.\n\n## எங்கள் அணுகுமுறை\n\nஎங்கள் குழு அஸ்திவாரத்திலிருந்து ஒப்படைப்பு வரை திட்டத்தை நிர்வகித்தது, ஒவ்வொரு கட்டத்திலும் குடும்பத்திற்கு தகவல் தெரிவித்தபடி கட்டமைப்பு, மின்சாரம் மற்றும் குழாய் பணிகளை ஒருங்கிணைத்தது."
+    }
+  }
+}

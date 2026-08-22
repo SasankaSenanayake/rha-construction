@@ -1,0 +1,46 @@
+{
+  "slug": "interior-finishing",
+  "icon": "paint-roller",
+  "order": 4,
+  "translations": {
+    "en": {
+      "title": "Interior Finishing",
+      "shortDescription": "Flooring, painting, ceilings, custom joinery, and fit-outs that bring a space to its final, move-in-ready state.",
+      "processSteps": [
+        "Design consultation and material sourcing",
+        "Surface preparation",
+        "Installation and finishing works",
+        "Quality check and handover"
+      ],
+      "gallery": [
+        { "src": "/images/services/interior-finishing/gallery-1.svg", "alt": { "en": "Interior finishing work", "si": "අභ්‍යන්තර නිම කිරීමේ කටයුතු", "ta": "உள்புற அலங்கார பணிகள்" } }
+      ]
+    },
+    "si": {
+      "title": "අභ්‍යන්තර නිම කිරීම්",
+      "shortDescription": "බිම් ආස්තරණ, තීන්ත ආලේපනය, සිවිලිම්, අභිරුචි ලී වැඩ හා නිම කිරීම් අවකාශයක් අවසාන, ගැනීමට සූදානම් තත්වයට ගෙන එයි.",
+      "processSteps": [
+        "සැලසුම් උපදේශනය හා ද්‍රව්‍ය ලබාගැනීම",
+        "මතුපිට සකස් කිරීම",
+        "ස්ථාපනය හා නිම කිරීමේ කටයුතු",
+        "ගුණාත්මක පරීක්ෂාව හා භාරදීම"
+      ],
+      "gallery": [
+        { "src": "/images/services/interior-finishing/gallery-1.svg", "alt": { "en": "Interior finishing work", "si": "අභ්‍යන්තර නිම කිරීමේ කටයුතු", "ta": "உள்புற அலங்கார பணிகள்" } }
+      ]
+    },
+    "ta": {
+      "title": "உள்புற அலங்காரம்",
+      "shortDescription": "தரை, வண்ணப்பூச்சு, கூரை, தனிப்பயன் மரவேலை மற்றும் அலங்காரங்கள் ஒரு இடத்தை இறுதியான, குடியேறத் தயாரான நிலைக்கு கொண்டு வருகின்றன.",
+      "processSteps": [
+        "வடிவமைப்பு ஆலோசனை மற்றும் பொருள் தேடல்",
+        "மேற்பரப்பு தயாரிப்பு",
+        "நிறுவல் மற்றும் அலங்கார பணிகள்",
+        "தர சோதனை மற்றும் ஒப்படைப்பு"
+      ],
+      "gallery": [
+        { "src": "/images/services/interior-finishing/gallery-1.svg", "alt": { "en": "Interior finishing work", "si": "අභ්‍යන්තර නිම කිරීමේ කටයුතු", "ta": "உள்புற அலங்கார பணிகள்" } }
+      ]
+    }
+  }
+}

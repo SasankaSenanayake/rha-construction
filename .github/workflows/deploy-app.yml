@@ -1,0 +1,74 @@
+name: Deploy App
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/web/**"
+      - "packages/shared/**"
+      - ".github/workflows/deploy-app.yml"
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: "npm"
+
+      - run: npm ci
+
+      - name: Build static export
+        run: npm run build --workspace=apps/web
+        env:
+          NEXT_PUBLIC_COMPANY_NAME: ${{ vars.COMPANY_NAME }}
+          NEXT_PUBLIC_DOMAIN: ${{ vars.DOMAIN_NAME }}
+          NEXT_PUBLIC_PHONE_DISPLAY: ${{ vars.PHONE_DISPLAY }}
+          NEXT_PUBLIC_PHONE_HREF: ${{ vars.PHONE_HREF }}
+          NEXT_PUBLIC_WHATSAPP_NUMBER: ${{ vars.WHATSAPP_NUMBER }}
+          NEXT_PUBLIC_CONTACT_EMAIL: ${{ vars.CONTACT_EMAIL }}
+          NEXT_PUBLIC_ADDRESS: ${{ vars.ADDRESS }}
+          NEXT_PUBLIC_GOOGLE_MAPS_EMBED_SRC: ${{ vars.GOOGLE_MAPS_EMBED_SRC }}
+          NEXT_PUBLIC_API_BASE_URL: ${{ vars.API_BASE_URL }}
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      # Three passes so hashed static assets and HTML get different
+      # Cache-Control headers: --delete on the first pass only, so the
+      # later passes don't remove files the first pass just added.
+      - name: Sync to S3 (baseline)
+        run: |
+          aws s3 sync apps/web/out/ s3://${{ vars.S3_BUCKET_NAME }}/ --delete
+
+      - name: Sync hashed static assets (immutable, long cache)
+        run: |
+          aws s3 cp apps/web/out/_next/static s3://${{ vars.S3_BUCKET_NAME }}/_next/static \
+            --recursive \
+            --cache-control "public,max-age=31536000,immutable" \
+            --metadata-directive REPLACE
+
+      - name: Sync HTML files (short cache, must-revalidate)
+        run: |
+          aws s3 cp apps/web/out/ s3://${{ vars.S3_BUCKET_NAME }}/ \
+            --recursive \
+            --exclude "*" \
+            --include "*.html" \
+            --cache-control "public,max-age=0,must-revalidate" \
+            --metadata-directive REPLACE
+
+      - name: Invalidate CloudFront
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ vars.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*"

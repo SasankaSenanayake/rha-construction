@@ -1,0 +1,30 @@
+{
+  "slug": "colombo-office-fitout",
+  "category": "commercial",
+  "location": "Colombo 03",
+  "year": 2024,
+  "featured": true,
+  "images": [
+    {
+      "src": "/images/projects/colombo-office-fitout/photo-1.svg",
+      "alt": { "en": "Interior of the Colombo office fit-out", "si": "කොළඹ කාර්යාල නිම කිරීමේ අභ්‍යන්තරය", "ta": "கொழும்பு அலுவலக அலங்காரத்தின் உட்புறம்" }
+    }
+  ],
+  "translations": {
+    "en": {
+      "title": "Corporate Office Fit-Out, Colombo 03",
+      "summary": "A full interior fit-out of a 6,000 sq ft office space for a growing financial services firm, delivered around a live-business timeline.",
+      "bodyMd": "## Project Overview\n\nOur client needed to fit out a new 6,000 sq ft office floor in Colombo 03 without disrupting their ongoing operations elsewhere in the building. Scope included partitioning, electrical and data cabling, ceiling and flooring finishes, and custom joinery.\n\n## Our Approach\n\nWork was phased and scheduled outside normal business hours where required, with daily progress updates to the client's facilities team. The office was handed over on schedule, fully fitted and ready to occupy."
+    },
+    "si": {
+      "title": "වාණිජ කාර්යාල අභ්‍යන්තර නිම කිරීම, කොළඹ 03",
+      "summary": "වර්ධනය වන මූල්‍ය සේවා ආයතනයක් සඳහා වර්ග අඩි 6,000ක කාර්යාල අවකාශයක සම්පූර්ණ අභ්‍යන්තර නිම කිරීමක්, ක්‍රියාත්මක ව්‍යාපාරික කාලසටහනක් වටා ලබා දෙන ලදී.",
+      "bodyMd": "## ව්‍යාපෘති සාරාංශය\n\nගොඩනැගිල්ලේ අනෙකුත් ස්ථානවල ක්‍රියාත්මක මෙහෙයුම් කඩාකප්පල් නොකර කොළඹ 03හි වර්ග අඩි 6,000ක නව කාර්යාල මහලක් නිම කිරීමට අපගේ පාරිභෝගිකයාට අවශ්‍ය විය.\n\n## අපගේ ප්‍රවේශය\n\nකාර්යය අදියර වශයෙන් සැලසුම් කරන ලද අතර අවශ්‍ය අවස්ථාවලදී සාමාන්‍ය ව්‍යාපාරික වේලාවෙන් පිටත සිදු කරන ලදී. කාර්යාලය කාලසටහනට අනුව, සම්පූර්ණයෙන් සවි කර භාරදෙන ලදී."
+    },
+    "ta": {
+      "title": "வணிக அலுவலக உள்புற அலங்காரம், கொழும்பு 03",
+      "summary": "வளர்ந்து வரும் நிதி சேவை நிறுவனத்திற்காக 6,000 சதுர அடி அலுவலக இடத்தின் முழுமையான உள்புற அலங்காரம், நடைமுறை வணிக காலவரிசையைச் சுற்றி வழங்கப்பட்டது.",
+      "bodyMd": "## திட்ட மேலோட்டம்\n\nகட்டிடத்தின் மற்ற பகுதிகளில் நடைபெறும் செயல்பாடுகளை பாதிக்காமல் கொழும்பு 03ல் 6,000 சதுர அடி புதிய அலுவலக மாடியை அலங்கரிக்க எங்கள் வாடிக்கையாளருக்குத் தேவைப்பட்டது.\n\n## எங்கள் அணுகுமுறை\n\nவேலை கட்டங்களாகத் திட்டமிடப்பட்டு தேவைப்படும் இடங்களில் வழக்கமான வணிக நேரங்களுக்கு வெளியே செய்யப்பட்டது. அலுவலகம் காலவரிசைப்படி, முழுமையாக பொருத்தப்பட்டு ஒப்படைக்கப்பட்டது."
+    }
+  }
+}

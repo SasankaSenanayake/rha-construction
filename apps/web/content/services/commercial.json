@@ -1,0 +1,46 @@
+{
+  "slug": "commercial",
+  "icon": "building",
+  "order": 2,
+  "translations": {
+    "en": {
+      "title": "Commercial Construction",
+      "shortDescription": "Office buildings, retail spaces, and warehouses built for durability and to meet your business timeline.",
+      "processSteps": [
+        "Requirements and feasibility review",
+        "Design and regulatory approval",
+        "Construction and quality inspections",
+        "Handover and after-care support"
+      ],
+      "gallery": [
+        { "src": "/images/services/commercial/gallery-1.svg", "alt": { "en": "Commercial construction site", "si": "වාණිජ ඉදිකිරීම් අඩවිය", "ta": "வணிக கட்டுமான தளம்" } }
+      ]
+    },
+    "si": {
+      "title": "වාණිජ ඉදිකිරීම්",
+      "shortDescription": "කාර්යාල ගොඩනැගිලි, සිල්ලර අවකාශයන් හා ගබඩා, කල්පැවැත්ම සඳහා හා ඔබේ ව්‍යාපාරික කාලසටහනට ගැලපෙන පරිදි ඉදිකරන ලද.",
+      "processSteps": [
+        "අවශ්‍යතා හා කළ හැකියාව සමාලෝචනය",
+        "සැලසුම් හා නියාමන අනුමැතිය",
+        "ඉදිකිරීම හා ගුණාත්මක පරීක්ෂණ",
+        "භාරදීම හා පසු සහාය"
+      ],
+      "gallery": [
+        { "src": "/images/services/commercial/gallery-1.svg", "alt": { "en": "Commercial construction site", "si": "වාණිජ ඉදිකිරීම් අඩවිය", "ta": "வணிக கட்டுமான தளம்" } }
+      ]
+    },
+    "ta": {
+      "title": "வணிக கட்டுமானம்",
+      "shortDescription": "அலுவலக கட்டிடங்கள், சில்லறை இடங்கள் மற்றும் கிடங்குகள், நீடித்து நிற்கும் வகையிலும் உங்கள் வணிக காலவரிசைக்கு ஏற்பவும் கட்டப்படுகின்றன.",
+      "processSteps": [
+        "தேவைகள் மற்றும் சாத்தியக்கூறு மதிப்பாய்வு",
+        "வடிவமைப்பு மற்றும் ஒழுங்குமுறை ஒப்புதல்",
+        "கட்டுமானம் மற்றும் தர ஆய்வுகள்",
+        "ஒப்படைப்பு மற்றும் பராமரிப்பு ஆதரவு"
+      ],
+      "gallery": [
+        { "src": "/images/services/commercial/gallery-1.svg", "alt": { "en": "Commercial construction site", "si": "වාණිජ ඉදිකිරීම් අඩවිය", "ta": "வணிக கட்டுமான தளம்" } }
+      ]
+    }
+  }
+}
