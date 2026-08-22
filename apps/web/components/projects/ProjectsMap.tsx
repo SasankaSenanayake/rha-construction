@@ -48,7 +48,7 @@ export function ProjectsMap({ projects }: { projects: LocalizedProject[] }) {
     <div>
       <h2 className="text-center font-display text-xl font-semibold text-ink-900 md:text-2xl">{t("mapTitle")}</h2>
       <div className="relative mx-auto mt-6 aspect-[1/2] w-full max-w-sm">
-        <svg viewBox={MAP_VIEW_BOX} className="absolute inset-0 h-full w-full text-gold-500/60" aria-hidden="true">
+        <svg viewBox={MAP_VIEW_BOX} className="absolute inset-0 h-full w-full text-sand-400" aria-hidden="true">
           <path d={ISLAND_PATH} fill="none" stroke="currentColor" strokeWidth={2} strokeDasharray="6 5" strokeLinejoin="round" />
         </svg>
 

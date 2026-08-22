@@ -3,7 +3,7 @@
   "category": "renovation",
   "location": "Kandy",
   "year": 2023,
-  "featured": false,
+  "featured": true,
   "images": [
     {
       "src": "/images/projects/kandy-retail-renovation/photo-1.jpg",

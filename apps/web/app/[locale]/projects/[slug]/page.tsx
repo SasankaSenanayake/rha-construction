@@ -6,7 +6,7 @@ import { routing } from "@/lib/i18n/routing";
 import { getAllProjects, getProjectBySlug, localizeProject } from "@/lib/content/projects";
 import { markdownToHtml } from "@/lib/content/markdown";
 import { Section } from "@/components/ui/Section";
-import { LinkButton } from "@/components/ui/Button";
+import { CircleCta } from "@/components/ui/CircleCta";
 import { Reveal } from "@/components/ui/Reveal";
 import { DarkHero } from "@/components/layout/DarkHero";
 import { ProjectGallery } from "@/components/projects/ProjectGallery";
@@ -48,10 +48,10 @@ export default async function ProjectDetailPage({
     <>
       <DarkHero image={cover?.src} imageAlt={cover?.alt[locale as Locale]}>
         <Reveal>
-          <LinkButton href="/projects" variant="ghost" className="mb-6">
-            ← {tc("backToProjects")}
-          </LinkButton>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">
+          <CircleCta href="/projects" tone="light" direction="back" className="mb-8">
+            {tc("backToProjects")}
+          </CircleCta>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sand-300">
             {tCategories(localized.category)}
           </p>
           <h1 className="mt-3 font-display text-4xl font-semibold md:text-5xl">{localized.title}</h1>
@@ -81,11 +81,11 @@ export default async function ProjectDetailPage({
       )}
 
       <Section tone="dark">
-        <Reveal className="text-center">
+        <Reveal className="flex flex-col items-center text-center">
           <h2 className="font-display text-2xl font-semibold">{tc("getQuote")}</h2>
-          <LinkButton href="/quote" className="mt-7">
+          <CircleCta href="/quote" tone="light" className="mt-7">
             {tc("getQuote")}
-          </LinkButton>
+          </CircleCta>
         </Reveal>
       </Section>
     </>

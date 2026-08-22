@@ -27,11 +27,11 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">{tf("quickLinks")}</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sand-400">{tf("quickLinks")}</p>
           <ul className="mt-4 space-y-2.5 text-sm">
             {links.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="transition-colors hover:text-gold-300">
+                <Link href={link.href} className="transition-colors hover:text-white">
                   {t(link.key)}
                 </Link>
               </li>
@@ -40,29 +40,29 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">{tf("getInTouch")}</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sand-400">{tf("getInTouch")}</p>
           <ul className="mt-4 space-y-3 text-sm">
             <li className="flex items-start gap-2">
-              <Icon name="phone" className="mt-0.5 h-4 w-4 shrink-0 text-gold-500" />
-              <a href={`tel:${siteConfig.phoneHref}`} className="transition-colors hover:text-gold-300">
+              <Icon name="phone" className="mt-0.5 h-4 w-4 shrink-0 text-sand-300" />
+              <a href={`tel:${siteConfig.phoneHref}`} className="transition-colors hover:text-white">
                 {siteConfig.phoneDisplay}
               </a>
             </li>
             <li className="flex items-start gap-2">
-              <Icon name="mail" className="mt-0.5 h-4 w-4 shrink-0 text-gold-500" />
-              <a href={`mailto:${siteConfig.email}`} className="transition-colors hover:text-gold-300">
+              <Icon name="mail" className="mt-0.5 h-4 w-4 shrink-0 text-sand-300" />
+              <a href={`mailto:${siteConfig.email}`} className="transition-colors hover:text-white">
                 {siteConfig.email}
               </a>
             </li>
             <li className="flex items-start gap-2">
-              <Icon name="map-pin" className="mt-0.5 h-4 w-4 shrink-0 text-gold-500" />
+              <Icon name="map-pin" className="mt-0.5 h-4 w-4 shrink-0 text-sand-300" />
               <span>{siteConfig.address}</span>
             </li>
           </ul>
         </div>
 
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">{tf("businessHours")}</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sand-400">{tf("businessHours")}</p>
           <ul className="mt-4 space-y-2 text-sm">
             <li className="flex justify-between gap-4">
               <span className="text-sand-400">{tf("weekdays")}</span>

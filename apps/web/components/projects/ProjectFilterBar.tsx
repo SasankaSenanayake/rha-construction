@@ -27,8 +27,8 @@ export function ProjectFilterBar({ projects }: { projects: LocalizedProject[] })
           onClick={() => setActiveCategory(null)}
           className={`rounded-full border px-4 py-2 text-sm font-semibold transition-colors duration-300 ${
             activeCategory === null
-              ? "border-gold-500 bg-gold-500 text-ink-950"
-              : "border-sand-200 text-ink-800 hover:border-gold-400"
+              ? "border-ink-900 bg-ink-900 text-white"
+              : "border-sand-200 text-ink-800 hover:border-ink-900"
           }`}
         >
           {common("allCategories")}
@@ -40,8 +40,8 @@ export function ProjectFilterBar({ projects }: { projects: LocalizedProject[] })
             onClick={() => setActiveCategory(category)}
             className={`rounded-full border px-4 py-2 text-sm font-semibold transition-colors duration-300 ${
               activeCategory === category
-                ? "border-gold-500 bg-gold-500 text-ink-950"
-                : "border-sand-200 text-ink-800 hover:border-gold-400"
+                ? "border-ink-900 bg-ink-900 text-white"
+                : "border-sand-200 text-ink-800 hover:border-ink-900"
             }`}
           >
             {tc(category)}

@@ -38,11 +38,15 @@
     "rightsReserved": "All rights reserved."
   },
   "home": {
-    "heroTitle": "Building Sri Lanka, One Project at a Time",
+    "heroTitle": "We build <light>Sri Lanka, one project at a time.</light>",
     "heroSubtitle": "Residential, commercial, and renovation construction handled by a team you can trust — from foundation to finish.",
     "heroCtaPrimary": "Get a Free Quote",
     "heroCtaSecondary": "View Our Projects",
     "trustBarTitle": "Trusted by homeowners and businesses across Sri Lanka",
+    "introEyebrow": "Who We Are",
+    "introTitle": "Two decades of <light>dedication, precision, and pride in every build.</light>",
+    "introBody": "For over 18 years, our site teams and project managers have delivered more than 240 residential, commercial, and renovation projects across Colombo, Kandy, and beyond — holding a family home in Nugegoda to the same standard as a city office fit-out. We measure success in referrals and repeat clients, not just handovers.",
+    "introCta": "Learn About Us",
     "servicesTitle": "What We Do",
     "servicesSubtitle": "Full-service construction, from the first sketch to the final coat of paint.",
     "featuredProjectsTitle": "Featured Projects",

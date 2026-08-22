@@ -3,8 +3,8 @@ import type { LocalizedTestimonial } from "@/lib/content/testimonials";
 
 export function TestimonialCard({ testimonial }: { testimonial: LocalizedTestimonial }) {
   return (
-    <figure className="flex h-full flex-col rounded-none border border-sand-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-gold-400/60 hover:shadow-soft-lg">
-      <div className="flex gap-0.5 text-gold-500" aria-hidden="true">
+    <figure className="flex h-full flex-col rounded-none bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-soft-lg">
+      <div className="flex gap-0.5 text-ink-800" aria-hidden="true">
         {Array.from({ length: 5 }).map((_, index) => (
           <Icon key={index} name="star" className={`h-4 w-4 ${index < testimonial.rating ? "" : "opacity-20"}`} />
         ))}

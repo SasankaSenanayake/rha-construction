@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/lib/i18n/navigation";
 import { siteConfig } from "@/lib/config/site";
 import { Icon } from "@/components/ui/Icon";
+import { CircleCta } from "@/components/ui/CircleCta";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 
 const navItems = [
@@ -36,7 +37,7 @@ export function Header() {
     <header className="sticky top-0 z-50">
       <div className="bg-ink-950 text-white">
         <div className="container-page flex h-9 items-center justify-between text-xs">
-          <a href={`tel:${siteConfig.phoneHref}`} className="flex items-center gap-1.5 font-semibold text-gold-400 transition-colors hover:text-gold-300">
+          <a href={`tel:${siteConfig.phoneHref}`} className="flex items-center gap-1.5 font-semibold text-white transition-colors hover:text-sand-200">
             <Icon name="phone" className="h-3.5 w-3.5" />
             {siteConfig.phoneDisplay}
           </a>
@@ -63,7 +64,7 @@ export function Header() {
               >
                 <span className="flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover:-translate-y-1/2 group-focus-visible:-translate-y-1/2">
                   <span className="block">{t(item.key)}</span>
-                  <span className="block text-gold-600" aria-hidden="true">
+                  <span className="block" aria-hidden="true">
                     {t(item.key)}
                   </span>
                 </span>
@@ -72,12 +73,9 @@ export function Header() {
           </nav>
 
           <div className="hidden lg:block">
-            <Link
-              href="/quote"
-              className="inline-flex items-center rounded-none bg-gold-500 px-5 py-2.5 text-sm font-semibold uppercase tracking-wide text-ink-950 shadow-gold transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-600"
-            >
+            <CircleCta href="/quote" tone="dark">
               {tc("getQuote")}
-            </Link>
+            </CircleCta>
           </div>
 
           <button
@@ -119,14 +117,10 @@ export function Header() {
                 </Link>
               </li>
             ))}
-            <li className="py-3">
-              <Link
-                href="/quote"
-                onClick={() => setOpen(false)}
-                className="inline-flex w-full items-center justify-center rounded-none bg-gold-500 px-5 py-2.5 text-sm font-semibold uppercase tracking-wide text-ink-950"
-              >
+            <li className="flex justify-center py-3">
+              <CircleCta href="/quote" tone="dark" onClick={() => setOpen(false)}>
                 {tc("getQuote")}
-              </Link>
+              </CircleCta>
             </li>
           </ul>
         </nav>

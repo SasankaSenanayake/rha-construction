@@ -35,6 +35,12 @@ const config: Config = {
         padding: "1.25rem",
         screens: { xl: "1200px" },
       },
+      minHeight: {
+        hero: "92vh",
+      },
+      height: {
+        "hero-media": "46vh",
+      },
       boxShadow: {
         soft: "0 1px 2px rgba(15, 27, 46, 0.04), 0 12px 32px -12px rgba(15, 27, 46, 0.16)",
         "soft-lg": "0 4px 8px rgba(15, 27, 46, 0.04), 0 24px 48px -16px rgba(15, 27, 46, 0.22)",

@@ -6,7 +6,7 @@ import { routing } from "@/lib/i18n/routing";
 import { dateLocaleTag, formatArticleDate, getAllArticles, getArticleBySlug, localizeArticle } from "@/lib/content/articles";
 import { markdownToHtml } from "@/lib/content/markdown";
 import { Section } from "@/components/ui/Section";
-import { LinkButton } from "@/components/ui/Button";
+import { CircleCta } from "@/components/ui/CircleCta";
 import { Reveal } from "@/components/ui/Reveal";
 import { DarkHero } from "@/components/layout/DarkHero";
 import { CaseStudyBody } from "@/components/projects/CaseStudyBody";
@@ -46,10 +46,10 @@ export default async function ArticleDetailPage({
     <>
       <DarkHero>
         <Reveal>
-          <LinkButton href="/articles" variant="ghost" className="mb-6">
-            ← {t("backToArticles")}
-          </LinkButton>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">
+          <CircleCta href="/articles" tone="light" direction="back" className="mb-8">
+            {t("backToArticles")}
+          </CircleCta>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sand-300">
             {tCategories(localized.category)} · {formatArticleDate(localized.publishedAt, dateLocaleTag(locale as Locale))}
           </p>
           <h1 className="mt-3 font-display text-4xl font-semibold md:text-5xl">{localized.title}</h1>
@@ -63,11 +63,11 @@ export default async function ArticleDetailPage({
       </Section>
 
       <Section tone="dark">
-        <Reveal className="text-center">
+        <Reveal className="flex flex-col items-center text-center">
           <h2 className="font-display text-2xl font-semibold">{tc("getQuote")}</h2>
-          <LinkButton href="/quote" className="mt-7">
+          <CircleCta href="/quote" tone="light" className="mt-7">
             {tc("getQuote")}
-          </LinkButton>
+          </CircleCta>
         </Reveal>
       </Section>
     </>

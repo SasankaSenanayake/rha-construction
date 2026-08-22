@@ -5,7 +5,7 @@ import type { Locale } from "@rha/shared";
 import { routing } from "@/lib/i18n/routing";
 import { getAllServices, getServiceBySlug, localizeService } from "@/lib/content/services";
 import { Section } from "@/components/ui/Section";
-import { LinkButton } from "@/components/ui/Button";
+import { CircleCta } from "@/components/ui/CircleCta";
 import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
 import { DarkHero } from "@/components/layout/DarkHero";
@@ -44,7 +44,7 @@ export default async function ServiceDetailPage({
     <>
       <DarkHero image={localized.gallery[0]?.src} imageAlt={localized.gallery[0]?.alt[locale as Locale]}>
         <Reveal>
-          <span className="flex h-14 w-14 items-center justify-center bg-white/10 text-gold-400">
+          <span className="flex h-14 w-14 items-center justify-center border border-white/40 text-white">
             <Icon name={localized.icon as never} className="h-7 w-7" />
           </span>
           <h1 className="mt-5 font-display text-4xl font-semibold md:text-5xl">{localized.title}</h1>
@@ -82,11 +82,11 @@ export default async function ServiceDetailPage({
       )}
 
       <Section tone="dark">
-        <Reveal className="text-center">
+        <Reveal className="flex flex-col items-center text-center">
           <h2 className="font-display text-2xl font-semibold">{t("ctaTitle")}</h2>
-          <LinkButton href="/quote" className="mt-7">
+          <CircleCta href="/quote" tone="light" className="mt-7">
             {tc("getQuote")}
-          </LinkButton>
+          </CircleCta>
         </Reveal>
       </Section>
     </>

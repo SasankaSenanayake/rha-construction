@@ -18,6 +18,7 @@ import type { LocalizedProject } from "@/lib/content/projects";
 export function FeaturedProjectsScroller({ projects }: { projects: LocalizedProject[] }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
+  const progressRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
@@ -47,6 +48,9 @@ export function FeaturedProjectsScroller({ projects }: { projects: LocalizedProj
             scrub: 1,
             pin: true,
             invalidateOnRefresh: true,
+            onUpdate: (self) => {
+              if (progressRef.current) progressRef.current.style.transform = `scaleX(${self.progress})`;
+            },
           },
         });
       };
@@ -75,11 +79,24 @@ export function FeaturedProjectsScroller({ projects }: { projects: LocalizedProj
         ref={trackRef}
         className="flex gap-6 overflow-x-auto pb-2 [-webkit-overflow-scrolling:touch]"
       >
-        {projects.map((project) => (
-          <div key={project.slug} className="w-[85%] flex-none sm:w-[55%] lg:w-[34%]">
-            <ProjectCard project={project} />
+        {projects.map((project, index) => (
+          <div
+            key={project.slug}
+            className={`w-4/5 flex-none sm:w-1/2 lg:w-1/3 ${index % 2 === 1 ? "lg:translate-y-12" : ""}`}
+          >
+            <ProjectCard project={project} index={index} />
           </div>
         ))}
+      </div>
+      {/* Signals "more to scroll" and softens the trailing card's caption
+       * instead of letting the viewport edge cut its text off mid-word. */}
+      <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-24 bg-gradient-to-r from-transparent to-sand-100 lg:block" />
+      <div className="mt-8 hidden h-px w-full bg-sand-200 lg:block">
+        <div
+          ref={progressRef}
+          className="h-full w-full origin-left scale-x-0 bg-ink-900"
+          aria-hidden="true"
+        />
       </div>
     </div>
   );

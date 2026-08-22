@@ -12,7 +12,7 @@ export function PageHeading({
   const centered = align === "center";
   return (
     <div className={centered ? "text-center" : ""}>
-      {eyebrow && <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-600">{eyebrow}</p>}
+      {eyebrow && <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sand-600">{eyebrow}</p>}
       <h1 className={`font-display text-4xl font-semibold text-ink-900 md:text-5xl ${eyebrow ? "mt-3" : ""}`}>
         {title}
       </h1>

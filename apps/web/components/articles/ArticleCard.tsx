@@ -12,14 +12,14 @@ export function ArticleCard({ article }: { article: LocalizedArticle }) {
   return (
     <Link
       href={`/articles/${article.slug}`}
-      className="group block h-full border border-sand-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gold-400/60 hover:shadow-soft"
+      className="group block h-full bg-white p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-soft-lg"
     >
-      <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold-600">
+      <p className="text-xs font-semibold uppercase tracking-[0.15em] text-ink-700">
         {tCategories(article.category)} · {formatArticleDate(article.publishedAt, dateLocaleTag(locale as Locale))}
       </p>
       <h3 className="mt-2.5 font-display text-xl font-semibold text-ink-900">{article.title}</h3>
       <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-sand-600">{article.excerpt}</p>
-      <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-ink-800 transition-colors group-hover:text-gold-600">
+      <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-ink-800 transition-colors group-hover:text-ink-950">
         {t("readMore")}
         <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
       </span>

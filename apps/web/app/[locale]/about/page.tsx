@@ -27,7 +27,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
   return (
     <>
-      <DarkHero>
+      <DarkHero image="/images/projects/nugegoda-family-home/photo-1.jpg" imageAlt={t("imageAlt")}>
         <Reveal>
           <h1 className="font-display text-4xl font-semibold md:text-5xl">{t("title")}</h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-sand-200">{t("intro")}</p>
@@ -67,8 +67,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {whyUsItems.map((item, index) => (
             <Reveal key={item.title} delay={index * 80}>
-              <div className="h-full rounded-none border border-sand-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gold-400/60 hover:shadow-soft">
-                <Icon name={whyChooseUsIcons[index]!} className="h-8 w-8 text-gold-500" />
+              <div className="h-full rounded-none bg-white p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-soft-lg">
+                <Icon name={whyChooseUsIcons[index]!} className="h-8 w-8 text-ink-700" />
                 <h3 className="mt-4 font-display text-lg font-semibold text-ink-900">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-sand-600">{item.body}</p>
               </div>

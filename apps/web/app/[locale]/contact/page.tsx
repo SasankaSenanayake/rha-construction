@@ -36,25 +36,25 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
           <h2 className="font-display text-lg font-semibold text-ink-900">{t("detailsTitle")}</h2>
           <ul className="mt-4 space-y-4 text-sm">
             <li className="flex items-start gap-3">
-              <Icon name="phone" className="mt-0.5 h-5 w-5 shrink-0 text-gold-500" />
+              <Icon name="phone" className="mt-0.5 h-5 w-5 shrink-0 text-ink-700" />
               <a href={`tel:${siteConfig.phoneHref}`} className="font-semibold text-ink-900">
                 {siteConfig.phoneDisplay}
               </a>
             </li>
             <li className="flex items-start gap-3">
-              <Icon name="whatsapp" className="mt-0.5 h-5 w-5 shrink-0 text-gold-500" />
+              <Icon name="whatsapp" className="mt-0.5 h-5 w-5 shrink-0 text-ink-700" />
               <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="font-semibold text-ink-900">
                 {tCommon("whatsapp")}
               </a>
             </li>
             <li className="flex items-start gap-3">
-              <Icon name="mail" className="mt-0.5 h-5 w-5 shrink-0 text-gold-500" />
+              <Icon name="mail" className="mt-0.5 h-5 w-5 shrink-0 text-ink-700" />
               <a href={`mailto:${siteConfig.email}`} className="font-semibold text-ink-900">
                 {siteConfig.email}
               </a>
             </li>
             <li className="flex items-start gap-3">
-              <Icon name="map-pin" className="mt-0.5 h-5 w-5 shrink-0 text-gold-500" />
+              <Icon name="map-pin" className="mt-0.5 h-5 w-5 shrink-0 text-ink-700" />
               <span className="text-ink-800">{siteConfig.address}</span>
             </li>
           </ul>
