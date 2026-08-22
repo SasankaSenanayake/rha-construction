@@ -1,4 +1,27 @@
-data "aws_iam_policy_document" "github_actions_assume_role" {
+# GitHub's OIDC token "sub" claim format depends on how the job is
+# triggered — a plain ref-based push is repo:OWNER/REPO:ref:refs/heads/BRANCH,
+# a pull_request run is repo:OWNER/REPO:pull_request, but a job that
+# specifies `environment: production` (as all of ours do at least once)
+# gets repo:OWNER/REPO:environment:production instead, *regardless* of the
+# trigger event. Each role's trust policy has to list every sub format any
+# workflow that assumes it can actually present.
+locals {
+  deploy_app_allowed_subs = [
+    # deploy-app.yml and deploy-lambda.yml both set environment: production
+    "repo:${var.github_org}/${var.github_repo}:environment:production",
+  ]
+
+  terraform_ci_allowed_subs = [
+    # terraform-plan.yml: pull_request trigger, no environment
+    "repo:${var.github_org}/${var.github_repo}:pull_request",
+    # terraform-plan.yml: workflow_dispatch trigger, no environment
+    "repo:${var.github_org}/${var.github_repo}:ref:refs/heads/main",
+    # terraform-apply.yml: workflow_dispatch trigger, environment: production
+    "repo:${var.github_org}/${var.github_repo}:environment:production",
+  ]
+}
+
+data "aws_iam_policy_document" "deploy_app_assume_role" {
   statement {
     actions = ["sts:AssumeRoleWithWebIdentity"]
 
@@ -16,7 +39,30 @@ data "aws_iam_policy_document" "github_actions_assume_role" {
     condition {
       test     = "StringLike"
       variable = "token.actions.githubusercontent.com:sub"
-      values   = ["repo:${var.github_org}/${var.github_repo}:ref:refs/heads/main"]
+      values   = local.deploy_app_allowed_subs
+    }
+  }
+}
+
+data "aws_iam_policy_document" "terraform_ci_assume_role" {
+  statement {
+    actions = ["sts:AssumeRoleWithWebIdentity"]
+
+    principals {
+      type        = "Federated"
+      identifiers = [local.oidc_provider_effective_arn]
+    }
+
+    condition {
+      test     = "StringEquals"
+      variable = "token.actions.githubusercontent.com:aud"
+      values   = ["sts.amazonaws.com"]
+    }
+
+    condition {
+      test     = "StringLike"
+      variable = "token.actions.githubusercontent.com:sub"
+      values   = local.terraform_ci_allowed_subs
     }
   }
 }
@@ -27,7 +73,7 @@ data "aws_iam_policy_document" "github_actions_assume_role" {
 # permissions — an app-deploy workflow can never change infrastructure.
 resource "aws_iam_role" "deploy_app" {
   name               = "${var.name_prefix}-gha-deploy-app"
-  assume_role_policy = data.aws_iam_policy_document.github_actions_assume_role.json
+  assume_role_policy = data.aws_iam_policy_document.deploy_app_assume_role.json
 }
 
 data "aws_iam_policy_document" "deploy_app_permissions" {
@@ -66,7 +112,7 @@ resource "aws_iam_role_policy" "deploy_app_permissions" {
 # terraform-apply.yml uses it only on manual, human-approved dispatch.
 resource "aws_iam_role" "terraform_ci" {
   name               = "${var.name_prefix}-gha-terraform-ci"
-  assume_role_policy = data.aws_iam_policy_document.github_actions_assume_role.json
+  assume_role_policy = data.aws_iam_policy_document.terraform_ci_assume_role.json
 }
 
 data "aws_iam_policy_document" "terraform_ci_permissions" {
