@@ -3,6 +3,7 @@ import type { Locale } from "@rha/shared";
 import { getAllServices, localizeService } from "@/lib/content/services";
 import { getFeaturedProjects, localizeProject } from "@/lib/content/projects";
 import { getAllTestimonials, localizeTestimonial } from "@/lib/content/testimonials";
+import { getAllArticles, localizeArticle } from "@/lib/content/articles";
 import { siteConfig } from "@/lib/config/site";
 import { Section } from "@/components/ui/Section";
 import { LinkButton } from "@/components/ui/Button";
@@ -15,6 +16,7 @@ import { CinematicHeroVideo } from "@/components/layout/CinematicHeroVideo";
 import { ServiceCard } from "@/components/services/ServiceCard";
 import { FeaturedProjectsScroller } from "@/components/projects/FeaturedProjectsScroller";
 import { TestimonialCard } from "@/components/testimonials/TestimonialCard";
+import { ArticleCard } from "@/components/articles/ArticleCard";
 import { Icon } from "@/components/ui/Icon";
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
@@ -30,6 +32,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const testimonials = getAllTestimonials()
     .slice(0, 3)
     .map((testimonial) => localizeTestimonial(testimonial, loc));
+  const latestArticles = getAllArticles()
+    .slice(0, 3)
+    .map((article) => localizeArticle(article, loc));
 
   const whyUs = [
     { title: t("whyUs.experienceTitle"), body: t("whyUs.experienceBody"), icon: "check" as const },
@@ -188,6 +193,35 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 </Reveal>
               ))}
             </div>
+          </Section>
+        </>
+      )}
+
+      {latestArticles.length > 0 && (
+        <>
+          <AnimatedDivider />
+
+          <Section>
+            <Reveal>
+              <div className="text-center">
+                <MaskReveal as="h2" inline className="font-display text-3xl font-semibold text-ink-900 md:text-4xl">
+                  {t("articlesTitle")}
+                </MaskReveal>
+                <p className="mx-auto mt-3 max-w-2xl text-sand-600">{t("articlesSubtitle")}</p>
+              </div>
+            </Reveal>
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {latestArticles.map((article, index) => (
+                <Reveal key={article.slug} delay={index * 80}>
+                  <ArticleCard article={article} />
+                </Reveal>
+              ))}
+            </div>
+            <Reveal className="mt-12 text-center">
+              <LinkButton href="/articles" variant="secondary">
+                {tCommon("viewAllArticles")}
+              </LinkButton>
+            </Reveal>
           </Section>
         </>
       )}

@@ -9,8 +9,9 @@ export function ProjectCard({ project }: { project: LocalizedProject }) {
 
   return (
     <Link
+      id={`project-${project.slug}`}
       href={`/projects/${project.slug}`}
-      className="group block overflow-hidden rounded-none border border-sand-200 bg-ink-950 transition-all duration-300 hover:-translate-y-1 hover:border-gold-400/60 hover:shadow-soft-lg"
+      className="group block scroll-mt-24 overflow-hidden rounded-none border border-sand-200 bg-ink-950 transition-all duration-300 hover:-translate-y-1 hover:border-gold-400/60 hover:shadow-soft-lg"
     >
       <div className="notch-panel relative aspect-[3/2] overflow-hidden bg-ink-800 [--notch:28px]">
         {cover && (

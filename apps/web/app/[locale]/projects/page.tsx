@@ -6,6 +6,7 @@ import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { PageHeading } from "@/components/ui/PageHeading";
 import { ProjectFilterBar } from "@/components/projects/ProjectFilterBar";
+import { ProjectsMap } from "@/components/projects/ProjectsMap";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("projects");
@@ -25,7 +26,10 @@ export default async function ProjectsPage({ params }: { params: Promise<{ local
       <Reveal>
         <PageHeading title={t("title")} subtitle={t("subtitle")} />
       </Reveal>
-      <Reveal delay={100} className="mt-12">
+      <Reveal delay={80} className="mt-12">
+        <ProjectsMap projects={projects} />
+      </Reveal>
+      <Reveal delay={140} className="mt-16">
         <ProjectFilterBar projects={projects} />
       </Reveal>
     </Section>

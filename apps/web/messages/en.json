@@ -5,6 +5,7 @@
     "services": "Services",
     "projects": "Projects",
     "testimonials": "Testimonials",
+    "articles": "Articles",
     "contact": "Contact",
     "quote": "Get a Quote"
   },
@@ -14,6 +15,7 @@
     "whatsapp": "WhatsApp Us",
     "readMore": "Read More",
     "viewAllProjects": "View All Projects",
+    "viewAllArticles": "View All Articles",
     "viewCaseStudy": "View Case Study",
     "submit": "Submit",
     "sending": "Sending…",
@@ -45,6 +47,8 @@
     "servicesSubtitle": "Full-service construction, from the first sketch to the final coat of paint.",
     "featuredProjectsTitle": "Featured Projects",
     "featuredProjectsSubtitle": "A selection of homes and buildings we're proud to have built.",
+    "articlesTitle": "Latest Articles",
+    "articlesSubtitle": "Practical advice and inspiration for your next build or renovation.",
     "testimonialsTitle": "What Our Clients Say",
     "ctaTitle": "Ready to Start Your Project?",
     "ctaSubtitle": "Tell us about your project and we'll get back to you within one business day.",
@@ -68,7 +72,8 @@
     "missionTitle": "Our Mission",
     "missionBody": "To deliver every project — from a single-room renovation to a multi-storey commercial building — with the same standard of craftsmanship, safety, and transparency.",
     "teamTitle": "Leadership Team",
-    "whyChooseUsTitle": "Why Homeowners and Businesses Choose Us"
+    "whyChooseUsTitle": "Why Homeowners and Businesses Choose Us",
+    "imageAlt": "Residential construction work in progress by RHA Construction"
   },
   "services": {
     "title": "Our Services",
@@ -91,7 +96,18 @@
     "locationLabel": "Location",
     "yearLabel": "Year",
     "categoryLabel": "Category",
-    "noResults": "No projects found in this category yet."
+    "noResults": "No projects found in this category yet.",
+    "mapTitle": "Where We've Built"
+  },
+  "articles": {
+    "title": "Articles & Insights",
+    "subtitle": "Practical advice, inspiration, and updates from the RHA Construction team.",
+    "backToArticles": "Back to Articles",
+    "categories": {
+      "guides": "Guides",
+      "renovation": "Renovation",
+      "materials": "Materials & Finishes"
+    }
   },
   "testimonials": {
     "title": "Client Testimonials",

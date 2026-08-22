@@ -104,6 +104,16 @@ body {
   transform: translateY(0);
 }
 
+/* Brief highlight pulse for a project card scrolled to from the projects map. */
+@keyframes map-highlight-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(201, 162, 39, 0.55); }
+  100% { box-shadow: 0 0 0 14px rgba(201, 162, 39, 0); }
+}
+
+.map-highlight {
+  animation: map-highlight-pulse 1.6s ease-out;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

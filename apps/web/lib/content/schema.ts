@@ -64,6 +64,20 @@ export const testimonialSchema = z.object({
   }),
 });
 
+export const ARTICLE_CATEGORIES = ["guides", "renovation", "materials"] as const;
+
+export const articleSchema = z.object({
+  slug: z.string().min(1),
+  publishedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+  category: z.enum(ARTICLE_CATEGORIES),
+  translations: z.object({
+    en: z.object({ title: z.string().min(1), excerpt: z.string().min(1), bodyMd: z.string().min(1) }),
+    si: z.object({ title: z.string().min(1), excerpt: z.string().min(1), bodyMd: z.string().min(1) }),
+    ta: z.object({ title: z.string().min(1), excerpt: z.string().min(1), bodyMd: z.string().min(1) }),
+  }),
+});
+
 export type Project = z.infer<typeof projectSchema>;
 export type Service = z.infer<typeof serviceSchema>;
 export type Testimonial = z.infer<typeof testimonialSchema>;
+export type Article = z.infer<typeof articleSchema>;

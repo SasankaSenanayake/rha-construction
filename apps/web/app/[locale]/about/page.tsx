@@ -35,14 +35,27 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       </DarkHero>
 
       <Section>
-        <div className="grid gap-12 md:grid-cols-2">
-          <Reveal>
-            <h2 className="font-display text-2xl font-semibold text-ink-900">{t("historyTitle")}</h2>
-            <p className="mt-4 leading-relaxed text-sand-600">{t("historyBody")}</p>
-          </Reveal>
-          <Reveal delay={100}>
-            <h2 className="font-display text-2xl font-semibold text-ink-900">{t("missionTitle")}</h2>
-            <p className="mt-4 leading-relaxed text-sand-600">{t("missionBody")}</p>
+        <div className="grid items-center gap-12 md:grid-cols-2">
+          <div>
+            <Reveal>
+              <h2 className="font-display text-2xl font-semibold text-ink-900">{t("historyTitle")}</h2>
+              <p className="mt-4 leading-relaxed text-sand-600">{t("historyBody")}</p>
+            </Reveal>
+            <Reveal delay={100} className="mt-10">
+              <h2 className="font-display text-2xl font-semibold text-ink-900">{t("missionTitle")}</h2>
+              <p className="mt-4 leading-relaxed text-sand-600">{t("missionBody")}</p>
+            </Reveal>
+          </div>
+          <Reveal delay={80}>
+            <div className="notch-panel relative aspect-[4/5] overflow-hidden bg-ink-800">
+              <img
+                src="/images/services/residential/gallery-1.jpg"
+                alt={t("imageAlt")}
+                loading="lazy"
+                className="h-full w-full object-cover"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/40 via-transparent to-transparent" />
+            </div>
           </Reveal>
         </div>
       </Section>
