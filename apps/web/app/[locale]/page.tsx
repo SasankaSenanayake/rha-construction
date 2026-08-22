@@ -8,6 +8,7 @@ import { Section } from "@/components/ui/Section";
 import { LinkButton } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
+import { CinematicHeroImage } from "@/components/layout/CinematicHeroImage";
 import { ServiceCard } from "@/components/services/ServiceCard";
 import { ProjectCard } from "@/components/projects/ProjectCard";
 import { TestimonialCard } from "@/components/testimonials/TestimonialCard";
@@ -40,9 +41,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     <>
       <section className="relative isolate overflow-hidden bg-ink-950 text-white">
         {heroImage ? (
-          <div className="absolute inset-0 -z-10 overflow-hidden">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={heroImage.src} alt="" className="h-full w-full animate-ken-burns object-cover" />
+          <div className="portal-mask absolute inset-0 -z-10 overflow-hidden">
+            <CinematicHeroImage src={heroImage.src} />
+            <div className="grain absolute inset-0 opacity-[0.05] mix-blend-overlay" />
             <div className="absolute inset-0 bg-ink-950/55" />
             <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/70 to-ink-950/30" />
           </div>
@@ -53,6 +54,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="container-page py-28 md:py-36">
           <Reveal>
             <div className="notch-panel max-w-2xl bg-ink-950/80 p-8 backdrop-blur-sm md:p-12">
+              <div className="mb-5 inline-flex items-center gap-2.5 border border-white/10 bg-white/5 px-3.5 py-1.5">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inset-0 rounded-full bg-gold-400 animate-pulse-ring" />
+                  <span className="relative h-2 w-2 rounded-full bg-gold-400" />
+                </span>
+                <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-sand-200">
+                  {t("trustBarTitle")}
+                </span>
+              </div>
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-400">{siteConfig.companyName}</p>
               <h1 className="mt-4 font-display text-4xl font-semibold leading-[1.05] md:text-6xl">{t("heroTitle")}</h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-sand-200">{t("heroSubtitle")}</p>
@@ -80,14 +90,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </Reveal>
         </div>
       </section>
-
-      <Section tone="muted" className="!py-10">
-        <Reveal>
-          <h2 className="text-center text-sm font-semibold uppercase tracking-[0.2em] text-sand-600">
-            {t("trustBarTitle")}
-          </h2>
-        </Reveal>
-      </Section>
 
       <Section>
         <Reveal>

@@ -66,6 +66,19 @@ body {
   clip-path: polygon(var(--notch) 0, 100% 0, 100% 100%, 0 100%, 0 var(--notch), var(--notch) var(--notch));
 }
 
+/* Soft vignette mask for cinematic hero/detail images — fades the photo into
+   the surrounding ink-950 section background instead of a hard rectangle. */
+.portal-mask {
+  -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 38%, black 55%, transparent 100%);
+  mask-image: radial-gradient(ellipse 75% 65% at 50% 38%, black 55%, transparent 100%);
+}
+
+/* Filmic grain overlay, CSS-only (feTurbulence data URI, no image weight). */
+.grain {
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
 .case-study-body h2 {
   @apply mt-10 font-display text-2xl font-semibold text-ink-900 first:mt-0;
 }
