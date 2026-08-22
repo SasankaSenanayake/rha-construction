@@ -23,6 +23,10 @@ infra/**/*.tfstate.*
 infra/**/terraform.tfvars
 infra/**/*.tfplan
 infra/**/crash.log
+infra/modules/forms-api/.placeholder/
+
+# TypeScript
+*.tsbuildinfo
 
 # Editor / OS
 .DS_Store
