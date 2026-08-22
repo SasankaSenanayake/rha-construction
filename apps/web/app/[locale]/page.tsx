@@ -9,6 +9,7 @@ import { LinkButton } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 import { CinematicHeroImage } from "@/components/layout/CinematicHeroImage";
+import { CinematicHeroVideo } from "@/components/layout/CinematicHeroVideo";
 import { ServiceCard } from "@/components/services/ServiceCard";
 import { ProjectCard } from "@/components/projects/ProjectCard";
 import { TestimonialCard } from "@/components/testimonials/TestimonialCard";
@@ -36,13 +37,18 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   ];
 
   const heroImage = featuredProjects[0]?.images[0];
+  const heroVideo = "/video.mp4";
 
   return (
     <>
       <section className="relative isolate overflow-hidden bg-ink-950 text-white">
         {heroImage ? (
           <div className="portal-mask absolute inset-0 -z-10 overflow-hidden">
-            <CinematicHeroImage src={heroImage.src} />
+            {heroVideo ? (
+              <CinematicHeroVideo src={heroVideo} poster={heroImage.src} />
+            ) : (
+              <CinematicHeroImage src={heroImage.src} />
+            )}
             <div className="grain absolute inset-0 opacity-[0.05] mix-blend-overlay" />
             <div className="absolute inset-0 bg-ink-950/55" />
             <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/70 to-ink-950/30" />
