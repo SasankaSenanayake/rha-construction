@@ -58,9 +58,14 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium tracking-wide text-ink-800 transition-colors hover:text-gold-600"
+                className="group relative block h-5 overflow-hidden text-sm font-medium tracking-wide text-ink-800"
               >
-                {t(item.key)}
+                <span className="flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover:-translate-y-1/2 group-focus-visible:-translate-y-1/2">
+                  <span className="block">{t(item.key)}</span>
+                  <span className="block text-gold-600" aria-hidden="true">
+                    {t(item.key)}
+                  </span>
+                </span>
               </Link>
             ))}
           </nav>

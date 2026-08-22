@@ -7,11 +7,13 @@ import { siteConfig } from "@/lib/config/site";
 import { Section } from "@/components/ui/Section";
 import { LinkButton } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
+import { MaskReveal } from "@/components/ui/MaskReveal";
+import { AnimatedDivider } from "@/components/ui/AnimatedDivider";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 import { CinematicHeroImage } from "@/components/layout/CinematicHeroImage";
 import { CinematicHeroVideo } from "@/components/layout/CinematicHeroVideo";
 import { ServiceCard } from "@/components/services/ServiceCard";
-import { ProjectCard } from "@/components/projects/ProjectCard";
+import { FeaturedProjectsScroller } from "@/components/projects/FeaturedProjectsScroller";
 import { TestimonialCard } from "@/components/testimonials/TestimonialCard";
 import { Icon } from "@/components/ui/Icon";
 
@@ -70,7 +72,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 </span>
               </div>
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-400">{siteConfig.companyName}</p>
-              <h1 className="mt-4 font-display text-4xl font-semibold leading-[1.05] md:text-6xl">{t("heroTitle")}</h1>
+              <MaskReveal as="h1" tone="gold" className="mt-4 font-display text-4xl font-semibold leading-[1.05] md:text-6xl">
+                {t("heroTitle")}
+              </MaskReveal>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-sand-200">{t("heroSubtitle")}</p>
               <div className="mt-9 flex flex-wrap gap-4">
                 <LinkButton href="/quote">{t("heroCtaPrimary")}</LinkButton>
@@ -97,10 +101,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
       </section>
 
+      <AnimatedDivider />
+
       <Section>
         <Reveal>
           <div className="text-center">
-            <h2 className="font-display text-3xl font-semibold text-ink-900 md:text-4xl">{t("servicesTitle")}</h2>
+            <MaskReveal as="h2" inline className="font-display text-3xl font-semibold text-ink-900 md:text-4xl">
+              {t("servicesTitle")}
+            </MaskReveal>
             <p className="mx-auto mt-3 max-w-2xl text-sand-600">{t("servicesSubtitle")}</p>
           </div>
         </Reveal>
@@ -114,31 +122,39 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </Section>
 
       {featuredProjects.length > 0 && (
-        <Section tone="muted">
-          <Reveal>
-            <div className="text-center">
-              <h2 className="font-display text-3xl font-semibold text-ink-900 md:text-4xl">{t("featuredProjectsTitle")}</h2>
-              <p className="mx-auto mt-3 max-w-2xl text-sand-600">{t("featuredProjectsSubtitle")}</p>
+        <>
+          <AnimatedDivider />
+
+          <Section tone="muted">
+            <Reveal>
+              <div className="text-center">
+                <MaskReveal as="h2" inline className="font-display text-3xl font-semibold text-ink-900 md:text-4xl">
+                  {t("featuredProjectsTitle")}
+                </MaskReveal>
+                <p className="mx-auto mt-3 max-w-2xl text-sand-600">{t("featuredProjectsSubtitle")}</p>
+              </div>
+            </Reveal>
+            <div className="mt-12">
+              <FeaturedProjectsScroller projects={featuredProjects} />
             </div>
-          </Reveal>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {featuredProjects.map((project, index) => (
-              <Reveal key={project.slug} delay={index * 80}>
-                <ProjectCard project={project} />
-              </Reveal>
-            ))}
-          </div>
-          <Reveal className="mt-12 text-center">
-            <LinkButton href="/projects" variant="secondary">
-              {tCommon("viewAllProjects")}
-            </LinkButton>
-          </Reveal>
-        </Section>
+            <Reveal className="mt-12 text-center">
+              <LinkButton href="/projects" variant="secondary">
+                {tCommon("viewAllProjects")}
+              </LinkButton>
+            </Reveal>
+          </Section>
+        </>
       )}
+
+      <AnimatedDivider />
 
       <Section>
         <Reveal>
-          <h2 className="text-center font-display text-3xl font-semibold text-ink-900 md:text-4xl">{t("whyUsTitle")}</h2>
+          <div className="text-center">
+            <MaskReveal as="h2" inline className="font-display text-3xl font-semibold text-ink-900 md:text-4xl">
+              {t("whyUsTitle")}
+            </MaskReveal>
+          </div>
         </Reveal>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {whyUs.map((item, index) => (
@@ -154,23 +170,33 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </Section>
 
       {testimonials.length > 0 && (
-        <Section tone="muted">
-          <Reveal>
-            <h2 className="text-center font-display text-3xl font-semibold text-ink-900 md:text-4xl">{t("testimonialsTitle")}</h2>
-          </Reveal>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {testimonials.map((testimonial, index) => (
-              <Reveal key={testimonial.id} delay={index * 80}>
-                <TestimonialCard testimonial={testimonial} />
-              </Reveal>
-            ))}
-          </div>
-        </Section>
+        <>
+          <AnimatedDivider />
+
+          <Section tone="muted">
+            <Reveal>
+              <div className="text-center">
+                <MaskReveal as="h2" inline className="font-display text-3xl font-semibold text-ink-900 md:text-4xl">
+                  {t("testimonialsTitle")}
+                </MaskReveal>
+              </div>
+            </Reveal>
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {testimonials.map((testimonial, index) => (
+                <Reveal key={testimonial.id} delay={index * 80}>
+                  <TestimonialCard testimonial={testimonial} />
+                </Reveal>
+              ))}
+            </div>
+          </Section>
+        </>
       )}
 
       <Section tone="dark">
         <Reveal className="text-center">
-          <h2 className="font-display text-3xl font-semibold md:text-4xl">{t("ctaTitle")}</h2>
+          <MaskReveal as="h2" tone="gold" inline className="font-display text-3xl font-semibold md:text-4xl">
+            {t("ctaTitle")}
+          </MaskReveal>
           <p className="mx-auto mt-3 max-w-xl text-sand-200">{t("ctaSubtitle")}</p>
           <LinkButton href="/quote" className="mt-9">
             {tCommon("getQuote")}
