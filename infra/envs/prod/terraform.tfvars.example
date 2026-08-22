@@ -16,6 +16,10 @@ ses_to_address   = "owner@example.com"    # business owner's receiving address
 alert_email      = "owner@example.com"    # budget + CloudWatch alarm notifications
 budget_limit_usd = 10
 
+# Set false if this AWS account already has token.actions.githubusercontent.com
+# registered as an OIDC provider from another project (it's account-wide).
+create_oidc_provider = true
+
 github_org  = "SasankaSenanayake"
 github_repo = "rha-construction"
 

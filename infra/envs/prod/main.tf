@@ -57,6 +57,7 @@ module "iam" {
   source = "../../modules/iam"
 
   name_prefix                = var.name_prefix
+  create_oidc_provider       = var.create_oidc_provider
   github_org                 = var.github_org
   github_repo                = var.github_repo
   site_bucket_arn            = "arn:aws:s3:::${module.static_site.bucket_name}"

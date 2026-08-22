@@ -71,3 +71,9 @@ variable "terraform_state_bucket_arn" {
   type        = string
   description = "ARN of the state bucket created by infra/bootstrap"
 }
+
+variable "create_oidc_provider" {
+  type        = bool
+  default     = true
+  description = "Set false if this AWS account already has token.actions.githubusercontent.com registered as an OIDC provider (it's an account-wide singleton, so a second project reusing the account needs this false)."
+}

@@ -2,6 +2,12 @@ variable "name_prefix" {
   type = string
 }
 
+variable "create_oidc_provider" {
+  type        = bool
+  default     = true
+  description = "Set false if token.actions.githubusercontent.com is already registered as an OIDC provider in this AWS account (e.g. by another project) — the provider is an account-wide singleton."
+}
+
 variable "github_org" {
   type        = string
   description = "GitHub org/user that owns the repo, e.g. your-github-username"
