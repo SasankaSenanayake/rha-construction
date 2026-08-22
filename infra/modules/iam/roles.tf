@@ -5,19 +5,30 @@
 # gets repo:OWNER/REPO:environment:production instead, *regardless* of the
 # trigger event. Each role's trust policy has to list every sub format any
 # workflow that assumes it can actually present.
+#
+# As of the current GitHub default, the "OWNER/REPO" portion itself is also
+# no longer the plain name — it's suffixed with each one's immutable numeric
+# ID (e.g. "SasankaSenanayake@35719611/rha-construction@1342629525"), a
+# GitHub-side hardening change to prevent identity confusion across repo
+# renames/transfers. Confirmed via `gh api
+# repos/OWNER/REPO/actions/oidc/customization/sub` (returns
+# `sub_claim_prefix` including the IDs even with `use_default: true`) and
+# via CloudTrail's rejected AssumeRoleWithWebIdentity events, which show the
+# actual presented subject. The `@*` wildcard below matches the ID without
+# hardcoding it, so this module stays portable across repos.
 locals {
   deploy_app_allowed_subs = [
     # deploy-app.yml and deploy-lambda.yml both set environment: production
-    "repo:${var.github_org}/${var.github_repo}:environment:production",
+    "repo:${var.github_org}@*/${var.github_repo}@*:environment:production",
   ]
 
   terraform_ci_allowed_subs = [
     # terraform-plan.yml: pull_request trigger, no environment
-    "repo:${var.github_org}/${var.github_repo}:pull_request",
+    "repo:${var.github_org}@*/${var.github_repo}@*:pull_request",
     # terraform-plan.yml: workflow_dispatch trigger, no environment
-    "repo:${var.github_org}/${var.github_repo}:ref:refs/heads/main",
+    "repo:${var.github_org}@*/${var.github_repo}@*:ref:refs/heads/main",
     # terraform-apply.yml: workflow_dispatch trigger, environment: production
-    "repo:${var.github_org}/${var.github_repo}:environment:production",
+    "repo:${var.github_org}@*/${var.github_repo}@*:environment:production",
   ]
 }
 
