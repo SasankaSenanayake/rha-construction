@@ -1,6 +1,6 @@
-# R.H.A. Construction — Website & Infrastructure
+# RHA Construction — Website & Infrastructure
 
-A production-ready marketing site for R.H.A. Construction, a Sri Lankan construction contractor. Fully static Next.js frontend (English/Sinhala/Tamil) served from S3 + CloudFront, with a minimal serverless backend (Lambda + API Gateway + DynamoDB + SES) for the contact and quote forms — designed to run at effectively zero cost within AWS's free tier.
+A production-ready marketing site for RHA Construction, a Sri Lankan construction contractor. Fully static Next.js frontend (English/Sinhala/Tamil) served from S3 + CloudFront, with a minimal serverless backend (Lambda + API Gateway + DynamoDB + SES) for the contact and quote forms — designed to run at effectively zero cost within AWS's free tier.
 
 ## Status: placeholder content
 

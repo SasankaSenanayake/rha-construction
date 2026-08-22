@@ -7,6 +7,7 @@ on:
       - "backend/forms-api/**"
       - "packages/shared/**"
       - ".github/workflows/deploy-lambda.yml"
+  workflow_dispatch: {}
 
 permissions:
   id-token: write

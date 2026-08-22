@@ -7,7 +7,7 @@
 // null/undefined — an empty string would otherwise silently override these
 // defaults with blank values in the deployed build.
 export const siteConfig = {
-  companyName: process.env.NEXT_PUBLIC_COMPANY_NAME || "R.H.A. Construction (Pvt) Ltd",
+  companyName: process.env.NEXT_PUBLIC_COMPANY_NAME || "RHA Construction",
   domain: process.env.NEXT_PUBLIC_DOMAIN || "example.com",
   phoneDisplay: process.env.NEXT_PUBLIC_PHONE_DISPLAY || "+94 77 000 0000",
   phoneHref: process.env.NEXT_PUBLIC_PHONE_HREF || "+94770000000",
