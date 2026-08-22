@@ -6,11 +6,11 @@
   "featured": true,
   "images": [
     {
-      "src": "/images/projects/nugegoda-family-home/photo-1.svg",
+      "src": "/images/projects/nugegoda-family-home/photo-1.jpg",
       "alt": { "en": "Exterior of the Nugegoda family home", "si": "නුගේගොඩ පවුල් නිවසේ බාහිර දර්ශනය", "ta": "நுகேகொடை குடும்ப வீட்டின் வெளிப்புறம்" }
     },
     {
-      "src": "/images/projects/nugegoda-family-home/photo-2.svg",
+      "src": "/images/projects/nugegoda-family-home/photo-2.jpg",
       "alt": { "en": "Living area of the Nugegoda family home", "si": "නුගේගොඩ පවුල් නිවසේ ලිවිං ග් රූම් එක", "ta": "நுகேகொடை குடும்ப வீட்டின் வாழ்விடம்" }
     }
   ],

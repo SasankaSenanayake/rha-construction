@@ -13,7 +13,7 @@
         "Final walkthrough and handover"
       ],
       "gallery": [
-        { "src": "/images/services/renovation/gallery-1.svg", "alt": { "en": "Renovation work in progress", "si": "ප්‍රතිසංස්කරණ කටයුතු", "ta": "புதுப்பித்தல் பணிகள்" } }
+        { "src": "/images/services/renovation/gallery-1.jpg", "alt": { "en": "Renovation work in progress", "si": "ප්‍රතිසංස්කරණ කටයුතු", "ta": "புதுப்பித்தல் பணிகள்" } }
       ]
     },
     "si": {
@@ -26,7 +26,7 @@
         "අවසාන පරීක්ෂාව හා භාරදීම"
       ],
       "gallery": [
-        { "src": "/images/services/renovation/gallery-1.svg", "alt": { "en": "Renovation work in progress", "si": "ප්‍රතිසංස්කරණ කටයුතු", "ta": "புதுப்பித்தல் பணிகள்" } }
+        { "src": "/images/services/renovation/gallery-1.jpg", "alt": { "en": "Renovation work in progress", "si": "ප්‍රතිසංස්කරණ කටයුතු", "ta": "புதுப்பித்தல் பணிகள்" } }
       ]
     },
     "ta": {
@@ -39,7 +39,7 @@
         "இறுதி ஆய்வு மற்றும் ஒப்படைப்பு"
       ],
       "gallery": [
-        { "src": "/images/services/renovation/gallery-1.svg", "alt": { "en": "Renovation work in progress", "si": "ප්‍රතිසංස්කරණ කටයුතු", "ta": "புதுப்பித்தல் பணிகள்" } }
+        { "src": "/images/services/renovation/gallery-1.jpg", "alt": { "en": "Renovation work in progress", "si": "ප්‍රතිසංස්කරණ කටයුතු", "ta": "புதுப்பித்தல் பணிகள்" } }
       ]
     }
   }

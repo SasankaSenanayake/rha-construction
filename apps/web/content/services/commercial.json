@@ -13,7 +13,7 @@
         "Handover and after-care support"
       ],
       "gallery": [
-        { "src": "/images/services/commercial/gallery-1.svg", "alt": { "en": "Commercial construction site", "si": "වාණිජ ඉදිකිරීම් අඩවිය", "ta": "வணிக கட்டுமான தளம்" } }
+        { "src": "/images/services/commercial/gallery-1.jpg", "alt": { "en": "Commercial construction site", "si": "වාණිජ ඉදිකිරීම් අඩවිය", "ta": "வணிக கட்டுமான தளம்" } }
       ]
     },
     "si": {
@@ -26,7 +26,7 @@
         "භාරදීම හා පසු සහාය"
       ],
       "gallery": [
-        { "src": "/images/services/commercial/gallery-1.svg", "alt": { "en": "Commercial construction site", "si": "වාණිජ ඉදිකිරීම් අඩවිය", "ta": "வணிக கட்டுமான தளம்" } }
+        { "src": "/images/services/commercial/gallery-1.jpg", "alt": { "en": "Commercial construction site", "si": "වාණිජ ඉදිකිරීම් අඩවිය", "ta": "வணிக கட்டுமான தளம்" } }
       ]
     },
     "ta": {
@@ -39,7 +39,7 @@
         "ஒப்படைப்பு மற்றும் பராமரிப்பு ஆதரவு"
       ],
       "gallery": [
-        { "src": "/images/services/commercial/gallery-1.svg", "alt": { "en": "Commercial construction site", "si": "වාණිජ ඉදිකිරීම් අඩවිය", "ta": "வணிக கட்டுமான தளம்" } }
+        { "src": "/images/services/commercial/gallery-1.jpg", "alt": { "en": "Commercial construction site", "si": "වාණිජ ඉදිකිරීම් අඩවිය", "ta": "வணிக கட்டுமான தளம்" } }
       ]
     }
   }

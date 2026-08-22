@@ -13,7 +13,7 @@
         "Final inspection and sign-off"
       ],
       "gallery": [
-        { "src": "/images/services/project-management/gallery-1.svg", "alt": { "en": "Project management on site", "si": "අඩවියේ ව්‍යාපෘති කළමනාකරණය", "ta": "தளத்தில் திட்ட மேலாண்மை" } }
+        { "src": "/images/services/project-management/gallery-1.jpg", "alt": { "en": "Project management on site", "si": "අඩවියේ ව්‍යාපෘති කළමනාකරණය", "ta": "தளத்தில் திட்ட மேலாண்மை" } }
       ]
     },
     "si": {
@@ -26,7 +26,7 @@
         "අවසාන පරීක්ෂාව හා අනුමැතිය"
       ],
       "gallery": [
-        { "src": "/images/services/project-management/gallery-1.svg", "alt": { "en": "Project management on site", "si": "අඩවියේ ව්‍යාපෘති කළමනාකරණය", "ta": "தளத்தில் திட்ட மேலாண்மை" } }
+        { "src": "/images/services/project-management/gallery-1.jpg", "alt": { "en": "Project management on site", "si": "අඩවියේ ව්‍යාපෘති කළමනාකරණය", "ta": "தளத்தில் திட்ட மேலாண்மை" } }
       ]
     },
     "ta": {
@@ -39,7 +39,7 @@
         "இறுதி ஆய்வு மற்றும் ஒப்புதல்"
       ],
       "gallery": [
-        { "src": "/images/services/project-management/gallery-1.svg", "alt": { "en": "Project management on site", "si": "අඩවියේ ව්‍යාපෘති කළමනාකරණය", "ta": "தளத்தில் திட்ட மேலாண்மை" } }
+        { "src": "/images/services/project-management/gallery-1.jpg", "alt": { "en": "Project management on site", "si": "අඩවියේ ව්‍යාපෘති කළමනාකරණය", "ta": "தளத்தில் திட்ட மேலாண்மை" } }
       ]
     }
   }

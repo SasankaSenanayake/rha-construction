@@ -13,7 +13,7 @@
         "Quality check and handover"
       ],
       "gallery": [
-        { "src": "/images/services/interior-finishing/gallery-1.svg", "alt": { "en": "Interior finishing work", "si": "අභ්‍යන්තර නිම කිරීමේ කටයුතු", "ta": "உள்புற அலங்கார பணிகள்" } }
+        { "src": "/images/services/interior-finishing/gallery-1.jpg", "alt": { "en": "Interior finishing work", "si": "අභ්‍යන්තර නිම කිරීමේ කටයුතු", "ta": "உள்புற அலங்கார பணிகள்" } }
       ]
     },
     "si": {
@@ -26,7 +26,7 @@
         "ගුණාත්මක පරීක්ෂාව හා භාරදීම"
       ],
       "gallery": [
-        { "src": "/images/services/interior-finishing/gallery-1.svg", "alt": { "en": "Interior finishing work", "si": "අභ්‍යන්තර නිම කිරීමේ කටයුතු", "ta": "உள்புற அலங்கார பணிகள்" } }
+        { "src": "/images/services/interior-finishing/gallery-1.jpg", "alt": { "en": "Interior finishing work", "si": "අභ්‍යන්තර නිම කිරීමේ කටයුතු", "ta": "உள்புற அலங்கார பணிகள்" } }
       ]
     },
     "ta": {
@@ -39,7 +39,7 @@
         "தர சோதனை மற்றும் ஒப்படைப்பு"
       ],
       "gallery": [
-        { "src": "/images/services/interior-finishing/gallery-1.svg", "alt": { "en": "Interior finishing work", "si": "අභ්‍යන්තර නිම කිරීමේ කටයුතු", "ta": "உள்புற அலங்கார பணிகள்" } }
+        { "src": "/images/services/interior-finishing/gallery-1.jpg", "alt": { "en": "Interior finishing work", "si": "අභ්‍යන්තර නිම කිරීමේ කටයුතු", "ta": "உள்புற அலங்கார பணிகள்" } }
       ]
     }
   }

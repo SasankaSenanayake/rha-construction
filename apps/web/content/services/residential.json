@@ -13,7 +13,7 @@
         "Interior finishing and handover"
       ],
       "gallery": [
-        { "src": "/images/services/residential/gallery-1.svg", "alt": { "en": "Residential construction site", "si": "නිවාස ඉදිකිරීම් අඩවිය", "ta": "குடியிருப்பு கட்டுமான தளம்" } }
+        { "src": "/images/services/residential/gallery-1.jpg", "alt": { "en": "Residential construction site", "si": "නිවාස ඉදිකිරීම් අඩවිය", "ta": "குடியிருப்பு கட்டுமான தளம்" } }
       ]
     },
     "si": {
@@ -26,7 +26,7 @@
         "අභ්‍යන්තර නිම කිරීම හා භාරදීම"
       ],
       "gallery": [
-        { "src": "/images/services/residential/gallery-1.svg", "alt": { "en": "Residential construction site", "si": "නිවාස ඉදිකිරීම් අඩවිය", "ta": "குடியிருப்பு கட்டுமான தளம்" } }
+        { "src": "/images/services/residential/gallery-1.jpg", "alt": { "en": "Residential construction site", "si": "නිවාස ඉදිකිරීම් අඩවිය", "ta": "குடியிருப்பு கட்டுமான தளம்" } }
       ]
     },
     "ta": {
@@ -39,7 +39,7 @@
         "உள்புற அலங்காரம் மற்றும் ஒப்படைப்பு"
       ],
       "gallery": [
-        { "src": "/images/services/residential/gallery-1.svg", "alt": { "en": "Residential construction site", "si": "නිවාස ඉදිකිරීම් අඩවිය", "ta": "குடியிருப்பு கட்டுமான தளம்" } }
+        { "src": "/images/services/residential/gallery-1.jpg", "alt": { "en": "Residential construction site", "si": "නිවාස ඉදිකිරීම් අඩවිය", "ta": "குடியிருப்பு கட்டுமான தளம்" } }
       ]
     }
   }
