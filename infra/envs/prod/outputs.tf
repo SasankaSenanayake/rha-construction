@@ -19,6 +19,11 @@ output "dynamodb_table_name" {
   value = module.data.table_name
 }
 
+output "lambda_function_name" {
+  value       = module.forms_api.function_name
+  description = "Set as LAMBDA_FUNCTION_NAME in GitHub Actions vars"
+}
+
 output "gha_deploy_app_role_arn" {
   value       = module.iam.deploy_app_role_arn
   description = "Set as AWS_DEPLOY_ROLE_ARN in GitHub Actions secrets/vars"
