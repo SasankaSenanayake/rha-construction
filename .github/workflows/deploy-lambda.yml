@@ -2,7 +2,7 @@ name: Deploy Lambda
 
 on:
   push:
-    branches: [main]
+    branches: [main, dev]
     paths:
       - "backend/forms-api/**"
       - "packages/shared/**"
@@ -16,7 +16,7 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: production
+    environment: ${{ github.ref_name == 'dev' && 'development' || 'production' }}
     steps:
       - uses: actions/checkout@v4
 

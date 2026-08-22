@@ -18,6 +18,18 @@ variable "github_repo" {
   description = "Repo name, e.g. rha-construction"
 }
 
+variable "github_environment" {
+  type        = string
+  default     = "production"
+  description = "GitHub Environment name the deploy/apply jobs run under (sets the OIDC sub claim's environment:<name> segment)."
+}
+
+variable "github_deploy_branch" {
+  type        = string
+  default     = "main"
+  description = "Branch this stack's terraform-plan workflow trusts for its ref:refs/heads/<branch> and workflow_dispatch OIDC sub claims."
+}
+
 variable "site_bucket_arn" {
   type = string
 }

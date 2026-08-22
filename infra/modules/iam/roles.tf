@@ -18,17 +18,17 @@
 # hardcoding it, so this module stays portable across repos.
 locals {
   deploy_app_allowed_subs = [
-    # deploy-app.yml and deploy-lambda.yml both set environment: production
-    "repo:${var.github_org}@*/${var.github_repo}@*:environment:production",
+    # deploy-app.yml and deploy-lambda.yml both set environment: <github_environment>
+    "repo:${var.github_org}@*/${var.github_repo}@*:environment:${var.github_environment}",
   ]
 
   terraform_ci_allowed_subs = [
     # terraform-plan.yml: pull_request trigger, no environment
     "repo:${var.github_org}@*/${var.github_repo}@*:pull_request",
     # terraform-plan.yml: workflow_dispatch trigger, no environment
-    "repo:${var.github_org}@*/${var.github_repo}@*:ref:refs/heads/main",
-    # terraform-apply.yml: workflow_dispatch trigger, environment: production
-    "repo:${var.github_org}@*/${var.github_repo}@*:environment:production",
+    "repo:${var.github_org}@*/${var.github_repo}@*:ref:refs/heads/${var.github_deploy_branch}",
+    # terraform-apply.yml: workflow_dispatch trigger, environment: <github_environment>
+    "repo:${var.github_org}@*/${var.github_repo}@*:environment:${var.github_environment}",
   ]
 }
 
