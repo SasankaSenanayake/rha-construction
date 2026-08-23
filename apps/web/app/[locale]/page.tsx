@@ -58,7 +58,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   return (
     <>
-      {heroImage && <SplitHero image={heroImage.src} imageAlt={heroImage.alt[loc]} video="/videos/home-hero.mp4" />}
+      {heroImage && (
+        <SplitHero
+          image={heroImage.src}
+          imageAlt={heroImage.alt[loc]}
+          video="/videos/home-hero.mp4"
+          videoObjectPosition="50% 15%"
+          videoBaseZoom={1.18}
+        />
+      )}
 
       <div className="border-b border-sand-200 bg-sand-50">
         <div className="container-page flex divide-x divide-sand-200 py-8">

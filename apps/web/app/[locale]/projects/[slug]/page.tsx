@@ -23,6 +23,9 @@ const projectHeroVideos: Record<string, string> = {
   "nugegoda-family-home": "/videos/projects/nugegoda-family-home.mp4",
 };
 
+// All 3 clips above have a Kling watermark baked into the bottom corner — crop it out of frame.
+const projectHeroVideoCrop = { objectPosition: "50% 15%", baseZoom: 1.18 };
+
 export async function generateMetadata({
   params,
 }: {
@@ -53,7 +56,13 @@ export default async function ProjectDetailPage({
 
   return (
     <>
-      <DarkHero image={cover?.src} imageAlt={cover?.alt[locale as Locale]} video={projectHeroVideos[slug]}>
+      <DarkHero
+        image={cover?.src}
+        imageAlt={cover?.alt[locale as Locale]}
+        video={projectHeroVideos[slug]}
+        videoObjectPosition={projectHeroVideos[slug] ? projectHeroVideoCrop.objectPosition : undefined}
+        videoBaseZoom={projectHeroVideos[slug] ? projectHeroVideoCrop.baseZoom : undefined}
+      >
         <Reveal>
           <CircleCta href="/projects" tone="light" direction="back" className="mb-8">
             {tc("backToProjects")}

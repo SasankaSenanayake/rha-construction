@@ -14,11 +14,16 @@ export async function SplitHero({
   image,
   imageAlt,
   video,
+  videoObjectPosition,
+  videoBaseZoom,
 }: {
   image: string;
   imageAlt?: string;
   /** When set, an autoplaying background video replaces the static image; `image` becomes its poster frame. */
   video?: string;
+  /** Crop controls passed through to the video, e.g. to crop a baked-in watermark out of frame. */
+  videoObjectPosition?: string;
+  videoBaseZoom?: number;
 }) {
   const t = await getTranslations("home");
 
@@ -26,7 +31,7 @@ export async function SplitHero({
     <section className="grid min-h-hero grid-cols-1 bg-sand-50 lg:grid-cols-12">
       <div className="relative order-1 h-hero-media overflow-hidden lg:order-1 lg:col-span-8 lg:h-auto">
         {video ? (
-          <CinematicHeroVideo src={video} poster={image} />
+          <CinematicHeroVideo src={video} poster={image} objectPosition={videoObjectPosition} baseZoom={videoBaseZoom} />
         ) : (
           <CinematicHeroImage src={image} alt={imageAlt} objectPosition="85% 78%" baseZoom={1.6} />
         )}
