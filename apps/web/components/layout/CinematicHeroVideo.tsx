@@ -31,6 +31,16 @@ export function CinematicHeroVideo({
       return;
     }
 
+    // The `autoplay` attribute alone is unreliable on iOS Chrome/Safari —
+    // it can silently no-op and leave the poster frame showing until a
+    // user gesture. Setting `muted` as a JS property (not just the JSX
+    // attribute) and explicitly calling play() is the standard fix.
+    video.muted = true;
+    video.play().catch(() => {
+      // Autoplay still blocked (e.g. Low Power Mode) — poster stays up,
+      // which is an acceptable fallback rather than a broken page.
+    });
+
     let raf = 0;
     const update = () => {
       const max = window.innerHeight * 1.15;
@@ -61,6 +71,7 @@ export function CinematicHeroVideo({
       muted
       loop
       playsInline
+      preload="auto"
       poster={poster}
       style={{ objectPosition, transform: `scale(${baseZoom})` }}
       className="h-full w-full object-cover will-change-transform"
