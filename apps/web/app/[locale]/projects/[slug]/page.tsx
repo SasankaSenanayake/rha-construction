@@ -16,6 +16,13 @@ export function generateStaticParams() {
   return routing.locales.flatMap((locale) => getAllProjects().map((project) => ({ locale, slug: project.slug })));
 }
 
+// Only these 3 projects have a generated hero video so far — the rest keep their static cover photo.
+const projectHeroVideos: Record<string, string> = {
+  "colombo-office-fitout": "/videos/projects/colombo-office-fitout.mp4",
+  "kandy-retail-renovation": "/videos/projects/kandy-retail-renovation.mp4",
+  "nugegoda-family-home": "/videos/projects/nugegoda-family-home.mp4",
+};
+
 export async function generateMetadata({
   params,
 }: {
@@ -46,7 +53,7 @@ export default async function ProjectDetailPage({
 
   return (
     <>
-      <DarkHero image={cover?.src} imageAlt={cover?.alt[locale as Locale]}>
+      <DarkHero image={cover?.src} imageAlt={cover?.alt[locale as Locale]} video={projectHeroVideos[slug]}>
         <Reveal>
           <CircleCta href="/projects" tone="light" direction="back" className="mb-8">
             {tc("backToProjects")}

@@ -27,7 +27,13 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
   return (
     <>
-      <DarkHero image="/images/projects/nugegoda-family-home/photo-1.jpg" imageAlt={t("imageAlt")}>
+      <DarkHero
+        image="/images/projects/nugegoda-family-home/photo-1.jpg"
+        imageAlt={t("imageAlt")}
+        video="/videos/about-hero.mp4"
+        videoObjectPosition="50% 15%"
+        videoBaseZoom={1.18}
+      >
         <Reveal>
           <h1 className="font-display text-4xl font-semibold md:text-5xl">{t("title")}</h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-sand-200">{t("intro")}</p>

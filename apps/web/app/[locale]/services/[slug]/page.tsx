@@ -15,6 +15,18 @@ export function generateStaticParams() {
   return routing.locales.flatMap((locale) => getAllServices().map((service) => ({ locale, slug: service.slug })));
 }
 
+// Only these 3 services have a generated hero video so far — interior-finishing and
+// project-management keep their static gallery photo until a clip exists for them.
+const serviceHeroVideos: Record<string, string> = {
+  commercial: "/videos/services/commercial.mp4",
+  renovation: "/videos/services/renovation.mp4",
+  residential: "/videos/services/residential.mp4",
+};
+
+// All 3 of the above clips have a Kling watermark baked into the bottom corner —
+// crop it out of frame until they're regenerated on a clean tier.
+const serviceHeroVideoCrop = { objectPosition: "50% 15%", baseZoom: 1.18 };
+
 export async function generateMetadata({
   params,
 }: {
@@ -42,7 +54,13 @@ export default async function ServiceDetailPage({
 
   return (
     <>
-      <DarkHero image={localized.gallery[0]?.src} imageAlt={localized.gallery[0]?.alt[locale as Locale]}>
+      <DarkHero
+        image={localized.gallery[0]?.src}
+        imageAlt={localized.gallery[0]?.alt[locale as Locale]}
+        video={serviceHeroVideos[slug]}
+        videoObjectPosition={serviceHeroVideos[slug] ? serviceHeroVideoCrop.objectPosition : undefined}
+        videoBaseZoom={serviceHeroVideos[slug] ? serviceHeroVideoCrop.baseZoom : undefined}
+      >
         <Reveal>
           <span className="flex h-14 w-14 items-center justify-center border border-white/40 text-white">
             <Icon name={localized.icon as never} className="h-7 w-7" />

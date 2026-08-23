@@ -58,7 +58,20 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   return (
     <>
-      {heroImage && <SplitHero image={heroImage.src} imageAlt={heroImage.alt[loc]} />}
+      {heroImage && <SplitHero image={heroImage.src} imageAlt={heroImage.alt[loc]} video="/videos/home-hero.mp4" />}
+
+      <div className="border-b border-sand-200 bg-sand-50">
+        <div className="container-page flex divide-x divide-sand-200 py-8">
+          <div className="pr-8">
+            <p className="font-display text-3xl font-bold text-ink-950">{siteConfig.yearsInBusiness}+</p>
+            <p className="mt-1 text-xs uppercase tracking-[0.15em] text-sand-600">{tCommon("yearsInBusiness")}</p>
+          </div>
+          <div className="pl-8">
+            <p className="font-display text-3xl font-bold text-ink-950">{siteConfig.projectsCompleted}+</p>
+            <p className="mt-1 text-xs uppercase tracking-[0.15em] text-sand-600">{tCommon("projectsCompleted")}</p>
+          </div>
+        </div>
+      </div>
 
       {staggerImageA && staggerImageB && (
         <IntroStagger
